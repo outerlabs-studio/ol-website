@@ -94,6 +94,8 @@ const Footer = () => {
     return () => ctx.revert()
   }, [])
 
+  const currentYear = new Date()
+
   return (
     <FooterWrapper ref={footerTarget}>
       <ContentWrapper>

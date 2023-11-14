@@ -38,6 +38,10 @@ export const BottomLine = styled.div`
 `
 export const CustomGridWrapper = styled(GridWrapper)`
   align-items: end;
+
+  a {
+    width: fit-content;
+  }
 `
 export const LinksWrapper = styled.div`
   display: flex;
@@ -57,8 +61,8 @@ export const BackgroundBlur = styled.div`
 export const WheelWrapper = styled.div`
   position: absolute;
   top: -100%;
-  left: 9%;
-  transform: translate(-9%, 100%);
+  left: 8%;
+  transform: translate(-8%, 100%);
 `
 export const FerrisWheel = styled.div`
   position: absolute;

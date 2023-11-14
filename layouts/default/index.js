@@ -1,5 +1,4 @@
 'use client'
-import { useEffect } from 'react'
 import { Lenis } from '@studio-freight/react-lenis'
 import Tempus from '@studio-freight/tempus'
 import { Footer, Scrollbar } from 'components'
@@ -7,7 +6,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, lightTheme } from 'styles'
-import Ukiyo from 'ukiyojs'
 import { RealViewport } from 'lib'
 
 if (typeof window !== 'undefined') {
@@ -29,14 +27,7 @@ if (typeof window !== 'undefined') {
   console.log('👋 Hello! 👀')
 }
 
-export function Layout({ children, className }) {
-  useEffect(() => {
-    const els = document.querySelectorAll('.ukiyo')
-    els.forEach((el) => {
-      new Ukiyo(el, { scale: 1.2 })
-    })
-  }, [])
-
+export function Layout({ children }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />

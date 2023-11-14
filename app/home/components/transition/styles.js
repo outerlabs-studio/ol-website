@@ -19,6 +19,7 @@ export const TextWrapper = styled.div`
 
   p {
     display: inline;
+    opacity: 0;
   }
 `
 export const ButtonWrapper = styled.div`

@@ -38,13 +38,13 @@ export const BottomImageWrapper = styled.div`
 `
 export const CustomGridWrapper = styled(GridWrapper)`
   padding-top: 5vw;
+  margin-top: 5vw;
 `
 export const ContentWrapper = styled.div`
   grid-column: 3;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 5vw;
 
   a {
     width: fit-content;

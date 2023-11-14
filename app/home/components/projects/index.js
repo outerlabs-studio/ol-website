@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { Container, NormalText } from 'styles'
 import {
   CustomDescription,
@@ -11,38 +10,11 @@ import {
   ProjectWrapper,
   TopbarWrapper,
 } from './styles'
-import { Label } from 'components'
-import Image from 'next/image'
-import { useIsomorphicLayoutEffect } from 'react-use/lib'
-import gsap from 'gsap'
+import { CustomImage, Label } from 'components'
 
 const Projects = () => {
-  const sectionTarget = useRef()
-
-  // useIsomorphicLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     let tl = gsap.timeline()
-
-  //     tl.from(
-  //       sectionTarget.current,
-  //       {
-  //         scale: 0.8,
-  //         scrollTrigger: {
-  //           trigger: sectionTarget.current,
-  //           start: 'top-=40% bottom',
-  //           end: 'top+=30% bottom',
-  //           scrub: true,
-  //         },
-  //       },
-  //       0,
-  //     )
-  //   })
-
-  //   return () => ctx.revert()
-  // }, [])
-
   return (
-    <ProjectWrapper ref={sectionTarget}>
+    <ProjectWrapper>
       <Container>
         <TopbarWrapper>
           <Label reverse>Selected Work</Label>
@@ -51,35 +23,24 @@ const Projects = () => {
         <ProjectList>
           <Project href="/">
             <ImageWrapper>
-              <Image
-                src="/techcodes.png"
-                alt="TechCodes"
-                fill
-                className="ukiyo"
-              />
+              <CustomImage src="/techcodes.png" alt="TechCodes" speed={0.5} />
             </ImageWrapper>
             <CustomTitle>TechCodes</CustomTitle>
             <CustomDescription>Computer science nonprofit</CustomDescription>
           </Project>
           <Project href="/">
             <ImageWrapper>
-              <Image
-                src="/astro.jpg"
-                alt="Astro Studios"
-                fill
-                className="ukiyo"
-              />
+              <CustomImage src="/astro.jpg" alt="Astro Studios" speed={0.5} />
             </ImageWrapper>
             <CustomTitle>Astro Studios</CustomTitle>
             <CustomDescription>A podcast company</CustomDescription>
           </Project>
           <Project href="/">
             <ImageWrapper>
-              <Image
+              <CustomImage
                 src="/stigma.png"
                 alt="Stop the Stigma"
-                fill
-                className="ukiyo"
+                speed={0.5}
               />
             </ImageWrapper>
             <CustomTitle>Stop the Stigma</CustomTitle>
@@ -89,12 +50,7 @@ const Projects = () => {
           </Project>
           <Project href="/">
             <ImageWrapper>
-              <Image
-                src="/sarah.png"
-                alt="Sarah Khosla"
-                fill
-                className="ukiyo"
-              />
+              <CustomImage src="/sarah.png" alt="Sarah Khosla" speed={0.5} />
             </ImageWrapper>
             <CustomTitle>Sarah Khosla</CustomTitle>
             <CustomDescription>Portfolio</CustomDescription>

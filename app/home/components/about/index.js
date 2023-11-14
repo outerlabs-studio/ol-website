@@ -16,23 +16,23 @@ import {
   BottomImageWrapper,
   BottomMarqueeWrapper,
 } from './styles'
-import { CustomButton, Label, Marquee, Parallax } from 'components'
-import Image from 'next/image'
+import { CustomButton, CustomImage, Label, Marquee, Parallax } from 'components'
 
 const About = () => {
   const sectionTarget = useRef()
+  const imageTarget = useRef()
 
   return (
     <AboutSection ref={sectionTarget}>
       <GridWrapper>
-        <Parallax speed={-1} trigger={sectionTarget}>
-          <TopImageWrapper>
-            <Image src="/boys.jpg" alt="The team" fill className="ukiyo" />
+        <Parallax speed={-1.5} trigger={sectionTarget}>
+          <TopImageWrapper ref={imageTarget}>
+            <CustomImage src="/boys.jpg" alt="The team" />
           </TopImageWrapper>
         </Parallax>
-        <Parallax speed={-1} trigger={sectionTarget}>
+        <Parallax speed={-1.5} trigger={sectionTarget}>
           <BottomImageWrapper>
-            <Image src="/meeting.JPG" alt="The team" fill className="ukiyo" />
+            <CustomImage src="/meeting.JPG" alt="The team" />
           </BottomImageWrapper>
         </Parallax>
       </GridWrapper>
@@ -40,9 +40,9 @@ const About = () => {
         <DisplayText m={'0 6vw 0 0'}>Size doesn{`'`}t matter</DisplayText>
       </Marquee>
       <Container>
-        <CustomGridWrapper>
-          <Label reverse>Studio</Label>
-          <Parallax speed={1.25} trigger={sectionTarget}>
+        <Parallax speed={1.25} trigger={sectionTarget}>
+          <CustomGridWrapper>
+            <Label reverse>Studio</Label>
             <ContentWrapper>
               <HugeText>
                 Talent beats quantity <br />
@@ -56,8 +56,8 @@ const About = () => {
               </NormalText>
               <CustomButton href="/about">Meet the team</CustomButton>
             </ContentWrapper>
-          </Parallax>
-        </CustomGridWrapper>
+          </CustomGridWrapper>
+        </Parallax>
       </Container>
       <BottomMarqueeWrapper>
         <Marquee repeat={3}>
