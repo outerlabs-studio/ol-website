@@ -1,0 +1,7 @@
+node_modules
+**/.next/**
+**/dist/**
+**/public/**
+.cache
+package.json
+package-lock.json
