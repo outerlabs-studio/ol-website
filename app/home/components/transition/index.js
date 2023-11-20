@@ -13,7 +13,7 @@ import { useIsomorphicLayoutEffect } from 'react-use'
 import gsap from 'gsap'
 
 const Transition = () => {
-  const text = `From ideation to production: we create digital products that help successful companies thrive. Our refined process has helped our clients generate more than 8 figures in monthly profit. Our approach begins with understanding your unique business needs and tailoring our strategy to align with your specific goals.`
+  const text = `From ideation to production: we create digital products that help successful companies thrive. Our refined process has helped our clients generate more than 6 figures in monthly profit. Our approach begins with understanding your unique business needs and tailoring our strategy to align with your specific goals.`
   const textTarget = useRef()
   const sectionTarget = useRef()
   const innerTarget = useRef()

@@ -10,7 +10,7 @@ import { gsap } from 'gsap'
 import styled, { css } from 'styled-components'
 import { useIsTouchDevice } from 'hooks'
 import { Normal } from 'styles'
-import { useIsomorphicLayoutEffect } from 'react-use/lib'
+import { useIsomorphicLayoutEffect } from 'react-use'
 
 const ButtonWrapper = styled.a`
   display: block;

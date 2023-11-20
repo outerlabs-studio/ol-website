@@ -8,8 +8,12 @@ export const FooterWrapper = styled.footer`
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   z-index: ${Z_INDEX.footer.section};
   position: relative;
-  padding: 15vw 0;
+  padding: 28vh 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   h1 {
     line-height: 90%;
@@ -55,27 +59,31 @@ export const BackgroundBlur = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => `rgb(${theme.text})`};
-  opacity: 0.3;
+  opacity: 0.4;
   z-index: ${Z_INDEX.footer.section};
 `
 export const WheelWrapper = styled.div`
   position: absolute;
-  top: -100%;
-  left: 8%;
-  transform: translate(-8%, 100%);
+  /* top: -10vh; */
+  /* transform: translateY(10%); */
+  left: 0;
+  /* transform: translateY(30vh); */
+  width: 100vw;
+  height: 100vw;
+  z-index: ${Z_INDEX.footer.background};
 `
+
 export const FerrisWheel = styled.div`
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  top: 0;
-  left: 0;
-  color: var(--blue);
-  transform-origin: center;
-  width: 750px;
-  height: 750px;
+  transform-origin: center center;
   flex-shrink: 0;
   z-index: ${Z_INDEX.footer.background};
 `
+
 export const ItemWrapper = styled.div`
   position: absolute;
   height: 1px;
@@ -84,6 +92,6 @@ export const ItemWrapper = styled.div`
   img {
     width: 20vw;
     height: 20vw;
-    filter: blur(5px);
+    filter: blur(7px);
   }
 `

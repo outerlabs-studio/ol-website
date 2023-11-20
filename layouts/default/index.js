@@ -7,6 +7,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, lightTheme } from 'styles'
 import { RealViewport } from 'lib'
+import { useIsomorphicLayoutEffect } from 'react-use'
+import { useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.defaults({ ease: 'none' })
@@ -28,6 +30,15 @@ if (typeof window !== 'undefined') {
 }
 
 export function Layout({ children }) {
+  const mainTarget = useRef()
+
+  useIsomorphicLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to(mainTarget.current, { opacity: 1 })
+    })
+
+    return () => ctx.revert()
+  }, [])
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
@@ -35,7 +46,7 @@ export function Layout({ children }) {
       <Lenis root>
         <div>
           <Scrollbar />
-          <main>
+          <main ref={mainTarget}>
             {children}
             <Footer />
           </main>

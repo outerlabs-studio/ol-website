@@ -1,9 +1,9 @@
 'use client'
 
-import { useRect, useWindowSize } from '@studio-freight/hamo'
+import { useEffect, useRef } from 'react'
+import { useRect } from 'hooks'
 import { useLenis } from '@studio-freight/react-lenis'
-import { clamp, mapRange } from 'lib/maths'
-import { useEffect, useRef, useState } from 'react'
+import { mapRange } from 'lib/maths'
 import styled from 'styled-components'
 
 const ScrollbarWrapper = styled.div`

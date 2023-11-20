@@ -12,7 +12,7 @@ import {
 } from './styles'
 import { CustomButton, CustomLink, Parallax } from 'components'
 import { useRef } from 'react'
-import { useIsomorphicLayoutEffect } from 'react-use/lib'
+import { useIsomorphicLayoutEffect } from 'react-use'
 import gsap from 'gsap'
 
 const Hero = () => {
@@ -21,7 +21,6 @@ const Hero = () => {
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline()
-
       tl.to(
         trigger.current,
         {
@@ -35,6 +34,44 @@ const Hero = () => {
         },
         0,
       )
+        .from(
+          gsap.utils.toArray('.reveal-hero-1'),
+          {
+            yPercent: 100,
+            duration: 2,
+            stagger: 0.1,
+            ease: 'power3.inOut',
+          },
+          0,
+        )
+        .from(
+          gsap.utils.toArray('.reveal-hero-2'),
+          {
+            yPercent: 100,
+            duration: 2,
+            stagger: 0.1,
+            ease: 'power3.inOut',
+          },
+          0,
+        )
+        .from(
+          gsap.utils.toArray('.reveal-hero-3'),
+          {
+            xPercent: -100,
+            duration: 1,
+            stagger: 0.03,
+            ease: 'power3.inOut',
+          },
+          0,
+        )
+        .fromTo(
+          '.reveal-button',
+          {
+            scale: 0,
+          },
+          { scale: 1, duration: 0.5, ease: 'power3.inOut' },
+          1,
+        )
     })
 
     return () => ctx.revert()
@@ -45,50 +82,89 @@ const Hero = () => {
       <Container>
         <CustomGridWrapper>
           <LinkWrapper>
-            <CustomLink href="https://instagram.com/outerlabs">
-              Instagram
-            </CustomLink>
-            <CustomLink href="https://www.linkedin.com/company/outerlabs">
-              LinkedIn
-            </CustomLink>
-            <CustomLink href="https://www.dribbble.com/outerlabs">
-              Dribbble
-            </CustomLink>
+            <div className="overflow">
+              <div className="reveal-hero-2">
+                <CustomLink href="https://instagram.com/outerlabs">
+                  Instagram
+                </CustomLink>
+              </div>
+            </div>
+            <div className="overflow">
+              <div className="reveal-hero-2">
+                <CustomLink href="https://www.linkedin.com/company/outerlabs">
+                  LinkedIn
+                </CustomLink>
+              </div>
+            </div>
+            <div className="overflow">
+              <div className="reveal-hero-2">
+                <CustomLink href="https://www.dribbble.com/outerlabs">
+                  Dribbble
+                </CustomLink>
+              </div>
+            </div>
           </LinkWrapper>
           <DescriptionWrapper>
-            <NormalText>
-              Award winning digital design and development consultancy
-              specializing in websites, apps, and branding.
-            </NormalText>
+            <div className="overflow">
+              <div className="reveal-hero-1">
+                Award winning digital design and development
+              </div>
+            </div>
+            <div className="overflow">
+              <div className="reveal-hero-1">
+                consultancy specializing in websites, apps, and
+              </div>
+            </div>
+            <div className="overflow">
+              <div className="reveal-hero-1">branding.</div>
+            </div>
           </DescriptionWrapper>
         </CustomGridWrapper>
       </Container>
       <Parallax speed={0.5} trigger={trigger}>
-        <ButtonWrapper>
+        <ButtonWrapper className="reveal-button">
           <CustomButton href="#contact">Get in touch</CustomButton>
         </ButtonWrapper>
       </Parallax>
       <TitleWrapper>
         <SectionTitle>
-          <div>O</div>
+          <div className="overflow">
+            <div className="reveal-hero-3">O</div>
+          </div>
           <Parallax speed={-2} trigger={trigger}>
-            <div>u</div>
+            <div className="overflow">
+              <div className="reveal-hero-3">u</div>
+            </div>
           </Parallax>
-          <div>t</div>
+          <div className="overflow">
+            <div className="reveal-hero-3">t</div>
+          </div>
           <Parallax speed={-1} trigger={trigger}>
-            <div>e</div>
+            <div className="overflow">
+              <div className="reveal-hero-3">e</div>
+            </div>
           </Parallax>
-          <div>r</div>
+          <div className="overflow">
+            <div className="reveal-hero-3">r</div>
+          </div>
           <div>&nbsp;</div>
           <Parallax speed={-1.5} trigger={trigger}>
-            <div>L</div>
+            <div className="overflow">
+              <div className="reveal-hero-3">L</div>
+            </div>
           </Parallax>
-          <div>a</div>
+          <div className="overflow">
+            <div className="reveal-hero-3">a</div>
+          </div>
           <Parallax speed={-0.5} trigger={trigger}>
-            <div>b</div>
+            <div className="overflow">
+              <div className="reveal-hero-3">b</div>
+            </div>
           </Parallax>
           <Parallax speed={-3} trigger={trigger}>
-            <div>s</div>
+            <div className="overflow">
+              <div className="reveal-hero-3">s</div>
+            </div>
           </Parallax>
         </SectionTitle>
       </TitleWrapper>

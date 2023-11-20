@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { GridWrapper, Z_INDEX } from 'styles'
+import { GridWrapper, Huge, Normal, Z_INDEX } from 'styles'
 
 export const AboutSection = styled.section`
   position: relative;
@@ -25,9 +25,9 @@ export const TopImageWrapper = styled.div`
 export const BottomImageWrapper = styled.div`
   position: absolute;
   grid-column: 2;
-  top: 30vw;
+  top: 40vw;
   width: 20vw;
-  height: 40vw;
+  height: 50vw;
   border-radius: 0 0 30px 30px;
   z-index: 2;
 
@@ -37,8 +37,7 @@ export const BottomImageWrapper = styled.div`
   }
 `
 export const CustomGridWrapper = styled(GridWrapper)`
-  padding-top: 5vw;
-  margin-top: 5vw;
+  margin-top: 25vw;
 `
 export const ContentWrapper = styled.div`
   grid-column: 3;
@@ -49,7 +48,14 @@ export const ContentWrapper = styled.div`
   a {
     width: fit-content;
   }
+
+  .reveal-about-1 {
+    ${Huge}
+  }
+  .reveal-about-2 {
+    ${Normal}
+  }
 `
 export const BottomMarqueeWrapper = styled.div`
-  padding-top: 15vw;
+  padding-top: 25vw;
 `

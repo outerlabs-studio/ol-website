@@ -50,6 +50,16 @@ const GlobalStyle = createGlobalStyle`
     gap: 1vmax;
   }
 
+  main {
+    opacity: 0;
+  }
+
+  .overflow {
+    overflow: hidden;
+    height: fit-content;
+    display: inline-flex;
+  }
+
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
     img[loading='lazy'] {
       clip-path: inset(0.6px);

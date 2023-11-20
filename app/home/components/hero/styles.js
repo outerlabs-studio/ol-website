@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { GridWrapper, Z_INDEX, wtskrappa } from 'styles'
+import { GridWrapper, Normal, Z_INDEX, wtskrappa } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
@@ -11,6 +11,10 @@ export const HeroWrapper = styled.section`
   height: 100vh;
   width: 100%;
   z-index: ${Z_INDEX.hero};
+
+  .reveal-hero-1 {
+    ${Normal}
+  }
 `
 export const TitleWrapper = styled.div`
   /* position: absolute; */

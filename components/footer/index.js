@@ -17,84 +17,70 @@ import {
 } from './styles'
 import CustomLink from 'components/link'
 import gsap from 'gsap'
-import { useIsomorphicLayoutEffect } from 'react-use/lib'
+import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 
 const Footer = () => {
   let footerTarget = useRef(null)
   let ferrisWheelRef = useRef(null)
+  const { width } = useWindowSize()
+  const currentYear = new Date().getFullYear()
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(footerTarget.current, {
         yPercent: -50,
         scrollTrigger: {
           trigger: footerTarget.current,
-          start: 'top center',
-          end: 'bottom-=10px center',
+          start: 'top bottom',
+          end: 'bottom+=45% bottom',
           scrub: true,
         },
       })
     })
 
-    return () => ctx.revert()
-  }, [])
+    let radius = (30 * width) / 100
 
-  useIsomorphicLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      let radius = 500
-
-      let tl = gsap.timeline({
-        // scrollTrigger: {
-        //   trigger: footerTarget.current,
-        //   start: 'top bottom',
-        //   end: 'bottom top',
-        // },
+    const itemTarget = gsap.utils.toArray('.ferris-item')
+    itemTarget.forEach((item, i) => {
+      let numItems = itemTarget.length
+      let rotation = i * (360 / numItems)
+      gsap.set(item, { left: '50%', top: '50%' })
+      gsap.set(item.querySelector('img'), {
+        transformOrigin: '50% 50%',
+        x: radius - 40,
+        y: -6,
+        rotation: -rotation,
       })
-
-      const itemTarget = gsap.utils.toArray('.ferris-item')
-
-      itemTarget.forEach((itemAnim, i) => {
-        let numItems = itemTarget.length
-        let rotation = i * (360 / numItems)
-        gsap.set(itemAnim, { left: '50%', top: '50%' })
-        gsap.set(itemAnim.querySelector('img'), {
-          transformOrigin: '50% 50%',
-          x: radius - 40,
-          y: -6,
-          rotation: -rotation,
-        })
-        gsap.set(itemAnim, {
-          transformOrigin: 'left center',
-          rotation: rotation,
-          width: radius,
-        })
+      gsap.set(item, {
+        transformOrigin: 'left center',
+        rotation: rotation,
+        width: radius,
       })
+    })
 
-      gsap.set(ferrisWheelRef.current, {
-        width: radius * 2.5,
-        height: radius * 2.5,
-      })
+    gsap.set(ferrisWheelRef.current, {
+      width: radius * 2,
+      height: radius * 2,
+    })
 
-      tl.to(ferrisWheelRef.current, {
-        rotation: 360,
-        duration: 15,
+    gsap.to(ferrisWheelRef.current, {
+      rotation: 360,
+      duration: 15,
+      repeat: -1,
+      ease: 'none',
+    })
+
+    itemTarget.forEach((item) => {
+      gsap.to(item.querySelector('img'), {
+        rotation: '-=360',
+        duration: 7 + Math.random() * 7,
         repeat: -1,
         ease: 'none',
-      })
-
-      itemTarget.forEach((itemAnim, i) => {
-        tl.to(
-          itemAnim.querySelector('img'),
-          { rotation: '-=360', duration: 15, repeat: -1, ease: 'none' },
-          0,
-        )
       })
     })
 
     return () => ctx.revert()
-  }, [])
-
-  const currentYear = new Date()
+  }, [width])
 
   return (
     <FooterWrapper ref={footerTarget}>
@@ -128,14 +114,12 @@ const Footer = () => {
             <NormalText>
               25 Broadway
               <br />
-              Floor 10 {`#1034`}
-              <br />
               New York, NY 10004
             </NormalText>
             <CustomLink href="mailto@hello@outerlabs.studio" reverse>
               hello@outerlabs.studio
             </CustomLink>
-            <NormalText>2023</NormalText>
+            <NormalText>{currentYear}</NormalText>
           </CustomGridWrapper>
         </Container>
       </BottomLine>
