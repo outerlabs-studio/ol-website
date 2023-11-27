@@ -1,4 +1,5 @@
 'use client'
+
 import { Lenis } from '@studio-freight/react-lenis'
 import Tempus from '@studio-freight/tempus'
 import { Footer, Scrollbar } from 'components'
@@ -43,6 +44,7 @@ export function Layout({ children }) {
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
       <RealViewport />
+
       <Lenis root>
         <div>
           <Scrollbar />
