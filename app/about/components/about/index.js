@@ -9,7 +9,7 @@ import gsap from 'gsap'
 
 const About = () => {
   const sectionTarget = useRef()
-  const text = `We get shit done. Picture a small office where creative minds, fueled by an endless supply of coffee, show how to draw squares on a blank canvas. We're not just about coding and design; we're about creating digital magic with a dash of fun and a sprinkle of the unexpected.`
+  const text = `We get shit done. Picture a small office where creative minds, fueled by an endless supply of coffee, show how to draw squares on a blank canvas. We're not just about coding and design; we're about creating digital magic with a dash of fun and a sprinkle of the`
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -18,7 +18,6 @@ const About = () => {
           trigger: sectionTarget.current,
           start: 'top bottom-=10',
           toggleActions: 'play none none reset',
-          markers: true,
         },
       })
 
@@ -52,6 +51,14 @@ const About = () => {
           },
           0.75,
         )
+
+      gsap.to(gsap.utils.toArray('.reveal-about-4'), {
+        fontWeight: 800,
+        repeat: -1,
+        yoyo: true,
+        duration: 0.2,
+        stagger: 0.05,
+      })
     })
 
     return () => ctx.revert()
@@ -72,6 +79,20 @@ const About = () => {
                 <div className="reveal-about-1">{element}&nbsp;</div>
               </div>
             ))}
+            <div className="overflow">
+              <div className="reveal-about-1">
+                <div className="reveal-about-4">u</div>
+                <div className="reveal-about-4">n</div>
+                <div className="reveal-about-4">e</div>
+                <div className="reveal-about-4">x</div>
+                <div className="reveal-about-4">p</div>
+                <div className="reveal-about-4">e</div>
+                <div className="reveal-about-4">c</div>
+                <div className="reveal-about-4">t</div>
+                <div className="reveal-about-4">e</div>
+                <div className="reveal-about-4">d</div>.
+              </div>
+            </div>
           </TextWrapper>
           <InfoWrapper>
             <div className="col">

@@ -1,5 +1,5 @@
 import { Layout } from 'layouts/default'
-import { Hero, About } from './components'
+import { Hero, About, ImageSection, Services, Team } from './components'
 
 export const metadata = {
   title: 'About | Outer Labs',
@@ -11,29 +11,9 @@ export default function Home() {
     <Layout>
       <Hero />
       <About />
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
+      <ImageSection />
+      <Services />
+      <Team />
     </Layout>
   )
 }

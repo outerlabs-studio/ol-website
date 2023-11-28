@@ -1,12 +1,14 @@
+'use client'
+
 import styled from 'styled-components'
 import { Huge, Medium, Normal, Z_INDEX } from 'styles'
 
-export const AboutWrapper = styled.div`
+export const AboutWrapper = styled.section`
   width: 100%;
   background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 10vw 0;
-  z-index: ${Z_INDEX.about};
+  z-index: ${Z_INDEX.transition};
 `
 export const TextWrapper = styled.div`
   grid-column: 2 / span 2;
@@ -14,6 +16,7 @@ export const TextWrapper = styled.div`
 
   .reveal-about-1 {
     ${Huge}
+    display: inline-flex;
   }
 `
 export const InfoWrapper = styled.div`
