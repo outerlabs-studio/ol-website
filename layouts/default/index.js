@@ -2,7 +2,7 @@
 
 import { Lenis } from '@studio-freight/react-lenis'
 import Tempus from '@studio-freight/tempus'
-import { Footer, Scrollbar } from 'components'
+import { Footer, Nav, Scrollbar } from 'components'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ThemeProvider } from 'styled-components'
@@ -49,6 +49,7 @@ export function Layout({ children }) {
         <div>
           <Scrollbar />
           <main ref={mainTarget}>
+            <Nav />
             {children}
             <Footer />
           </main>

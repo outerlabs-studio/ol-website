@@ -14,7 +14,7 @@ import { CustomImage, Label } from 'components'
 
 const Projects = () => {
   return (
-    <ProjectWrapper>
+    <ProjectWrapper id="projects">
       <Container>
         <TopbarWrapper>
           <Label reverse>Selected Work</Label>

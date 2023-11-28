@@ -92,6 +92,6 @@ export const ItemWrapper = styled.div`
   img {
     width: 20vw;
     height: 20vw;
-    filter: blur(7px);
+    filter: blur(10px);
   }
 `

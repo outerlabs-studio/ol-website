@@ -2,7 +2,7 @@
 
 import CustomButton from 'components/button'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { Container, DisplayText, NormalText } from 'styles'
 import {
   FooterWrapper,
