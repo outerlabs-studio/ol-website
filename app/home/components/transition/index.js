@@ -33,7 +33,6 @@ const Transition = () => {
             trigger: textTarget.current,
             start: 'top bottom-=20%',
             end: 'bottom bottom-=20%',
-            toggleActions: 'play none none reverse',
             scrub: true,
           },
         },

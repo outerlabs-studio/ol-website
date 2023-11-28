@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { Container, MediumText } from 'styles'
+import { useRef } from 'react'
+import { Container } from 'styles'
 import {
   BlobWrapper,
   HeroWrapper,
@@ -30,7 +30,7 @@ const Hero = () => {
           ease: 'elastic(2, 1)',
         },
         0,
-      )
+      ).addLabel('loaded', 1.5)
 
       const radius = Math.min(width, height) / 2
       const centerX = width / 2
@@ -43,11 +43,9 @@ const Hero = () => {
         const y = centerY + Math.sin(angle) * radius
 
         // for the second animation
-        const extendedRadius = radius + 300
+        const extendedRadius = radius + 350
         const endX = centerX + Math.cos(angle) * extendedRadius
         const endY = centerY + Math.sin(angle) * extendedRadius
-
-        const rotation = 30 * Math.random()
 
         tl.to(
           blob,
@@ -55,20 +53,33 @@ const Hero = () => {
             duration: 0.5,
             x: x - width / 2,
             y: y - height / 2,
-            rotation: rotation,
+            rotation: 30 * Math.random(),
             ease: 'expo.out',
           },
           1.5,
-        ).to(
-          blob,
-          {
-            duration: 40,
-            x: endX - width / 2,
-            y: endY - height / 2,
-            rotation: rotation,
-          },
-          2,
         )
+          .add('explosion', 2)
+          .to(
+            blob,
+            {
+              duration: 40,
+              x: endX - width / 2,
+              y: endY - height / 2,
+              rotation: 60 * Math.random(),
+              onComplete: () => {
+                tl.timeScale(60)
+                tl.tweenTo('explosion').then(() => {
+                  tl.timeScale(1)
+                  tl.tweenTo('loaded').then(() => {
+                    setTimeout(() => {
+                      tl.play('loaded')
+                    }, 500)
+                  })
+                })
+              },
+            },
+            2,
+          )
       })
 
       tl.from(
@@ -77,9 +88,9 @@ const Hero = () => {
           yPercent: 100,
           duration: 2,
           stagger: 0.1,
-          ease: 'power3.inOut',
+          ease: 'expo.out',
         },
-        1,
+        1.5,
       )
     })
 

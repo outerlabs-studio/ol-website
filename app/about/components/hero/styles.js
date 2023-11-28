@@ -1,18 +1,21 @@
 'use client'
 
 import styled from 'styled-components'
-import { MediumText, Medium } from 'styles'
+import { MediumText, Medium, Z_INDEX } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  z-index: ${Z_INDEX.hero};
 `
 export const TextWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: ${Z_INDEX.hero + 1};
 
   .reveal-hero-1 {
     ${Medium}

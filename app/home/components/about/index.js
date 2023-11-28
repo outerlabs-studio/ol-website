@@ -24,7 +24,7 @@ const About = () => {
         scrollTrigger: {
           trigger: sectionTarget.current,
           start: 'top bottom',
-          toggleActions: 'play none none reverse',
+          toggleActions: 'play none none reset',
         },
       })
 
