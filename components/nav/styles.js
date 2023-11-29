@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import styled from 'styled-components'
-import { Huge, Medium, MediumText, wtskrappa } from 'styles'
+import { Huge, Medium, MediumText, Normal, wtskrappa } from 'styles'
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -10,9 +10,15 @@ export const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   z-index: 9999;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
-  color: ${({ theme }) => `rgb(${theme.text})`};
+  /* background-color: ${({ theme }) => `rgb(${theme.accent1})`}; */
+  color: ${({ theme }) => `rgb(${theme.accent1})`};
   transition: transform 0.3s ease-in-out;
+  mix-blend-mode: difference;
+  backdrop-filter: blur(10px);
+
+  a {
+    mix-blend-mode: difference;
+  }
 
   ${(props) =>
     props.hide &&
@@ -33,13 +39,14 @@ export const LinkList = styled.div`
   align-items: center;
 
   a {
-    ${Medium}
+    ${Normal}
+    color: ${({ theme }) => `rgb(${theme.accent1})`};
   }
 `
 export const Logo = styled(Link)`
   ${Huge}
   font-weight: 800!important;
   text-decoration: none;
-  color: ${({ theme }) => `rgb(${theme.text})`};
+  color: ${({ theme }) => `rgb(${theme.accent1})`};
   font-family: ${wtskrappa.style.fontFamily};
 `

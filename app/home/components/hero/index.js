@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, NormalText } from 'styles'
+import { Container } from 'styles'
 import {
   ButtonWrapper,
   CustomGridWrapper,
@@ -117,6 +117,9 @@ const Hero = () => {
             </div>
             <div className="overflow">
               <div className="reveal-hero-1">branding.</div>
+            </div>
+            <div className="reveal-button">
+              <CustomButton href="/about">Learn more</CustomButton>
             </div>
           </DescriptionWrapper>
         </CustomGridWrapper>

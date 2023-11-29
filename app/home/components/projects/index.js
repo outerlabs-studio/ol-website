@@ -1,16 +1,17 @@
 'use client'
 
-import { Container, NormalText } from 'styles'
+import { Container, HugeText, NormalText } from 'styles'
 import {
   CustomDescription,
   CustomTitle,
   ImageWrapper,
+  MarqueeWrapper,
   Project,
   ProjectList,
   ProjectWrapper,
   TopbarWrapper,
 } from './styles'
-import { CustomImage, Label } from 'components'
+import { CustomImage, Label, Marquee } from 'components'
 
 const Projects = () => {
   return (
@@ -23,6 +24,11 @@ const Projects = () => {
         <ProjectList>
           <Project href="/">
             <ImageWrapper>
+              <MarqueeWrapper>
+                <Marquee repeat={3}>
+                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                </Marquee>
+              </MarqueeWrapper>
               <CustomImage src="/techcodes.png" alt="TechCodes" speed={0.5} />
             </ImageWrapper>
             <CustomTitle>TechCodes</CustomTitle>
@@ -30,6 +36,11 @@ const Projects = () => {
           </Project>
           <Project href="/">
             <ImageWrapper>
+              <MarqueeWrapper>
+                <Marquee repeat={3}>
+                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                </Marquee>
+              </MarqueeWrapper>
               <CustomImage src="/astro.jpg" alt="Astro Studios" speed={0.5} />
             </ImageWrapper>
             <CustomTitle>Astro Studios</CustomTitle>
@@ -37,6 +48,11 @@ const Projects = () => {
           </Project>
           <Project href="/">
             <ImageWrapper>
+              <MarqueeWrapper>
+                <Marquee repeat={3}>
+                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                </Marquee>
+              </MarqueeWrapper>
               <CustomImage
                 src="/stigma.png"
                 alt="Stop the Stigma"
@@ -50,6 +66,11 @@ const Projects = () => {
           </Project>
           <Project href="/">
             <ImageWrapper>
+              <MarqueeWrapper>
+                <Marquee repeat={3}>
+                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                </Marquee>
+              </MarqueeWrapper>
               <CustomImage src="/sarah.png" alt="Sarah Khosla" speed={0.5} />
             </ImageWrapper>
             <CustomTitle>Sarah Khosla</CustomTitle>

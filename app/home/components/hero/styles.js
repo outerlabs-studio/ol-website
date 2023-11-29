@@ -34,7 +34,7 @@ export const SectionTitle = styled.h1`
   }
 `
 export const CustomGridWrapper = styled(GridWrapper)`
-  padding-top: 15vmin;
+  padding-top: 10vmin;
 `
 export const ButtonWrapper = styled.div`
   position: absolute;
@@ -52,4 +52,8 @@ export const LinkWrapper = styled.div`
 export const DescriptionWrapper = styled.div`
   grid-column: 3;
   max-width: 20rem;
+
+  .reveal-button {
+    margin-top: 2rem;
+  }
 `

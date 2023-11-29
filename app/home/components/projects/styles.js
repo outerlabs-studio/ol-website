@@ -39,6 +39,7 @@ export const ImageWrapper = styled.div`
   width: 100%;
   height: 30vw;
   border-radius: 40px;
+  overflow: hidden;
 
   :hover {
     img {
@@ -50,5 +51,15 @@ export const ImageWrapper = styled.div`
     transition: scale 0.2s ease-in-out;
     border-radius: inherit;
     object-fit: cover;
+    filter: blur(10px);
   }
+`
+export const MarqueeWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+  color: ${({ theme }) => `rgb(${theme.text})`};
+  transform: translateY(-50%);
+  z-index: 9999;
 `

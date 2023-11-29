@@ -7,10 +7,9 @@ import { useLenis } from '@studio-freight/react-lenis'
 import { useState } from 'react'
 
 const Nav = () => {
-  const lenis = useLenis()
   const [hide, setHide] = useState(true)
 
-  useLenis(({ scroll, limit, direction }) => {
+  useLenis(({ scroll, direction }) => {
     if (direction === 1 || direction === undefined || scroll < 50) {
       setHide(true)
     } else if (direction === -1) {
