@@ -25,9 +25,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV !== 'development',
   },
-  images: {
-    domains: [process.env.NEXT_PUBLIC_STRAPI_HOSTNAME],
-  },
   webpack: (config, options) => {
     const { dir } = options
 
