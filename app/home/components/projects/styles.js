@@ -58,7 +58,7 @@ export const MarqueeWrapper = styled.div`
   position: absolute;
   width: 100%;
   top: 50%;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
   transform: translateY(-50%);
   z-index: 9999;

@@ -1,5 +1,23 @@
 import { RealViewport, StyledComponentsRegistry } from 'lib'
 
+export const metadata = {
+  title: 'Outer Labs Studio',
+  description:
+    'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+  openGraph: {
+    title: 'Outer Labs Studio',
+    description:
+      'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+    images: [
+      `${
+        process.env.NODE_ENV === 'development'
+          ? 'http://localhost:3000'
+          : 'https://outerlabs.studio'
+      }/OG.jpg`,
+    ],
+  },
+}
+
 export default function RootLayout({ children }) {
   return (
     <html>
