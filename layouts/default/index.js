@@ -7,7 +7,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, lightTheme } from 'styles'
-import { RealViewport } from 'lib'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { useRef } from 'react'
 
@@ -30,7 +29,10 @@ if (typeof window !== 'undefined') {
   console.log('👋 Hello! 👀')
 }
 
-export function Layout({ children }) {
+export function Layout({
+  seo = { title: '', description: '', image: '', keywords: '' },
+  children,
+}) {
   const mainTarget = useRef()
 
   useIsomorphicLayoutEffect(() => {
@@ -41,20 +43,17 @@ export function Layout({ children }) {
     return () => ctx.revert()
   }, [])
   return (
-    <ThemeProvider theme={lightTheme}>
-      <GlobalStyle />
-      <RealViewport />
+    <Lenis root>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyle />
 
-      <Lenis root>
-        <div>
-          <Scrollbar />
-          <main ref={mainTarget}>
-            <Nav />
-            {children}
-            <Footer />
-          </main>
-        </div>
-      </Lenis>
-    </ThemeProvider>
+        <Scrollbar />
+        <main ref={mainTarget}>
+          <Nav />
+          {children}
+          <Footer />
+        </main>
+      </ThemeProvider>
+    </Lenis>
   )
 }

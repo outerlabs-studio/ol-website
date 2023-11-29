@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import styled from 'styled-components'
-import Parallax from './parallax'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import gsap from 'gsap'
 import { useRef } from 'react'
