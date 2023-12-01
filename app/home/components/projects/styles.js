@@ -10,7 +10,7 @@ export const ProjectWrapper = styled.section`
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 8vw 0;
   z-index: ${Z_INDEX.projects};
-  border-radius: 50px 50px 0 0;
+  border-radius: 3vw 3vw 0 0;
 `
 export const TopbarWrapper = styled.div`
   display: flex;
@@ -38,17 +38,10 @@ export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 30vw;
-  border-radius: 40px;
+  border-radius: 2vw;
   overflow: hidden;
 
-  :hover {
-    img {
-      scale: 1.1;
-    }
-  }
-
   img {
-    transition: scale 0.2s ease-in-out;
     border-radius: inherit;
     object-fit: cover;
     filter: blur(10px);

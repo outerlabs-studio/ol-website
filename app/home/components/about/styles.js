@@ -7,13 +7,14 @@ export const AboutSection = styled.section`
   position: relative;
   padding: 10vw 0;
   background-color: ${({ theme }) => `rgb(${theme.body})`};
+  min-height: 200vh;
   z-index: ${Z_INDEX.about};
 `
 export const TopImageWrapper = styled.div`
   position: absolute;
   grid-column: 2;
   width: 20vw;
-  height: 40vw;
+  height: 85vh;
   border-radius: 30px 30px 0 0;
   z-index: 2;
 
@@ -25,9 +26,9 @@ export const TopImageWrapper = styled.div`
 export const BottomImageWrapper = styled.div`
   position: absolute;
   grid-column: 2;
-  top: 40vw;
+  top: 85vh;
   width: 20vw;
-  height: 50vw;
+  height: 85vh;
   border-radius: 0 0 30px 30px;
   z-index: 2;
 
@@ -37,7 +38,7 @@ export const BottomImageWrapper = styled.div`
   }
 `
 export const CustomGridWrapper = styled(GridWrapper)`
-  margin-top: 25vw;
+  margin-top: 45vh;
 `
 export const ContentWrapper = styled.div`
   grid-column: 3;
@@ -57,5 +58,6 @@ export const ContentWrapper = styled.div`
   }
 `
 export const BottomMarqueeWrapper = styled.div`
-  padding-top: 25vw;
+  position: absolute;
+  bottom: 10vw;
 `

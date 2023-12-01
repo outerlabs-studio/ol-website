@@ -60,6 +60,12 @@ const Team = () => {
         pos="Lead App Developer"
         num={3}
       />
+      <Member
+        name="Chanul Dandeniya"
+        image="/chanul.jpg"
+        pos="Creative director"
+        num={4}
+      />
     </TeamSection>
   )
 }

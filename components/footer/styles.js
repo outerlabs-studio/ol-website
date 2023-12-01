@@ -88,10 +88,10 @@ export const ItemWrapper = styled.div`
   position: absolute;
   height: 1px;
   z-index: ${Z_INDEX.footer.background};
-
+  
   img {
     width: 20vw;
     height: 20vw;
-    filter: blur(10px);
+    filter: blur(20px);
   }
 `

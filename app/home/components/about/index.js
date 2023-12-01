@@ -77,12 +77,12 @@ const About = () => {
       <GridWrapper>
         <Parallax speed={-1.5} trigger={sectionTarget}>
           <TopImageWrapper>
-            <CustomImage src="/boys.jpg" alt="The team" />
+            <CustomImage src="/meeting.JPG" alt="The team" />
           </TopImageWrapper>
         </Parallax>
         <Parallax speed={-1.5} trigger={sectionTarget}>
           <BottomImageWrapper>
-            <CustomImage src="/meeting.JPG" alt="The team" />
+            <CustomImage src="/boys.jpg" alt="The team" />
           </BottomImageWrapper>
         </Parallax>
       </GridWrapper>
