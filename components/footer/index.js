@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import { CustomLink, CustomButton } from 'components'
 import { Container, DisplayText, NormalText } from 'styles'
@@ -12,16 +12,21 @@ import {
   CustomGridWrapper,
   FerrisWheel,
   ItemWrapper,
-  BackgroundBlur,
   WheelWrapper,
 } from './styles'
 import gsap from 'gsap'
 
+const currentYear = new Date().getFullYear()
+
 const Footer = () => {
-  let footerTarget = useRef(null)
-  let ferrisWheelRef = useRef(null)
+  const footerTarget = useRef(null)
+  const ferrisWheelRef = useRef(null)
   const { width } = useWindowSize()
-  const currentYear = new Date().getFullYear()
+
+  const ferrisWheelItems = useMemo(
+    () => new Array(width < 500 ? 4 : 8).fill(0),
+    [],
+  )
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -38,28 +43,30 @@ const Footer = () => {
       let radius = (30 * width) / 100
 
       const itemTarget = gsap.utils.toArray('.ferris-item')
-      itemTarget.forEach((item, i) => {
-        let numItems = itemTarget.length
-        let rotation = i * (360 / numItems)
-        gsap.set(item, { left: '50%', top: '50%' })
+      itemTarget.forEach((item, i, arr) => {
+        let rotation = i * (360 / arr.length)
+        gsap.set(item, {
+          left: '50%',
+          top: '50%',
+          transformOrigin: 'left center',
+          rotation: rotation,
+          width: radius,
+        })
         gsap.set(item.querySelector('img'), {
           transformOrigin: '50% 50%',
           x: radius - 40,
           y: -6,
           rotation: -rotation,
         })
-        gsap.set(item, {
-          transformOrigin: 'left center',
-          rotation: rotation,
-          width: radius,
-        })
       })
 
       gsap.set(ferrisWheelRef.current, {
         width: radius * 2,
         height: radius * 2,
+        rotation: 0,
+        repeat: -1,
+        ease: 'none',
       })
-
       gsap.to(ferrisWheelRef.current, {
         rotation: 360,
         duration: 15,
@@ -95,20 +102,7 @@ const Footer = () => {
       <BottomLine>
         <Container>
           <CustomGridWrapper>
-            <LinksWrapper>
-              <CustomLink href="https://instagram.com/outerlabs" $reverse>
-                Instagram
-              </CustomLink>
-              <CustomLink
-                href="https://www.linkedin.com/company/outerlabs"
-                $reverse
-              >
-                LinkedIn
-              </CustomLink>
-              <CustomLink href="https://www.dribbble.com/outerlabs" $reverse>
-                Dribbble
-              </CustomLink>
-            </LinksWrapper>
+            <LinksWrapper>{/* Links here */}</LinksWrapper>
             <NormalText>
               25 Broadway
               <br />
@@ -122,33 +116,13 @@ const Footer = () => {
         </Container>
       </BottomLine>
 
-      <BackgroundBlur />
       <WheelWrapper>
         <FerrisWheel ref={ferrisWheelRef}>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
-          <ItemWrapper className="ferris-item">
-            <img src="/emoji.svg" alt="Heart eyes emoji" />
-          </ItemWrapper>
+          {ferrisWheelItems.map((_, index) => (
+            <ItemWrapper key={index} className="ferris-item">
+              <img src="/emoji.svg" alt="Heart eyes emoji" />
+            </ItemWrapper>
+          ))}
         </FerrisWheel>
       </WheelWrapper>
     </FooterWrapper>

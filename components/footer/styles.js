@@ -52,46 +52,28 @@ export const LinksWrapper = styled.div`
   gap: 2rem;
 `
 
-export const BackgroundBlur = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: ${({ theme }) => `rgb(${theme.text})`};
-  opacity: 0.4;
-  z-index: ${Z_INDEX.footer.section};
-`
 export const WheelWrapper = styled.div`
-  position: absolute;
-  /* top: -10vh; */
-  /* transform: translateY(10%); */
-  left: 0;
-  /* transform: translateY(30vh); */
-  width: 100vw;
-  height: 100vw;
-  z-index: ${Z_INDEX.footer.background};
-`
-
-export const FerrisWheel = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
+  background-color: ${({ theme }) => `rgb(${theme.text})`};
+  opacity: 0.4;
+  filter: blur(0.5vw);
+  z-index: ${Z_INDEX.footer.background};
+`
+export const FerrisWheel = styled.div`
   transform-origin: center center;
   flex-shrink: 0;
   z-index: ${Z_INDEX.footer.background};
 `
-
 export const ItemWrapper = styled.div`
   position: absolute;
   height: 1px;
   z-index: ${Z_INDEX.footer.background};
-  
+
   img {
-    width: 20vw;
-    height: 20vw;
-    filter: blur(20px);
+    width: 40vmax;
+    height: 40vmax;
   }
 `
