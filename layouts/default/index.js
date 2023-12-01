@@ -30,7 +30,7 @@ if (typeof window !== 'undefined') {
 }
 
 export function Layout({
-  seo = { title: '', description: '', image: '', keywords: '' },
+
   children,
 }) {
   const mainTarget = useRef()

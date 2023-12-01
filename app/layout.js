@@ -53,9 +53,11 @@ export default function RootLayout({ children }) {
 
         {/* END FAVICON */}
       </head>
-      <body suppressHydrationWarning>
-        <RealViewport />
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      <body>
+        <StyledComponentsRegistry>
+          <RealViewport />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

@@ -1,8 +1,8 @@
 'use client'
 
-import CustomButton from 'components/button'
-
 import { useRef } from 'react'
+import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
+import { CustomLink, CustomButton } from 'components'
 import { Container, DisplayText, NormalText } from 'styles'
 import {
   FooterWrapper,
@@ -15,9 +15,7 @@ import {
   BackgroundBlur,
   WheelWrapper,
 } from './styles'
-import CustomLink from 'components/link'
 import gsap from 'gsap'
-import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 
 const Footer = () => {
   let footerTarget = useRef(null)
@@ -36,46 +34,46 @@ const Footer = () => {
           scrub: true,
         },
       })
-    })
 
-    let radius = (30 * width) / 100
+      let radius = (30 * width) / 100
 
-    const itemTarget = gsap.utils.toArray('.ferris-item')
-    itemTarget.forEach((item, i) => {
-      let numItems = itemTarget.length
-      let rotation = i * (360 / numItems)
-      gsap.set(item, { left: '50%', top: '50%' })
-      gsap.set(item.querySelector('img'), {
-        transformOrigin: '50% 50%',
-        x: radius - 40,
-        y: -6,
-        rotation: -rotation,
+      const itemTarget = gsap.utils.toArray('.ferris-item')
+      itemTarget.forEach((item, i) => {
+        let numItems = itemTarget.length
+        let rotation = i * (360 / numItems)
+        gsap.set(item, { left: '50%', top: '50%' })
+        gsap.set(item.querySelector('img'), {
+          transformOrigin: '50% 50%',
+          x: radius - 40,
+          y: -6,
+          rotation: -rotation,
+        })
+        gsap.set(item, {
+          transformOrigin: 'left center',
+          rotation: rotation,
+          width: radius,
+        })
       })
-      gsap.set(item, {
-        transformOrigin: 'left center',
-        rotation: rotation,
-        width: radius,
+
+      gsap.set(ferrisWheelRef.current, {
+        width: radius * 2,
+        height: radius * 2,
       })
-    })
 
-    gsap.set(ferrisWheelRef.current, {
-      width: radius * 2,
-      height: radius * 2,
-    })
-
-    gsap.to(ferrisWheelRef.current, {
-      rotation: 360,
-      duration: 15,
-      repeat: -1,
-      ease: 'none',
-    })
-
-    itemTarget.forEach((item) => {
-      gsap.to(item.querySelector('img'), {
-        rotation: '-=360',
-        duration: 7 + Math.random() * 7,
+      gsap.to(ferrisWheelRef.current, {
+        rotation: 360,
+        duration: 15,
         repeat: -1,
         ease: 'none',
+      })
+
+      itemTarget.forEach((item) => {
+        gsap.to(item.querySelector('img'), {
+          rotation: '-=360',
+          duration: 7 + Math.random() * 7,
+          repeat: -1,
+          ease: 'none',
+        })
       })
     })
 
