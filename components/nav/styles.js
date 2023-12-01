@@ -43,9 +43,11 @@ export const LinkList = styled.div`
   }
 `
 export const Logo = styled(Link)`
-  ${Huge}
-  font-weight: 800!important;
-  text-decoration: none;
-  color: ${({ theme }) => `rgb(${theme.accent1})`};
-  font-family: ${wtskrappa.style.fontFamily};
+  .reveal-nav-1 {
+    ${Huge}
+    font-weight: 800!important;
+    text-decoration: none;
+    color: ${({ theme }) => `rgb(${theme.accent1})`};
+    font-family: ${wtskrappa.style.fontFamily};
+  }
 `
