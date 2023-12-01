@@ -81,7 +81,7 @@ const Footer = () => {
   }, [width])
 
   return (
-    <FooterWrapper ref={footerTarget}>
+    <FooterWrapper ref={footerTarget} id="contact">
       <ContentWrapper>
         <DisplayText>
           We{`'`}d {`<`}3 to

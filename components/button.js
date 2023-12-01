@@ -58,7 +58,7 @@ const StyledButton = styled.div`
  * @returns {React.ReactElement} CustomButton component.
  */
 const CustomButton = (props) => {
-  const { href, target, children, $reverse, ...rest } = props
+  const { href, target, children, $reverse, onClick, ...rest } = props
   const isTouchDevice = useIsTouchDevice()
   const movingContainerRef = useRef(null)
   let line1 = useRef(null)
@@ -121,6 +121,7 @@ const CustomButton = (props) => {
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseExit}
+        onClick={onClick}
         $reverse={$reverse}
       >
         <StyledButton>

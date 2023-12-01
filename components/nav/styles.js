@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import styled from 'styled-components'
-import { Huge, Medium, MediumText, Normal, wtskrappa } from 'styles'
+import { Huge, Normal, wtskrappa } from 'styles'
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -14,7 +14,6 @@ export const HeaderWrapper = styled.header`
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   transition: transform 0.3s ease-in-out;
   mix-blend-mode: difference;
-  backdrop-filter: blur(10px);
 
   a {
     mix-blend-mode: difference;

@@ -14,9 +14,11 @@ import { CustomButton, CustomLink, Parallax } from 'components'
 import { useRef } from 'react'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import gsap from 'gsap'
+import { useLenis } from '@studio-freight/react-lenis'
 
 const Hero = () => {
   const trigger = useRef()
+  const lenis = useLenis()
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -126,7 +128,14 @@ const Hero = () => {
       </Container>
       <Parallax speed={0.5} trigger={trigger}>
         <ButtonWrapper className="reveal-button">
-          <CustomButton href="#contact">Get in touch</CustomButton>
+          <CustomButton
+            href="/"
+            onClick={() => {
+              lenis.scrollTo('#contact')
+            }}
+          >
+            Get in touch
+          </CustomButton>
         </ButtonWrapper>
       </Parallax>
       <TitleWrapper>

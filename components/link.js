@@ -46,6 +46,7 @@ const CustomLink = ({
   children,
   color,
   $reverse = false,
+  onClick,
   ...rest
 }) => {
   let line1 = useRef(null)
@@ -73,6 +74,7 @@ const CustomLink = ({
     rel: target ? undefined : 'noopener noreferrer',
     color,
     $reverse,
+    onClick,
     ...rest,
   }
 
@@ -84,6 +86,7 @@ const CustomLink = ({
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           $reverse={$reverse}
+          onClick={onClick}
         >
           <div ref={(el) => (line1 = el)}>{children}</div>
           <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>
@@ -97,6 +100,7 @@ const CustomLink = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       $reverse={$reverse}
+      onClick={onClick}
     >
       <div ref={(el) => (line1 = el)}>{children}</div>
       <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>
