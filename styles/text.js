@@ -10,7 +10,7 @@ export const Small = css`
 `
 export const SmallText = styled.p`
   ${Small}
-  margin: ${({ nm, m }) => (nm ? 0 : m ? m : 'unset')};
+  margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `
 export const Normal = css`
   font-size: 16px;
@@ -19,7 +19,7 @@ export const Normal = css`
 `
 export const NormalText = styled.p`
   ${Normal}
-  margin: ${({ nm, m }) => (nm ? 0 : m ? m : 'unset')};
+  margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `
 export const Medium = css`
   font-size: 24px;
@@ -28,7 +28,7 @@ export const Medium = css`
 `
 export const MediumText = styled.p`
   ${Medium}
-  margin: ${({ nm, m }) => (nm ? 0 : m ? m : 'unset')};
+  margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `
 export const Huge = css`
   font-size: 3.2vw; // 64px
@@ -37,7 +37,7 @@ export const Huge = css`
 `
 export const HugeText = styled.p`
   ${Huge}
-  margin: ${({ nm, m }) => (nm ? 0 : m ? m : 'unset')};
+  margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `
 export const Display = css`
   font-size: 8vw; // 180px
@@ -46,5 +46,5 @@ export const Display = css`
 `
 export const DisplayText = styled.h1`
   ${Display}
-  margin: ${({ nm, m }) => (nm ? 0 : m ? m : 'unset')};
+  margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `

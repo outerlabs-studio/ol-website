@@ -96,16 +96,16 @@ const Footer = () => {
         <Container>
           <CustomGridWrapper>
             <LinksWrapper>
-              <CustomLink href="https://instagram.com/outerlabs" reverse>
+              <CustomLink href="https://instagram.com/outerlabs" $reverse>
                 Instagram
               </CustomLink>
               <CustomLink
                 href="https://www.linkedin.com/company/outerlabs"
-                reverse
+                $reverse
               >
                 LinkedIn
               </CustomLink>
-              <CustomLink href="https://www.dribbble.com/outerlabs" reverse>
+              <CustomLink href="https://www.dribbble.com/outerlabs" $reverse>
                 Dribbble
               </CustomLink>
             </LinksWrapper>
@@ -114,7 +114,7 @@ const Footer = () => {
               <br />
               New York, NY 10004
             </NormalText>
-            <CustomLink href="mailto@hello@outerlabs.studio" reverse>
+            <CustomLink href="mailto@hello@outerlabs.studio" $reverse>
               hello@outerlabs.studio
             </CustomLink>
             <NormalText>{currentYear}</NormalText>

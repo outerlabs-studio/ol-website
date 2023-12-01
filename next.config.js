@@ -24,6 +24,7 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: process.env.NODE_ENV !== 'development',
+    styledComponents: true,
   },
   webpack: (config, options) => {
     const { dir } = options

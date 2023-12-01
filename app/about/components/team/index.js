@@ -27,7 +27,7 @@ const Member = ({ image, name, pos, num }) => {
       </Container>
       <MarqueeWrapper>
         <Marquee repeat={4} duration={3}>
-          <DisplayText m={'0 6vw 0 0'}>{name}</DisplayText>
+          <DisplayText $m={'0 6vw 0 0'}>{name}</DisplayText>
         </Marquee>
       </MarqueeWrapper>
     </TeamMemberItem>
@@ -39,7 +39,7 @@ const Team = () => {
     <TeamSection>
       <Container>
         <LabelWrapper>
-          <Label reverse>Team</Label>
+          <Label $reverse>Team</Label>
         </LabelWrapper>
       </Container>
       <Member

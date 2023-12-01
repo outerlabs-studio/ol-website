@@ -18,7 +18,7 @@ const Nav = () => {
   })
 
   return (
-    <HeaderWrapper hide={hide}>
+    <HeaderWrapper $hide={hide}>
       <Container>
         <NavWrapper>
           <Logo href="/">Outer Labs</Logo>

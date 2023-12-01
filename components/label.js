@@ -12,16 +12,16 @@ const LabelWrapper = styled.div`
 const LittleCircle = styled.span`
   height: 10px;
   width: 10px;
-  background-color: ${({ reverse, theme }) =>
-    reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
+  background-color: ${({ $reverse, theme }) =>
+    $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
   border-radius: 50%;
   display: inline-block;
 `
 
-const Label = ({ children, reverse = false }) => {
+const Label = ({ children, $reverse = false }) => {
   return (
     <LabelWrapper>
-      <LittleCircle reverse={reverse} />
+      <LittleCircle $reverse={$reverse} />
       <NormalText>{children}</NormalText>
     </LabelWrapper>
   )

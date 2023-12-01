@@ -17,8 +17,8 @@ const StyledLink = styled.a`
   display: inline-flex;
   flex-direction: column;
   text-decoration: none;
-  color: ${({ reverse, theme }) =>
-    reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
+  color: ${({ $reverse, theme }) =>
+    $reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -45,7 +45,7 @@ const CustomLink = ({
   target,
   children,
   color,
-  reverse = false,
+  $reverse = false,
   ...rest
 }) => {
   let line1 = useRef(null)
@@ -72,7 +72,7 @@ const CustomLink = ({
     target: target || '_blank',
     rel: target ? undefined : 'noopener noreferrer',
     color,
-    reverse,
+    $reverse,
     ...rest,
   }
 
@@ -83,7 +83,7 @@ const CustomLink = ({
           {...linkProps}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          reverse={reverse}
+          $reverse={$reverse}
         >
           <div ref={(el) => (line1 = el)}>{children}</div>
           <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>
@@ -96,7 +96,7 @@ const CustomLink = ({
     <StyledLink
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      reverse={reverse}
+      $reverse={$reverse}
     >
       <div ref={(el) => (line1 = el)}>{children}</div>
       <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>

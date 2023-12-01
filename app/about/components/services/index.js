@@ -71,7 +71,7 @@ const Services = () => {
         <GridWrapper>
           <div className="overflow">
             <div className="reveal-services-1">
-              <Label reverse>Services</Label>
+              <Label $reverse>Services</Label>
             </div>
           </div>
           <TextWrapper>
@@ -82,7 +82,7 @@ const Services = () => {
             ))}
           </TextWrapper>
           <div className="reveal-services-button">
-            <CustomButton reverse href="/contact">
+            <CustomButton $reverse href="/contact">
               Request custom service
             </CustomButton>
           </div>

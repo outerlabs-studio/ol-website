@@ -16,11 +16,11 @@ const ButtonWrapper = styled.a`
   display: block;
   position: relative;
   padding: 0.5rem 2rem;
-  background-color: ${({ reverse, theme }) =>
-    reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
+  background-color: ${({ $reverse, theme }) =>
+    $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
   border-radius: 35px;
-  color: ${({ reverse, theme }) =>
-    reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
+  color: ${({ $reverse, theme }) =>
+    $reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
   text-decoration: none;
   height: fit-content;
   width: fit-content;
@@ -58,7 +58,7 @@ const StyledButton = styled.div`
  * @returns {React.ReactElement} CustomButton component.
  */
 const CustomButton = (props) => {
-  const { href, target, children, reverse, ...rest } = props
+  const { href, target, children, $reverse, ...rest } = props
   const isTouchDevice = useIsTouchDevice()
   const movingContainerRef = useRef(null)
   let line1 = useRef(null)
@@ -121,7 +121,7 @@ const CustomButton = (props) => {
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseExit}
-        reverse={reverse}
+        $reverse={$reverse}
       >
         <StyledButton>
           <div ref={(el) => (line1 = el)}>{children}</div>

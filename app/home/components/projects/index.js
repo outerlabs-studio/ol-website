@@ -18,7 +18,7 @@ const Projects = () => {
     <ProjectWrapper id="projects">
       <Container>
         <TopbarWrapper>
-          <Label reverse>Selected Work</Label>
+          <Label $reverse>Selected Work</Label>
           <NormalText>2021-23</NormalText>
         </TopbarWrapper>
         <ProjectList>
@@ -26,7 +26,7 @@ const Projects = () => {
             <ImageWrapper>
               <MarqueeWrapper>
                 <Marquee repeat={3}>
-                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
                 </Marquee>
               </MarqueeWrapper>
               <CustomImage src="/techcodes.png" alt="TechCodes" speed={0.5} />
@@ -38,7 +38,7 @@ const Projects = () => {
             <ImageWrapper>
               <MarqueeWrapper>
                 <Marquee repeat={3}>
-                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
                 </Marquee>
               </MarqueeWrapper>
               <CustomImage src="/astro.jpg" alt="Astro Studios" speed={0.5} />
@@ -50,7 +50,7 @@ const Projects = () => {
             <ImageWrapper>
               <MarqueeWrapper>
                 <Marquee repeat={3}>
-                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
                 </Marquee>
               </MarqueeWrapper>
               <CustomImage
@@ -68,7 +68,7 @@ const Projects = () => {
             <ImageWrapper>
               <MarqueeWrapper>
                 <Marquee repeat={3}>
-                  <HugeText m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
                 </Marquee>
               </MarqueeWrapper>
               <CustomImage src="/sarah.png" alt="Sarah Khosla" speed={0.5} />

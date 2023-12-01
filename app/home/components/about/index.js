@@ -89,7 +89,7 @@ const About = () => {
       <Marquee repeat={3}>
         <div className="overflow">
           <div className="reveal-about-3">
-            <DisplayText m={'0 6vw 0 0'}>Size doesn{`'`}t matter</DisplayText>
+            <DisplayText $m={'0 6vw 0 0'}>Size doesn{`'`}t matter</DisplayText>
           </div>
         </div>
       </Marquee>
@@ -98,7 +98,7 @@ const About = () => {
           <CustomGridWrapper>
             <div className="overflow">
               <div className="reveal-about-1">
-                <Label reverse>Studio</Label>
+                <Label $reverse>Studio</Label>
               </div>
             </div>
             <ContentWrapper>
@@ -126,7 +126,7 @@ const About = () => {
       </Container>
       <BottomMarqueeWrapper>
         <Marquee repeat={3} inverted>
-          <DisplayText m={'0 6vw 0 0'}>Quality {`>`} Quantity</DisplayText>
+          <DisplayText $m={'0 6vw 0 0'}>Quality {`>`} Quantity</DisplayText>
         </Marquee>
       </BottomMarqueeWrapper>
     </AboutSection>

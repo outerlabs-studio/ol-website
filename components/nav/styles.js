@@ -21,7 +21,7 @@ export const HeaderWrapper = styled.header`
   }
 
   ${(props) =>
-    props.hide &&
+    props.$hide &&
     `
     transform: translateY(-100%);
   `}
