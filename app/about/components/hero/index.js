@@ -19,7 +19,13 @@ const Hero = () => {
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      let tl = gsap.timeline()
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: 'top bottom-=10',
+          toggleActions: 'play reset resume reset',
+        },
+      })
 
       tl.from(
         gsap.utils.toArray('.blob').sort(() => 0.5 - Math.random()),

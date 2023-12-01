@@ -70,7 +70,7 @@ const About = () => {
         <GridWrapper>
           <div className="overflow">
             <div className="reveal-about-1">
-              <Label $reverse>About</Label>
+              <Label reverse>About</Label>
             </div>
           </div>
           <TextWrapper>
