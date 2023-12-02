@@ -10,7 +10,7 @@ export const ProjectWrapper = styled.section`
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 8vw 0;
   z-index: ${Z_INDEX.projects};
-  border-radius: 3vw 3vw 0 0;
+  /* border-radius: 3vw 3vw 0 0; */
 `
 export const TopbarWrapper = styled.div`
   display: flex;

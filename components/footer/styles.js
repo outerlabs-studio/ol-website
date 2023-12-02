@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { GridWrapper, Z_INDEX } from 'styles'
+import { Display, GridWrapper, Normal, Z_INDEX } from 'styles'
 
 export const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => `rgb(${theme.text})`};
@@ -14,10 +14,6 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  h1 {
-    line-height: 90%;
-  }
 `
 export const ContentWrapper = styled.div`
   display: flex;
@@ -27,6 +23,14 @@ export const ContentWrapper = styled.div`
   justify-content: center;
   gap: 5rem;
   z-index: ${Z_INDEX.footer.foreground};
+
+  .reveal-footer-1 {
+    ${Display}
+    line-height: 90%;
+  }
+  .reveal-footer-3 {
+    ${Normal}
+  }
 
   h1,
   a {
