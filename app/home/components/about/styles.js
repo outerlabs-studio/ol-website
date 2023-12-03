@@ -8,6 +8,7 @@ export const AboutSection = styled.section`
   padding: 10vw 0;
   background-color: ${({ theme }) => `rgb(${theme.body})`};
   min-height: 200vh;
+  overflow-x: hidden;
   z-index: ${Z_INDEX.about};
 `
 export const TopImageWrapper = styled.div`
