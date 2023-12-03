@@ -34,6 +34,12 @@ export const Huge = css`
   font-size: 3.2vw; // 64px
   font-weight: 400;
   line-height: 140%;
+
+  ${media.desktop`font-size: 4vw;`}
+  ${media.thone`
+    font-size: 8vw;
+    line-height: 150%;
+  `}
 `
 export const HugeText = styled.p`
   ${Huge}
@@ -43,6 +49,9 @@ export const Display = css`
   font-size: 8vw; // 180px
   font-weight: 400;
   line-height: 110%;
+
+  ${media.desktop`font-size: 10vw;`}
+  ${media.thone`font-size: 20vw;`}
 `
 export const DisplayText = styled.h1`
   ${Display}

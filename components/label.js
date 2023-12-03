@@ -18,9 +18,9 @@ const LittleCircle = styled.span`
   display: inline-block;
 `
 
-const Label = ({ children, $reverse = false }) => {
+const Label = ({ children, className, $reverse = false }) => {
   return (
-    <LabelWrapper>
+    <LabelWrapper className={className}>
       <LittleCircle $reverse={$reverse} />
       <NormalText>{children}</NormalText>
     </LabelWrapper>

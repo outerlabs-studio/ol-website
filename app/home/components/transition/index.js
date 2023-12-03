@@ -60,7 +60,7 @@ const Transition = () => {
       <InnerWrapper ref={innerTarget}>
         <Container>
           <GridWrapper>
-            <Label>What we do</Label>
+            <Label className="label">What we do</Label>
             <TextWrapper ref={textTarget}>
               {text.split(' ').map((element, index) => (
                 <HugeText key={index} className="words">

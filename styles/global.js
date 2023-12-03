@@ -60,6 +60,11 @@ const GlobalStyle = createGlobalStyle`
     display: inline-flex;
   }
 
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
     img[loading='lazy'] {
       clip-path: inset(0.6px);

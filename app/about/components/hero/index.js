@@ -59,7 +59,7 @@ const Hero = () => {
             duration: 0.5,
             x: x - width / 2,
             y: y - height / 2,
-            rotation: 30 * Math.random(),
+            rotation: -30 + Math.random() * 60,
             ease: 'expo.out',
           },
           1.5,
@@ -71,9 +71,9 @@ const Hero = () => {
               duration: 40,
               x: endX - width / 2,
               y: endY - height / 2,
-              rotation: 60 * Math.random(),
+              rotation: -50 + Math.random() * 100,
               onComplete: () => {
-                tl.timeScale(60)
+                tl.timeScale(70)
                 tl.tweenTo('explosion').then(() => {
                   tl.timeScale(1)
                   tl.tweenTo('loaded').then(() => {
@@ -92,9 +92,9 @@ const Hero = () => {
         gsap.utils.toArray('.reveal-hero-1'),
         {
           yPercent: 100,
-          duration: 2,
+          duration: 1,
           stagger: 0.1,
-          ease: 'expo.out',
+          ease: 'power3.inOut',
         },
         1.5,
       )

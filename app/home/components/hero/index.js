@@ -1,24 +1,25 @@
 'use client'
 
-import { Container } from 'styles'
+import { Container, sizes } from 'styles'
 import {
   ButtonWrapper,
   CustomGridWrapper,
   DescriptionWrapper,
   HeroWrapper,
   LinkWrapper,
-  SectionTitle,
   TitleWrapper,
 } from './styles'
 import { CustomButton, CustomLink, Parallax } from 'components'
 import { useRef } from 'react'
-import { useIsomorphicLayoutEffect } from 'react-use'
+import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import gsap from 'gsap'
 import { useLenis } from '@studio-freight/react-lenis'
 
 const Hero = () => {
   const trigger = useRef()
   const lenis = useLenis()
+  const { width } = useWindowSize()
+  const text = `Award winning digital design and development consultancy specializing in websites, apps, and branding.`
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -41,7 +42,7 @@ const Hero = () => {
           {
             yPercent: 100,
             duration: 2,
-            stagger: 0.1,
+            stagger: 0.02,
             ease: 'power3.inOut',
           },
           0,
@@ -107,19 +108,11 @@ const Hero = () => {
             </div>
           </LinkWrapper>
           <DescriptionWrapper>
-            <div className="overflow">
-              <div className="reveal-hero-1">
-                Award winning digital design and development
+            {text.split(' ').map((word, index) => (
+              <div key={index} className="overflow">
+                <div className="reveal-hero-1">{word}&nbsp;</div>
               </div>
-            </div>
-            <div className="overflow">
-              <div className="reveal-hero-1">
-                consultancy specializing in websites, apps, and
-              </div>
-            </div>
-            <div className="overflow">
-              <div className="reveal-hero-1">branding.</div>
-            </div>
+            ))}
             <div className="reveal-button">
               <CustomButton href="/about">Learn more</CustomButton>
             </div>
@@ -139,46 +132,43 @@ const Hero = () => {
         </ButtonWrapper>
       </Parallax>
       <TitleWrapper>
-        <SectionTitle>
+        <div className="overflow">
+          <div className="reveal-hero-3">O</div>
+        </div>
+        <Parallax speed={-2} trigger={trigger}>
           <div className="overflow">
-            <div className="reveal-hero-3">O</div>
+            <div className="reveal-hero-3">u</div>
           </div>
-          <Parallax speed={-2} trigger={trigger}>
-            <div className="overflow">
-              <div className="reveal-hero-3">u</div>
-            </div>
-          </Parallax>
+        </Parallax>
+        <div className="overflow">
+          <div className="reveal-hero-3">t</div>
+        </div>
+        <Parallax speed={-1} trigger={trigger}>
           <div className="overflow">
-            <div className="reveal-hero-3">t</div>
+            <div className="reveal-hero-3">e</div>
           </div>
-          <Parallax speed={-1} trigger={trigger}>
-            <div className="overflow">
-              <div className="reveal-hero-3">e</div>
-            </div>
-          </Parallax>
+        </Parallax>
+        <div className="overflow">
+          <div className="reveal-hero-3">r&nbsp;</div>
+        </div>
+        <Parallax speed={-1.5} trigger={trigger}>
           <div className="overflow">
-            <div className="reveal-hero-3">r</div>
+            <div className="reveal-hero-3">L</div>
           </div>
-          <div>&nbsp;</div>
-          <Parallax speed={-1.5} trigger={trigger}>
-            <div className="overflow">
-              <div className="reveal-hero-3">L</div>
-            </div>
-          </Parallax>
+        </Parallax>
+        <div className="overflow">
+          <div className="reveal-hero-3">a</div>
+        </div>
+        <Parallax speed={-0.5} trigger={trigger}>
           <div className="overflow">
-            <div className="reveal-hero-3">a</div>
+            <div className="reveal-hero-3">b</div>
           </div>
-          <Parallax speed={-0.5} trigger={trigger}>
-            <div className="overflow">
-              <div className="reveal-hero-3">b</div>
-            </div>
-          </Parallax>
-          <Parallax speed={-3} trigger={trigger}>
-            <div className="overflow">
-              <div className="reveal-hero-3">s</div>
-            </div>
-          </Parallax>
-        </SectionTitle>
+        </Parallax>
+        <Parallax speed={-3} trigger={trigger}>
+          <div className="overflow">
+            <div className="reveal-hero-3">s</div>
+          </div>
+        </Parallax>
       </TitleWrapper>
     </HeroWrapper>
   )

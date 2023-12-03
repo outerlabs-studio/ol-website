@@ -10,7 +10,7 @@ const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
 
-  ${media.phablet`
+  ${media.thone`
     padding-right: 1rem;
     padding-left: 1rem;
   `};

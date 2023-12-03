@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import styled from 'styled-components'
-import { NormalText, SmallText, Z_INDEX } from 'styles'
+import { NormalText, SmallText, Z_INDEX, media } from 'styles'
 
 export const ProjectWrapper = styled.section`
   position: relative;
@@ -11,6 +11,8 @@ export const ProjectWrapper = styled.section`
   padding: 8vw 0;
   z-index: ${Z_INDEX.projects};
   /* border-radius: 3vw 3vw 0 0; */
+
+  ${media.thone`padding: 4rem 0;`}
 `
 export const TopbarWrapper = styled.div`
   display: flex;
@@ -22,6 +24,11 @@ export const ProjectList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5vw;
+
+  ${media.thone`
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  `}
 `
 export const Project = styled(Link)`
   text-decoration: none;
@@ -40,6 +47,8 @@ export const ImageWrapper = styled.div`
   height: 30vw;
   border-radius: 2vw;
   overflow: hidden;
+
+  ${media.thone`height: 80vw;`}
 
   img {
     border-radius: inherit;
