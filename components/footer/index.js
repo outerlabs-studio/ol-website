@@ -3,7 +3,7 @@
 import { useRef, useMemo } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import { CustomLink, CustomButton } from 'components'
-import { Container } from 'styles'
+import { Container, sizes } from 'styles'
 import {
   FooterWrapper,
   ContentWrapper,
@@ -24,7 +24,7 @@ const Footer = () => {
   const { width } = useWindowSize()
 
   const ferrisWheelItems = useMemo(
-    () => new Array(width < 500 ? 4 : 8).fill(0),
+    () => new Array(width > sizes.thone ? 8 : 7).fill(0),
     [],
   )
 
@@ -98,7 +98,7 @@ const Footer = () => {
           0.25,
         )
 
-      let radius = (30 * width) / 100
+      let radius = width > sizes.thone ? (30 * width) / 100 : (55 * width) / 100
 
       const itemTarget = gsap.utils.toArray('.ferris-item')
       itemTarget.forEach((item, i, arr) => {

@@ -85,111 +85,113 @@ const Hero = () => {
 
   return (
     <HeroWrapper ref={trigger}>
-      <Container>
-        <CustomGridWrapper>
-          <LinkWrapper>
-            <div className="overflow">
-              <div className="reveal-hero-2">
-                <CustomLink href="https://instagram.com/outerlabs">
-                  Instagram
-                </CustomLink>
+      <div className="content-wrap">
+        <Container>
+          <CustomGridWrapper>
+            <LinkWrapper>
+              <div className="overflow">
+                <div className="reveal-hero-2">
+                  <CustomLink href="https://instagram.com/outerlabs">
+                    Instagram
+                  </CustomLink>
+                </div>
               </div>
-            </div>
-            <div className="overflow">
-              <div className="reveal-hero-2">
-                <CustomLink href="https://www.linkedin.com/company/outerlabs">
-                  LinkedIn
-                </CustomLink>
+              <div className="overflow">
+                <div className="reveal-hero-2">
+                  <CustomLink href="https://www.linkedin.com/company/outerlabs">
+                    LinkedIn
+                  </CustomLink>
+                </div>
               </div>
-            </div>
-            <div className="overflow">
-              <div className="reveal-hero-2">
-                <CustomLink href="https://www.dribbble.com/outerlabs">
-                  Dribbble
-                </CustomLink>
+              <div className="overflow">
+                <div className="reveal-hero-2">
+                  <CustomLink href="https://www.dribbble.com/outerlabs">
+                    Dribbble
+                  </CustomLink>
+                </div>
               </div>
-            </div>
-          </LinkWrapper>
-          <DescriptionWrapper>
-            {text.split(' ').map((word, index) => (
-              <div key={index} className="overflow">
-                <div className="reveal-hero-1">{word}&nbsp;</div>
-              </div>
-            ))}
-            <div className="link-wrapper">
-              <CustomButton href="/about" className="reveal-button">
-                Learn more
-              </CustomButton>
-              {width <= 600 && (
-                <CustomButton
-                  href="/"
-                  className="reveal-button"
-                  $reverse
-                  onClick={() => {
-                    lenis.scrollTo('#contact', { offset: 800 })
-                  }}
-                >
-                  Get in touch
+            </LinkWrapper>
+            <DescriptionWrapper>
+              {text.split(' ').map((word, index) => (
+                <div key={index} className="overflow">
+                  <div className="reveal-hero-1">{word}&nbsp;</div>
+                </div>
+              ))}
+              <div className="link-wrapper">
+                <CustomButton href="/about" className="reveal-button">
+                  Learn more
                 </CustomButton>
-              )}
+                {width <= 600 && (
+                  <CustomButton
+                    href="/"
+                    className="reveal-button"
+                    $reverse
+                    onClick={() => {
+                      lenis.scrollTo('#contact', { offset: 800 })
+                    }}
+                  >
+                    Get in touch
+                  </CustomButton>
+                )}
+              </div>
+            </DescriptionWrapper>
+          </CustomGridWrapper>
+        </Container>
+        {width > 600 && (
+          <ButtonWrapper>
+            <Parallax speed={1} trigger={trigger}>
+              <CustomButton
+                className="reveal-button"
+                href="/"
+                onClick={() => {
+                  lenis.scrollTo('#contact', { offset: 800 })
+                }}
+              >
+                Get in touch
+              </CustomButton>
+            </Parallax>
+          </ButtonWrapper>
+        )}
+        <TitleWrapper>
+          <div className="overflow">
+            <div className="reveal-hero-3">O</div>
+          </div>
+          <Parallax speed={-2} trigger={trigger} $toggleMobile>
+            <div className="overflow">
+              <div className="reveal-hero-3">u</div>
             </div>
-          </DescriptionWrapper>
-        </CustomGridWrapper>
-      </Container>
-      {width > 600 && (
-        <ButtonWrapper>
-          <Parallax speed={1} trigger={trigger}>
-            <CustomButton
-              className="reveal-button"
-              href="/"
-              onClick={() => {
-                lenis.scrollTo('#contact', { offset: 800 })
-              }}
-            >
-              Get in touch
-            </CustomButton>
           </Parallax>
-        </ButtonWrapper>
-      )}
-      <TitleWrapper>
-        <div className="overflow">
-          <div className="reveal-hero-3">O</div>
-        </div>
-        <Parallax speed={-2} trigger={trigger} $toggleMobile>
           <div className="overflow">
-            <div className="reveal-hero-3">u</div>
+            <div className="reveal-hero-3">t</div>
           </div>
-        </Parallax>
-        <div className="overflow">
-          <div className="reveal-hero-3">t</div>
-        </div>
-        <Parallax speed={-1} trigger={trigger} $toggleMobile>
+          <Parallax speed={-1} trigger={trigger} $toggleMobile>
+            <div className="overflow">
+              <div className="reveal-hero-3">e</div>
+            </div>
+          </Parallax>
           <div className="overflow">
-            <div className="reveal-hero-3">e</div>
+            <div className="reveal-hero-3">r&nbsp;</div>
           </div>
-        </Parallax>
-        <div className="overflow">
-          <div className="reveal-hero-3">r&nbsp;</div>
-        </div>
-        <Parallax speed={-1.5} trigger={trigger} $toggleMobile>
+          <Parallax speed={-1.5} trigger={trigger} $toggleMobile>
+            <div className="overflow">
+              <div className="reveal-hero-3">L</div>
+            </div>
+          </Parallax>
           <div className="overflow">
-            <div className="reveal-hero-3">L</div>
+            <div className="reveal-hero-3">a</div>
           </div>
-        </Parallax>
-        <div className="overflow">
-          <div className="reveal-hero-3">a</div>
-        </div>
-        <Parallax speed={-0.5} trigger={trigger} $toggleMobile>
-          <div className="overflow">
-            <div className="reveal-hero-3">b</div>
-          </div>
-        </Parallax>
-        <Parallax speed={-3} trigger={trigger} $toggleMobile>
-          <div className="overflow">
-            <div className="reveal-hero-3">s</div>
-          </div>
-        </Parallax>
-      </TitleWrapper>
+          <Parallax speed={-0.5} trigger={trigger} $toggleMobile>
+            <div className="overflow">
+              <div className="reveal-hero-3">b</div>
+            </div>
+          </Parallax>
+          <Parallax speed={-3} trigger={trigger} $toggleMobile>
+            <div className="overflow">
+              <div className="reveal-hero-3">s</div>
+            </div>
+          </Parallax>
+        </TitleWrapper>
+      </div>
     </HeroWrapper>
   )
 }

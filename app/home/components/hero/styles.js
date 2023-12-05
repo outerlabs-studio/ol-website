@@ -5,24 +5,25 @@ import { GridWrapper, Normal, Z_INDEX, media, wtskrappa } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   max-height: 100vh;
   width: 100%;
   z-index: ${Z_INDEX.hero};
-
-  ${media.thone`
-    flex-direction: column-reverse;
-    padding: 0.5rem 0 1.5rem;
-  `};
 
   .reveal-hero-1 {
     ${Normal}
   }
 
   .content-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: calc(var(--vh, 1vh) * 100);
+
+    ${media.thone`
+      flex-direction: column-reverse;
+      padding: 0.5rem 0 1.5rem;
+    `};
   }
 `
 export const TitleWrapper = styled.div`
