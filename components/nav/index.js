@@ -41,7 +41,12 @@ const Nav = () => {
     <HeaderWrapper $hide={hide}>
       <Container>
         <NavWrapper>
-          <Logo href="/">
+          <Logo
+            href="/"
+            onClick={() => {
+              lenis.scrollTo(0)
+            }}
+          >
             <div className="overflow">
               <div className="reveal-nav-1">Outer&nbsp;</div>
             </div>

@@ -31,12 +31,14 @@ export const TopImageWrapper = styled.div`
   grid-column: 2 / 3;
   width: 100%;
   max-width: 24.5vw;
-  height: 85vh;
+  height: 90vh;
   border-radius: 30px 30px 0 0;
   z-index: 2;
+  top: -15vh;
 
   ${media.desktop`
     height: 60vh;
+    top: 0;
   `}
   ${media.thone`
     grid-column: 1 / 3;
@@ -54,10 +56,10 @@ export const TopImageWrapper = styled.div`
 export const BottomImageWrapper = styled.div`
   position: absolute;
   grid-column: 2 / 3;
-  top: 85vh;
+  top: 75vh;
   width: 100%;
   max-width: 24.5vw;
-  height: 85vh;
+  height: 90vh;
   border-radius: 0 0 30px 30px;
   z-index: 2;
 
