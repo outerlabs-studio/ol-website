@@ -1,6 +1,9 @@
 'use client'
 
-import { Container, sizes } from 'styles'
+import { useRef } from 'react'
+import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
+import { useLenis } from '@studio-freight/react-lenis'
+import { Container } from 'styles'
 import {
   ButtonWrapper,
   CustomGridWrapper,
@@ -9,11 +12,8 @@ import {
   LinkWrapper,
   TitleWrapper,
 } from './styles'
-import { CustomButton, CustomLink, Parallax } from 'components'
-import { useRef } from 'react'
-import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import gsap from 'gsap'
-import { useLenis } from '@studio-freight/react-lenis'
+import { CustomButton, CustomLink, Parallax } from 'components'
 
 const Hero = () => {
   const trigger = useRef()
@@ -52,7 +52,7 @@ const Hero = () => {
           {
             yPercent: 100,
             duration: 2,
-            stagger: 0.1,
+            stagger: 0.2,
             ease: 'power3.inOut',
           },
           0,
@@ -113,29 +113,46 @@ const Hero = () => {
                 <div className="reveal-hero-1">{word}&nbsp;</div>
               </div>
             ))}
-            <div className="reveal-button">
-              <CustomButton href="/about">Learn more</CustomButton>
+            <div className="link-wrapper">
+              <CustomButton href="/about" className="reveal-button">
+                Learn more
+              </CustomButton>
+              {width <= 600 && (
+                <CustomButton
+                  href="/"
+                  className="reveal-button"
+                  $reverse
+                  onClick={() => {
+                    lenis.scrollTo('#contact', { offset: 800 })
+                  }}
+                >
+                  Get in touch
+                </CustomButton>
+              )}
             </div>
           </DescriptionWrapper>
         </CustomGridWrapper>
       </Container>
-      <Parallax speed={0.5} trigger={trigger}>
-        <ButtonWrapper className="reveal-button">
-          <CustomButton
-            href="/"
-            onClick={() => {
-              lenis.scrollTo('#contact')
-            }}
-          >
-            Get in touch
-          </CustomButton>
+      {width > 600 && (
+        <ButtonWrapper>
+          <Parallax speed={1} trigger={trigger}>
+            <CustomButton
+              className="reveal-button"
+              href="/"
+              onClick={() => {
+                lenis.scrollTo('#contact', { offset: 800 })
+              }}
+            >
+              Get in touch
+            </CustomButton>
+          </Parallax>
         </ButtonWrapper>
-      </Parallax>
+      )}
       <TitleWrapper>
         <div className="overflow">
           <div className="reveal-hero-3">O</div>
         </div>
-        <Parallax speed={-2} trigger={trigger}>
+        <Parallax speed={-2} trigger={trigger} $toggleMobile>
           <div className="overflow">
             <div className="reveal-hero-3">u</div>
           </div>
@@ -143,7 +160,7 @@ const Hero = () => {
         <div className="overflow">
           <div className="reveal-hero-3">t</div>
         </div>
-        <Parallax speed={-1} trigger={trigger}>
+        <Parallax speed={-1} trigger={trigger} $toggleMobile>
           <div className="overflow">
             <div className="reveal-hero-3">e</div>
           </div>
@@ -151,7 +168,7 @@ const Hero = () => {
         <div className="overflow">
           <div className="reveal-hero-3">r&nbsp;</div>
         </div>
-        <Parallax speed={-1.5} trigger={trigger}>
+        <Parallax speed={-1.5} trigger={trigger} $toggleMobile>
           <div className="overflow">
             <div className="reveal-hero-3">L</div>
           </div>
@@ -159,12 +176,12 @@ const Hero = () => {
         <div className="overflow">
           <div className="reveal-hero-3">a</div>
         </div>
-        <Parallax speed={-0.5} trigger={trigger}>
+        <Parallax speed={-0.5} trigger={trigger} $toggleMobile>
           <div className="overflow">
             <div className="reveal-hero-3">b</div>
           </div>
         </Parallax>
-        <Parallax speed={-3} trigger={trigger}>
+        <Parallax speed={-3} trigger={trigger} $toggleMobile>
           <div className="overflow">
             <div className="reveal-hero-3">s</div>
           </div>

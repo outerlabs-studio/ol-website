@@ -51,19 +51,24 @@ export const CustomGridWrapper = styled(GridWrapper)`
   ${media.thone`
     padding-top: 0;
     grid-column-gap: 0;
-    grid-row-gap: 5vh;
+    grid-row-gap: 10vh;
   `}
 `
 export const ButtonWrapper = styled.div`
   position: absolute;
-  bottom: 40%;
+  top: 60%;
   left: 30%;
+  transform: translate(-30%, -60%);
   width: fit-content;
   z-index: 2;
 
+  ${media.desktop`
+    top: 80%;
+    left: 30%;
+    transform: translate(-30%, -80%);
+  `}
   ${media.thone`
-    bottom: 52%;
-    left: 50%;
+    position: relative;
   `}
 `
 export const LinkWrapper = styled.div`
@@ -82,12 +87,17 @@ export const DescriptionWrapper = styled.div`
   grid-column: 3;
   max-width: 20rem;
 
+  .link-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2vh;
+    align-items: center;
+  }
+
   ${media.thone`
     grid-column: 1 / 4;
     grid-row: 1;
+    max-width: 100%;
+    padding-top: 1rem;
   `}
-
-  .reveal-button {
-    margin-top: 2rem;
-  }
 `

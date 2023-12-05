@@ -22,6 +22,7 @@ export default function Parallax({
   position,
   direction = 'vertical',
   trigger = useRef(),
+  $toggleMobile,
 }) {
   const target = useRef()
   const timeline = useRef()
@@ -70,6 +71,10 @@ export default function Parallax({
       timeline?.current?.kill()
     }
   }, [id, speed, position, windowWidth, target])
+
+  if ($toggleMobile && windowWidth <= 600) {
+    return children
+  }
 
   return <>{cloneElement(children, { ref: target })}</>
 }

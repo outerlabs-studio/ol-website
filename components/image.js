@@ -27,7 +27,7 @@ const ParallaxWrapper = styled.div`
 const CustomImage = ({ src, alt, speed = 1 }) => {
   const target = useRef()
 
-  const { width: windowWidth } = useWindowSize()
+  const { height: windowWidth } = useWindowSize()
   const y = windowWidth * speed * 0.1
 
   useIsomorphicLayoutEffect(() => {

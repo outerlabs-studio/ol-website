@@ -8,7 +8,6 @@ import {
   CustomGridWrapper,
   TopImageWrapper,
   BottomImageWrapper,
-  BottomMarqueeWrapper,
 } from './styles'
 import { CustomButton, CustomImage, Label, Marquee, Parallax } from 'components'
 import { useIsomorphicLayoutEffect } from 'react-use'
@@ -74,18 +73,6 @@ const About = () => {
 
   return (
     <AboutSection ref={sectionTarget}>
-      <GridWrapper>
-        <Parallax speed={-1.5} trigger={sectionTarget}>
-          <TopImageWrapper>
-            <CustomImage src="/meeting.JPG" alt="The team" />
-          </TopImageWrapper>
-        </Parallax>
-        <Parallax speed={-1.5} trigger={sectionTarget}>
-          <BottomImageWrapper>
-            <CustomImage src="/boys.jpg" alt="The team" />
-          </BottomImageWrapper>
-        </Parallax>
-      </GridWrapper>
       <Marquee repeat={3}>
         <div className="overflow">
           <div className="reveal-about-3">
@@ -93,8 +80,20 @@ const About = () => {
           </div>
         </div>
       </Marquee>
+      <GridWrapper className="resize">
+        <Parallax speed={-1.5} trigger={sectionTarget} $toggleMobile>
+          <TopImageWrapper>
+            <CustomImage src="/meeting.JPG" alt="The team" />
+          </TopImageWrapper>
+        </Parallax>
+        <Parallax speed={-1.5} trigger={sectionTarget} $toggleMobile>
+          <BottomImageWrapper>
+            <CustomImage src="/boys.jpg" alt="The team" />
+          </BottomImageWrapper>
+        </Parallax>
+      </GridWrapper>
       <Container>
-        <Parallax speed={3.1} trigger={sectionTarget}>
+        <Parallax speed={3.1} trigger={sectionTarget} $toggleMobile>
           <CustomGridWrapper>
             <div className="overflow">
               <div className="reveal-about-1">
@@ -102,7 +101,7 @@ const About = () => {
               </div>
             </div>
             <ContentWrapper>
-              <div>
+              <div className="title-row">
                 <div className="overflow">
                   <div className="reveal-about-1">Talent beats quantity</div>
                 </div>
@@ -124,11 +123,6 @@ const About = () => {
           </CustomGridWrapper>
         </Parallax>
       </Container>
-      <BottomMarqueeWrapper>
-        <Marquee repeat={3} inverted>
-          <DisplayText $m={'0 6vw 0 0'}>Quality {`>`} Quantity</DisplayText>
-        </Marquee>
-      </BottomMarqueeWrapper>
     </AboutSection>
   )
 }

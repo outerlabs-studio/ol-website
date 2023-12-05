@@ -7,6 +7,8 @@ export const Small = css`
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
+
+  ${media.thone`font-size: 16px;`}
 `
 export const SmallText = styled.p`
   ${Small}
@@ -16,6 +18,8 @@ export const Normal = css`
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
+
+  ${media.thone`font-size: 18px;`}
 `
 export const NormalText = styled.p`
   ${Normal}

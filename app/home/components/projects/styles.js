@@ -19,6 +19,8 @@ export const TopbarWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   padding-bottom: 5vw;
+
+  ${media.thone`padding-bottom: 2rem;`}
 `
 export const ProjectList = styled.div`
   display: grid;
