@@ -8,7 +8,8 @@ export const FooterWrapper = styled.footer`
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   z-index: ${Z_INDEX.footer.section};
   position: relative;
-  padding: 28vh 0;
+  padding: 4vh 0;
+  min-height: 90vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,8 +26,7 @@ export const ContentWrapper = styled.div`
   z-index: ${Z_INDEX.footer.foreground};
 
   .reveal-footer-1 {
-    ${Display}
-    line-height: 90%;
+    ${Display}/* line-height: 95%; */
   }
   .reveal-footer-3 {
     ${Normal}

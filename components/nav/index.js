@@ -15,18 +15,10 @@ const Nav = () => {
   const lenis = useLenis()
 
   useLenis(({ scroll, direction }) => {
-    if (path === '/about') {
-      if (direction === 1) {
-        setHide(true)
-      } else if (direction === -1 || direction === undefined) {
-        setHide(false)
-      }
+    if (path === '/' && scroll < 50) {
+      setHide(true)
     } else {
-      if (direction === 1 || direction === undefined || scroll < 50) {
-        setHide(true)
-      } else if (direction === -1) {
-        setHide(false)
-      }
+      setHide(false)
     }
   })
 
