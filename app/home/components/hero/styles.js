@@ -8,7 +8,7 @@ export const HeroWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(var(--vh, 1vh) * 100);
+  max-height: 100vh;
   width: 100%;
   z-index: ${Z_INDEX.hero};
 
@@ -19,6 +19,10 @@ export const HeroWrapper = styled.section`
 
   .reveal-hero-1 {
     ${Normal}
+  }
+
+  .content-wrap {
+    height: calc(var(--vh, 1vh) * 100);
   }
 `
 export const TitleWrapper = styled.div`
