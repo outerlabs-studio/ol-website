@@ -24,8 +24,9 @@ export const AboutSection = styled.section`
 `
 export const TopImageWrapper = styled.div`
   position: absolute;
-  grid-column: 2;
-  width: 20vw;
+  grid-column: 2 / 3;
+  width: 100%;
+  max-width: 24.5vw;
   height: 85vh;
   border-radius: 30px 30px 0 0;
   z-index: 2;
@@ -35,7 +36,7 @@ export const TopImageWrapper = styled.div`
   `}
   ${media.thone`
     grid-column: 1 / 3;
-    width: 100%;
+    max-width: 100%;
     position: relative;
     border-radius: 0;
     height: 30rem;
@@ -48,9 +49,10 @@ export const TopImageWrapper = styled.div`
 `
 export const BottomImageWrapper = styled.div`
   position: absolute;
-  grid-column: 2;
+  grid-column: 2 / 3;
   top: 85vh;
-  width: 20vw;
+  width: 100%;
+  max-width: 24.5vw;
   height: 85vh;
   border-radius: 0 0 30px 30px;
   z-index: 2;
@@ -61,7 +63,7 @@ export const BottomImageWrapper = styled.div`
   `}
   ${media.thone`
     grid-column: 3 / 4;
-    width: 100%;
+    max-width: 100%;
     top: 0;
     border-radius: 0;
     height: 30rem;
@@ -73,9 +75,16 @@ export const BottomImageWrapper = styled.div`
   }
 `
 export const CustomGridWrapper = styled(GridWrapper)`
-  margin-top: 55vh;
+  /* margin-top: 55vh; */
+  position: absolute;
+  top: 25%;
+  width: 100%;
 
-  ${media.thone`margin-top: 0;`}
+  ${media.thone`
+    position: relative;
+    top: unset;
+    margin-top: 0;
+  `}
 `
 export const ContentWrapper = styled.div`
   grid-column: 3;
