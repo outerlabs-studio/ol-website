@@ -63,7 +63,7 @@ export const WheelWrapper = styled.div`
   transform: translate(-50%, -50%);
   background-color: ${({ theme }) => `rgb(${theme.text})`};
   opacity: 0.4;
-  filter: blur(0.5vw);
+  filter: blur(10px);
   z-index: ${Z_INDEX.footer.background};
 `
 export const FerrisWheel = styled.div`
