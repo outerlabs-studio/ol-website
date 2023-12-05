@@ -20,7 +20,7 @@ export const TopbarWrapper = styled.div`
   width: 100%;
   padding-bottom: 5vw;
 
-  ${media.thone`padding-bottom: 2rem;`}
+  ${media.thone`padding-bottom: 4rem;`}
 `
 export const ProjectList = styled.div`
   display: grid;
