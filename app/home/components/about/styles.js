@@ -73,7 +73,7 @@ export const BottomImageWrapper = styled.div`
   }
 `
 export const CustomGridWrapper = styled(GridWrapper)`
-  margin-top: 45vh;
+  margin-top: 55vh;
 
   ${media.thone`margin-top: 0;`}
 `
