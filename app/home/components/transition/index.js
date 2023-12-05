@@ -2,14 +2,14 @@
 
 import { useRef } from 'react'
 import { CustomButton, Label } from 'components'
-import { Container, GridWrapper, HugeText } from 'styles'
+import { Container, GridWrapper, HugeText, sizes } from 'styles'
 import {
   TextWrapper,
   TransitionSection,
   ButtonWrapper,
   InnerWrapper,
 } from './styles'
-import { useIsomorphicLayoutEffect } from 'react-use'
+import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import gsap from 'gsap'
 
 const Transition = () => {
@@ -17,6 +17,7 @@ const Transition = () => {
   const textTarget = useRef()
   const sectionTarget = useRef()
   const innerTarget = useRef()
+  const { width } = useWindowSize()
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -37,23 +38,27 @@ const Transition = () => {
           },
         },
         0,
-      ).to(
-        sectionTarget.current,
-        {
-          yPercent: 40,
-          scrollTrigger: {
-            trigger: sectionTarget.current,
-            start: 'center center',
-            end: 'bottom+=40% top',
-            scrub: true,
-          },
-        },
-        0,
       )
+
+      if (width >= sizes.thone) {
+        tl.to(
+          sectionTarget.current,
+          {
+            yPercent: 40,
+            scrollTrigger: {
+              trigger: sectionTarget.current,
+              start: 'center center',
+              end: 'bottom+=40% top',
+              scrub: true,
+            },
+          },
+          0,
+        )
+      }
     })
 
     return () => ctx.revert()
-  }, [])
+  }, [width])
 
   return (
     <TransitionSection ref={sectionTarget}>

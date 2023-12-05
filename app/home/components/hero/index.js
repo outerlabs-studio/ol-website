@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import { useLenis } from '@studio-freight/react-lenis'
-import { Container } from 'styles'
+import { Container, sizes } from 'styles'
 import {
   ButtonWrapper,
   CustomGridWrapper,
@@ -24,29 +24,16 @@ const Hero = () => {
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline()
-      tl.to(
-        trigger.current,
+      tl.from(
+        gsap.utils.toArray('.reveal-hero-1'),
         {
-          yPercent: 15,
-          scrollTrigger: {
-            trigger: trigger.current,
-            start: 'center center',
-            end: 'bottom+=15% top',
-            scrub: true,
-          },
+          yPercent: 100,
+          duration: 2,
+          stagger: 0.02,
+          ease: 'power3.inOut',
         },
         0,
       )
-        .from(
-          gsap.utils.toArray('.reveal-hero-1'),
-          {
-            yPercent: 100,
-            duration: 2,
-            stagger: 0.02,
-            ease: 'power3.inOut',
-          },
-          0,
-        )
         .from(
           gsap.utils.toArray('.reveal-hero-2'),
           {
@@ -75,10 +62,26 @@ const Hero = () => {
           { scale: 1, duration: 0.5, ease: 'power3.inOut' },
           1,
         )
+
+      if (width >= sizes.thone) {
+        tl.to(
+          trigger.current,
+          {
+            yPercent: 15,
+            scrollTrigger: {
+              trigger: trigger.current,
+              start: 'center center',
+              end: 'bottom+=15% top',
+              scrub: true,
+            },
+          },
+          0,
+        )
+      }
     })
 
     return () => ctx.revert()
-  }, [])
+  }, [width])
 
   return (
     <HeroWrapper ref={trigger}>

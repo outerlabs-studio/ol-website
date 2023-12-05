@@ -8,14 +8,14 @@ export const TransitionSection = styled.section`
   padding-top: 10vw;
   z-index: ${Z_INDEX.transition};
 
-  ${media.thone`padding-top: 20vw;`}
+  ${media.thone`padding-top: 0;`}
 `
 export const InnerWrapper = styled.div`
   background-color: ${({ theme }) => `rgb(${theme.text})`};
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   padding: 8vw 0 30vw;
 
-  ${media.thone`padding: 4rem 0 80vw;`}
+  ${media.thone`padding: 8rem 0;`}
 
   .label {
     margin-top: 0.3rem;

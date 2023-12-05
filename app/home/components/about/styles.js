@@ -23,7 +23,7 @@ export const AboutSection = styled.section`
   ${media.desktop`min-height: 140vh;`}
   ${media.thone`
     min-height: unset;
-    padding: 12vh 0;
+    padding: 4rem 0;
   `}
 `
 export const TopImageWrapper = styled.div`
