@@ -43,6 +43,8 @@ export const LinkList = styled.div`
   }
 `
 export const Logo = styled(Link)`
+  text-decoration: none;
+
   .reveal-nav-1 {
     ${Huge}
     font-weight: 800!important;
