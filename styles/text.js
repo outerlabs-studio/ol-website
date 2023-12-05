@@ -55,7 +55,7 @@ export const Display = css`
   line-height: 110%;
 
   ${media.desktop`font-size: 10vw;`}
-  ${media.thone`font-size: 20vw;`}
+  ${media.thone`font-size: 15vw;`}
 `
 export const DisplayText = styled.h1`
   ${Display}

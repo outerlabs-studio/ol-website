@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { Display, GridWrapper, Normal, Z_INDEX } from 'styles'
+import { Display, GridWrapper, Normal, Z_INDEX, media } from 'styles'
 
 export const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => `rgb(${theme.text})`};
@@ -50,10 +50,37 @@ export const CustomGridWrapper = styled(GridWrapper)`
   a {
     width: fit-content;
   }
+
+  ${media.tablet`
+    .item-1 {
+      grid-column: 2;
+    }
+    .item-2 {
+      grid-column: 1;
+    }
+    .item-3 {
+      grid-column: 3;
+    }
+    .item-4 {
+      grid-column: 4;
+    }
+    ${media.thone`
+      .item-1 {
+        grid-column: 4;
+      }
+      .item-4 {
+        grid-column: 4;
+        display: none;
+      }
+    `}
+  `}
 `
 export const LinksWrapper = styled.div`
   display: flex;
   gap: 2rem;
+
+  ${media.desktop`gap: 1rem;`}
+  ${media.tablet`flex-direction: column;`}
 `
 
 export const WheelWrapper = styled.div`
