@@ -70,7 +70,7 @@ const About = () => {
         <GridWrapper>
           <div className="overflow">
             <div className="reveal-about-1">
-              <Label reverse>About</Label>
+              <Label $reverse>About</Label>
             </div>
           </div>
           <TextWrapper>
@@ -95,7 +95,7 @@ const About = () => {
             </div>
           </TextWrapper>
           <InfoWrapper>
-            <div className="col">
+            <div className="col col-1">
               <div className="overflow">
                 <div className="reveal-about-2">Founded</div>
               </div>
@@ -103,7 +103,7 @@ const About = () => {
                 <div className="reveal-about-3">2021</div>
               </div>
             </div>
-            <div className="col">
+            <div className="col col-2">
               <div className="overflow">
                 <div className="reveal-about-2">Client profit</div>
               </div>
@@ -111,7 +111,7 @@ const About = () => {
                 <div className="reveal-about-3">8 figures</div>
               </div>
             </div>
-            <div className="col">
+            <div className="col col-3">
               <div className="overflow">
                 <div className="reveal-about-2">Size</div>
               </div>

@@ -3,7 +3,7 @@
 import { useRef, useMemo } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import { CustomLink, CustomButton } from 'components'
-import { Container, media, sizes } from 'styles'
+import { Container, sizes } from 'styles'
 import {
   FooterWrapper,
   ContentWrapper,

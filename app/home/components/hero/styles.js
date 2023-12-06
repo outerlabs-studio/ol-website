@@ -5,7 +5,7 @@ import { GridWrapper, Normal, Z_INDEX, media, wtskrappa } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
-  max-height: 100vh;
+  min-height: 100vh;
   width: 100%;
   z-index: ${Z_INDEX.hero};
 
@@ -27,10 +27,7 @@ export const HeroWrapper = styled.section`
   }
 `
 export const TitleWrapper = styled.div`
-  /* position: absolute; */
   width: 100%;
-  overflow: hidden;
-  /* bottom: 5%; */
   text-align: center;
 
   ${media.thone`
