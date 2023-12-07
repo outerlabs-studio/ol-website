@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 9998;
   /* background-color: ${({ theme }) => `rgb(${theme.accent1})`}; */
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   transition: transform 0.3s ease-in-out;
@@ -51,5 +51,6 @@ export const Logo = styled.a`
     text-decoration: none;
     color: ${({ theme }) => `rgb(${theme.accent1})`};
     font-family: ${wtskrappa.style.fontFamily};
+    -webkit-font-smoothing: antialiased;
   }
 `

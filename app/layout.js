@@ -3,7 +3,7 @@ import { StyledComponentsRegistry } from 'lib'
 export const metadata = {
   title: {
     template: '%s | Outer Labs',
-    default: 'Outer Labs',
+    default: 'Outer Labs | Websites, apps, & branding',
   },
   description:
     'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
