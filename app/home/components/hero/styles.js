@@ -39,6 +39,7 @@ export const TitleWrapper = styled.div`
     font-family: ${wtskrappa.style.fontFamily};
     font-size: 41.5vw;
     z-index: 1;
+    will-change: transform;
 
     ${media.thone`
       font-size: 69vw;

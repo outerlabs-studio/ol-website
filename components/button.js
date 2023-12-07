@@ -24,6 +24,7 @@ const ButtonWrapper = styled.a`
   text-decoration: none;
   height: fit-content;
   width: fit-content;
+  will-change: transform;
 `
 
 const ButtonStyle = css`
@@ -33,6 +34,7 @@ const ButtonStyle = css`
   display: inline-flex;
   flex-direction: column;
   overflow: hidden;
+  will-change: transform;
 
   &:disabled {
     background-color: var(--black);
@@ -77,13 +79,31 @@ const CustomButton = (props) => {
   const handleMouseMove = useCallback(
     (e) => {
       if (isTouchDevice) return
+
       const bounds = movingContainerRef.current.getBoundingClientRect()
 
+      // Calculate the distance from the cursor to the center of the element
+      const centerX = bounds.left + bounds.width / 2
+      const distanceX = e.clientX - centerX
+
+      // Determine the magnet effect threshold (e.g., 100 pixels)
+      const magnetThreshold = 100
+
+      let xPosition
+      if (Math.abs(distanceX) < magnetThreshold) {
+        // Apply a magnet effect: the closer to the center, the stronger the pull
+        xPosition = distanceX
+      } else {
+        // If the cursor is outside the magnet threshold, don't apply the magnet effect
+        xPosition = bounds.clientWidth
+      }
+
+      // Apply the animation with GSAP
       gsap.to(movingContainerRef.current, {
-        x: (e.clientX - bounds.left - 30) / 4,
+        x: xPosition,
         y:
           (e.clientY - bounds.top - movingContainerRef.current.clientHeight) /
-          4,
+          2,
         scale: 1.1,
         duration: 1,
         ease: 'expo.out',

@@ -52,8 +52,9 @@ const Marquee = ({
   repeat = 2,
   duration = 5,
   offset = 0,
-  inverted = false,
+  $inverted = false,
   animationStart = true,
+  style,
   ...props
 }) => {
   const ref = useRef()
@@ -64,7 +65,7 @@ const Marquee = ({
     <StyledMarquee
       ref={ref}
       {...props}
-      className={`${inverted && 'inverted'}${
+      className={`${$inverted && 'inverted'}${
         intersection?.isIntersecting && ' running'
       }`}
       style={{
