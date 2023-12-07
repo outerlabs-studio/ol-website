@@ -118,7 +118,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-1">Apps</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -133,7 +133,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-2">Design</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -148,7 +148,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-3">
                 Cloud infrastructure
               </LabelBlob>
@@ -165,7 +165,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-4">Branding</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -180,7 +180,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-5">Animation</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -195,7 +195,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-6">SEO</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -211,7 +211,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-7">Social media</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -226,7 +226,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-8">Websites</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -241,7 +241,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-9">UI</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -256,7 +256,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-10">UX</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -271,7 +271,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-11">Developing</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -286,7 +286,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-12">Messaging</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -302,7 +302,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-13">Motion</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -317,7 +317,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-14">Print</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -332,7 +332,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-15">Wireframing</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -347,7 +347,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-17">Discovery</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -362,7 +362,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-16">Ecommerce</LabelBlob>
             </Parallax>
           </LabelWrapper>
@@ -377,7 +377,7 @@ const Hero = () => {
               }deg)`,
             }}
           >
-            <Parallax trigger={heroRef} speed={-1}>
+            <Parallax trigger={heroRef} speed={-1} $togglemobile>
               <LabelBlob className="inner-blob blob-18">Print</LabelBlob>
             </Parallax>
           </LabelWrapper>
