@@ -23,7 +23,7 @@ const Hero = () => {
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top bottom-=10',
-          // toggleActions: 'play reset resume reset',
+          toggleActions: 'play reset resume reset',
         },
       })
 
@@ -101,7 +101,7 @@ const Hero = () => {
     })
 
     return () => ctx.revert()
-  }, [width, height])
+  }, [width])
 
   return (
     <HeroWrapper ref={heroRef}>
