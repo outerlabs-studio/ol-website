@@ -23,7 +23,7 @@ const Hero = () => {
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top bottom-=10',
-          toggleActions: 'play reset resume reset',
+          // toggleActions: 'play reset resume reset',
         },
       })
 
@@ -49,7 +49,7 @@ const Hero = () => {
         const y = centerY + Math.sin(angle) * radius
 
         // for the second animation
-        const extendedRadius = radius + 350
+        const extendedRadius = radius + 200
         const endX = centerX + Math.cos(angle) * extendedRadius
         const endY = centerY + Math.sin(angle) * extendedRadius
 
