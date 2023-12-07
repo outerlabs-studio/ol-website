@@ -1,4 +1,4 @@
-import { RealViewport, StyledComponentsRegistry } from 'lib'
+import { StyledComponentsRegistry } from 'lib'
 
 export const metadata = {
   title: 'Outer Labs Studio',
@@ -55,7 +55,6 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>
-          <RealViewport />
           {children}
         </StyledComponentsRegistry>
       </body>
