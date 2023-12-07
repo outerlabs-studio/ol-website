@@ -17,12 +17,18 @@ export const metadata = {
     'web development',
     'app development',
     'creative direction',
+    'creative web design',
+    'creative web development',
+    'creative agency',
+    'creative studio',
+    'creative design',
     'ecommerce',
     'ecommerce development',
     'app design',
     'graphic design',
     'logo design',
     'logo',
+    'SEO optimiztion',
     'design',
     'development',
     'awwwards',
@@ -43,7 +49,7 @@ export const metadata = {
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000'
           : 'https://outerlabs.studio'
-      }/OG.jpg`,
+      }/og-image.jpg`,
       width: 1200,
       height: 630,
     },
@@ -59,7 +65,7 @@ export const metadata = {
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000'
           : 'https://outerlabs.studio'
-      }/OG.jpg`,
+      }/og-image.jpg`,
     ],
   },
 }
