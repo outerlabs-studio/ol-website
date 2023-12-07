@@ -1,13 +1,59 @@
 import { StyledComponentsRegistry } from 'lib'
 
 export const metadata = {
-  title: 'Outer Labs Studio',
+  title: {
+    template: '%s | Outer Labs',
+    default: 'Outer Labs',
+  },
   description:
     'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+  keywords: [
+    'Outer Labs',
+    'Outer Labs Studio',
+    'Outer Labs Design',
+    'branding',
+    'website design',
+    'web design',
+    'web development',
+    'app development',
+    'creative direction',
+    'ecommerce',
+    'ecommerce development',
+    'app design',
+    'graphic design',
+    'logo design',
+    'logo',
+    'design',
+    'development',
+    'awwwards',
+    'css design awards',
+    'nyc design',
+    'nyc design studio',
+    'nyc design agency',
+  ],
   openGraph: {
     title: 'Outer Labs Studio',
     description:
       'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+    url: 'https://outerlabs.studio',
+    locale: 'en_US',
+    type: 'website',
+    images: {
+      url: `${
+        process.env.NODE_ENV === 'development'
+          ? 'http://localhost:3000'
+          : 'https://outerlabs.studio'
+      }/OG.jpg`,
+      width: 1200,
+      height: 630,
+    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Outer Labs | Design and Development Studio',
+    description:
+      'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+    creator: '@kyryloren',
     images: [
       `${
         process.env.NODE_ENV === 'development'
@@ -30,6 +76,12 @@ export default function RootLayout({ children }) {
         <meta name="geo.region" content="US" />
 
         {/* START FAVICON */}
+        <link
+          rel="mask-icon"
+          href="/favicon/safari-pinned.tab.svg"
+          color="#121212"
+        />
+        <meta name="msapplication-TileColor" content="#121212" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link
           rel="apple-touch-icon"
@@ -54,9 +106,7 @@ export default function RootLayout({ children }) {
         {/* END FAVICON */}
       </head>
       <body suppressHydrationWarning>
-        <StyledComponentsRegistry>
-          {children}
-        </StyledComponentsRegistry>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   )

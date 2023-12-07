@@ -2,7 +2,7 @@ import { Layout } from 'layouts/default'
 import { Hero, About, ImageSection, Services, Team } from './components'
 
 export const metadata = {
-  title: 'About | Outer Labs Studio',
+  title: 'About',
 }
 
 export default function Home() {

@@ -1,9 +1,9 @@
 import { Layout } from 'layouts/default'
-import { Container, DisplayText } from 'styles'
+import { Container } from 'styles'
 import { ContentWrapper, MainText, PageWrapper } from './components'
 
 export const metadata = {
-  title: 'Page Not Found | Outer Labs',
+  title: 'Page Not Found',
 }
 
 export default function NotFoundPage() {
