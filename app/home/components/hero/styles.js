@@ -4,22 +4,25 @@ import styled from 'styled-components'
 import { GridWrapper, Normal, Z_INDEX, media, wtskrappa } from 'styles'
 
 export const HeroWrapper = styled.section`
-  display: flex;
   position: relative;
-  flex-direction: column;
-  justify-content: space-between;
-  height: ${({ height }) => `${height}px`};
+  min-height: 100vh;
   width: 100%;
   z-index: ${Z_INDEX.hero};
-  overflow: hidden;
-
-  ${media.thone`
-      flex-direction: column-reverse;
-      padding: 0.5rem 0 1.5rem;
-    `};
 
   .reveal-hero-1 {
     ${Normal}
+  }
+
+  .content-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ${media.thone`
+      flex-direction: column-reverse;
+      padding: 0.5rem 0 1.5rem;
+    `};
   }
 `
 export const TitleWrapper = styled.div`
