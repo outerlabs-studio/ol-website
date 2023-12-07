@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import styled from 'styled-components'
 import { Huge, Normal, wtskrappa } from 'styles'
 
@@ -42,8 +41,9 @@ export const LinkList = styled.div`
     color: ${({ theme }) => `rgb(${theme.accent1})`};
   }
 `
-export const Logo = styled(Link)`
+export const Logo = styled.a`
   text-decoration: none;
+  cursor: pointer;
 
   .reveal-nav-1 {
     ${Huge}

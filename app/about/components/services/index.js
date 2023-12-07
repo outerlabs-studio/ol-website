@@ -81,11 +81,13 @@ const Services = () => {
               </div>
             ))}
           </TextWrapper>
-          <div className="reveal-services-button">
-            <CustomButton $reverse href="/contact">
-              Request custom service
-            </CustomButton>
-          </div>
+          <CustomButton
+            $reverse
+            href="/contact"
+            className="reveal-services-button"
+          >
+            Request custom service
+          </CustomButton>
           <ServicesCol>
             <div className="overflow">
               <div className="reveal-services-3">Branding and development</div>

@@ -125,6 +125,7 @@ const CustomButton = (props) => {
         onClick={onClick}
         $reverse={$reverse}
         className={className}
+        role="button"
       >
         <StyledButton>
           <div ref={(el) => (line1 = el)}>{children}</div>

@@ -18,7 +18,7 @@ export const HeroWrapper = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(var(--vh, 1vh) * 100);
+    height: var(--vh);
 
     ${media.thone`
       flex-direction: column-reverse;

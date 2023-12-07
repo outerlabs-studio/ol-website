@@ -8,14 +8,15 @@ import {
   MarqueeWrapper,
   TeamMemberItem,
   InformationWrapper,
+  LabelWrapper,
+  CustomGridWrapper,
 } from './styles'
-import { LabelWrapper } from '../hero/styles'
 
 const Member = ({ image, name, pos, num }) => {
   return (
     <TeamMemberItem>
       <Container>
-        <GridWrapper>
+        <CustomGridWrapper>
           <ImageWrapper className="image-wrapper">
             <CustomImage src={image} alt={name} />
           </ImageWrapper>
@@ -23,7 +24,7 @@ const Member = ({ image, name, pos, num }) => {
             <MediumText>{pos}</MediumText>
             <MediumText>{num}/4</MediumText>
           </InformationWrapper>
-        </GridWrapper>
+        </CustomGridWrapper>
       </Container>
       <MarqueeWrapper>
         <Marquee repeat={4} duration={3}>

@@ -9,6 +9,7 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, lightTheme } from 'styles'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { useRef } from 'react'
+import { useIsTouchDevice } from 'hooks'
 
 if (typeof window !== 'undefined') {
   gsap.defaults({ ease: 'none' })
@@ -29,11 +30,9 @@ if (typeof window !== 'undefined') {
   console.log('👋 Hello! 👀')
 }
 
-export function Layout({
-
-  children,
-}) {
+export function Layout({ children }) {
   const mainTarget = useRef()
+  const touchDevice = useIsTouchDevice()
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -47,7 +46,7 @@ export function Layout({
       <ThemeProvider theme={lightTheme}>
         <GlobalStyle />
 
-        <Scrollbar />
+        {touchDevice ? null : <Scrollbar />}
         <main ref={mainTarget}>
           <Nav />
           {children}

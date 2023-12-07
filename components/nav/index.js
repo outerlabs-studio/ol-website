@@ -1,17 +1,18 @@
 'use client'
 
+import { useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { useIsomorphicLayoutEffect } from 'react-use'
+import { useLenis } from '@studio-freight/react-lenis'
+import CustomLink from 'components/link'
 import { Container } from 'styles'
 import { HeaderWrapper, LinkList, Logo, NavWrapper } from './styles'
-import CustomLink from 'components/link'
-import { useLenis } from '@studio-freight/react-lenis'
-import { useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { useIsomorphicLayoutEffect } from 'react-use'
 import gsap from 'gsap'
 
 const Nav = () => {
   const [hide, setHide] = useState(true)
   const path = usePathname()
+  const router = useRouter()
   const lenis = useLenis()
 
   useLenis(({ scroll, direction }) => {
@@ -42,9 +43,10 @@ const Nav = () => {
       <Container>
         <NavWrapper>
           <Logo
-            href="/"
+            role="link"
             onClick={() => {
-              lenis.scrollTo(0)
+              if (path === '/') lenis.scrollTo(0)
+              else router.push('/')
             }}
           >
             <div className="overflow">
@@ -57,11 +59,11 @@ const Nav = () => {
           <LinkList>
             <div className="overflow">
               <CustomLink
-                target="_self"
-                href="/#projects"
                 className="reveal-nav-1"
+                role="link"
                 onClick={() => {
-                  lenis.scrollTo('#projects', { offset: 70 })
+                  if (path === '/') lenis.scrollTo('#projects', { offset: 70 })
+                  else router.push('/#projects')
                 }}
               >
                 Projects

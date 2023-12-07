@@ -43,6 +43,10 @@ export const InfoWrapper = styled.div`
     grid-column: 1 / 4;
     margin-top: 4rem;
   `}
+  ${media.phablet`
+    gap: 0;
+    justify-content: space-between;
+  `}
 
   .reveal-about-2 {
     ${Normal}

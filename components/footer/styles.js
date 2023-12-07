@@ -15,6 +15,7 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  will-change: transform;
 `
 export const ContentWrapper = styled.div`
   display: flex;

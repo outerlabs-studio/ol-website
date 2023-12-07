@@ -1,13 +1,14 @@
 'use client'
 
 import styled from 'styled-components'
-import { Z_INDEX } from 'styles'
+import { Z_INDEX, media } from 'styles'
 
 export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 50vw;
   z-index: ${Z_INDEX.projects};
+  ${media.desktop`height: 85vh;`}
 
   img {
     object-fit: cover;

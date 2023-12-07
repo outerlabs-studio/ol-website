@@ -93,12 +93,12 @@ const About = () => {
         </div>
       </Marquee>
       <GridWrapper className="resize">
-        <Parallax speed={-1.5} trigger={sectionTarget} $toggleMobile>
+        <Parallax speed={-2} trigger={sectionTarget} $toggleMobile>
           <TopImageWrapper>
             <CustomImage src="/meeting.JPG" alt="The team" />
           </TopImageWrapper>
         </Parallax>
-        <Parallax speed={-1.5} trigger={sectionTarget} $toggleMobile>
+        <Parallax speed={-2} trigger={sectionTarget} $toggleMobile>
           <BottomImageWrapper>
             <CustomImage src="/boys.jpg" alt="The team" />
           </BottomImageWrapper>
