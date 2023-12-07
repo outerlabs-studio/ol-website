@@ -15,7 +15,7 @@ import { Parallax } from 'components'
 
 const Hero = () => {
   const heroRef = useRef()
-  const { width, height } = useWindowSize()
+  const { width } = useWindowSize()
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -38,9 +38,9 @@ const Hero = () => {
         0,
       ).addLabel('loaded', 1.5)
 
-      const radius = Math.min(width, height) / 2
+      const radius = Math.min(width, window.innerHeight) / 2
       const centerX = width / 2
-      const centerY = height / 2
+      const centerY = window.innerHeight / 2
 
       gsap.utils.toArray('.blob').forEach((blob, i) => {
         // for the first animation
@@ -58,7 +58,7 @@ const Hero = () => {
           {
             duration: 0.5,
             x: x - width / 2,
-            y: y - height / 2,
+            y: y - window.innerHeight / 2,
             rotation: -30 + Math.random() * 60,
             ease: 'expo.out',
           },
@@ -70,7 +70,7 @@ const Hero = () => {
             {
               duration: 40,
               x: endX - width / 2,
-              y: endY - height / 2,
+              y: endY - window.innerHeight / 2,
               rotation: -50 + Math.random() * 100,
               onComplete: () => {
                 tl.timeScale(70)
