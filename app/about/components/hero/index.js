@@ -18,6 +18,7 @@ const Hero = () => {
   const { width } = useWindowSize()
 
   useIsomorphicLayoutEffect(() => {
+    if (window === 'undefined') return
     let ctx = gsap.context(() => {
       let tl = gsap.timeline({
         scrollTrigger: {
