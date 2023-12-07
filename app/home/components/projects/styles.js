@@ -55,7 +55,6 @@ export const ImageWrapper = styled.div`
   img {
     border-radius: inherit;
     object-fit: cover;
-    filter: blur(10px);
   }
 `
 export const MarqueeWrapper = styled.div`
