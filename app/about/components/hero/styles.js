@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { MediumText, Z_INDEX, Huge } from 'styles'
+import { MediumText, Z_INDEX, Huge, media } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
@@ -37,10 +37,12 @@ export const LabelWrapper = styled.div`
 `
 export const LabelBlob = styled(MediumText)`
   width: fit-content;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5vw 2.5vw;
   background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   border-radius: 60px;
   line-break: nowrap;
+
+  ${media.desktop`padding: 0.5rem 2rem;`}
 `
 export const BlobWrapper = styled.div`
   display: grid;

@@ -9,7 +9,7 @@ export const FooterWrapper = styled.footer`
   z-index: ${Z_INDEX.footer.section};
   position: relative;
   padding: 4vh 0;
-  min-height: 90vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;

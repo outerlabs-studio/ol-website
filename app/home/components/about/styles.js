@@ -96,8 +96,9 @@ export const ContentWrapper = styled.div`
   grid-column: 3;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3vw;
 
+  ${media.desktop`gap: 2rem;`}
   ${media.thone`grid-column: 1 / 4;`}
 
   a {

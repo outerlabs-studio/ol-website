@@ -13,6 +13,45 @@ import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import gsap from 'gsap'
 import { Parallax } from 'components'
 
+const labels = [
+  'Apps',
+  'Design',
+  'Cloud infrastructure',
+  'Branding',
+  'Animation',
+  'SEO',
+  'Social media',
+  'Websites',
+  'UI',
+  'UX',
+  'Developing',
+  'Messaging',
+  'Motion',
+  'Print',
+  'Wireframing',
+  'Discovery',
+  'Ecommerce',
+]
+
+const Label = ({ className, text, heroRef }) => {
+  const padding = `${Math.floor(Math.random() * 16) + 1}px`
+  const rotation =
+    (Math.random() * 2 + 3) *
+    (Math.random() < 0.5 ? 1 : -1) *
+    (Math.random() < 0.5 ? 1 : -1)
+
+  return (
+    <LabelWrapper
+      className={className}
+      style={{ padding, transform: `rotate(${rotation}deg)` }}
+    >
+      <Parallax trigger={heroRef} speed={-1} $togglemobile>
+        <LabelBlob className={`inner-blob ${className}`}>{text}</LabelBlob>
+      </Parallax>
+    </LabelWrapper>
+  )
+}
+
 const Hero = () => {
   const heroRef = useRef()
   const { width } = useWindowSize()
@@ -32,13 +71,13 @@ const Hero = () => {
         {
           duration: 1,
           scale: 0,
-          stagger: 0.05,
+          stagger: 0.02,
           ease: 'elastic(2, 1)',
         },
         0,
       ).addLabel('loaded', 1.5)
 
-      const radius = Math.min(width, window.outerHeight) / 2
+      const radius = Math.min(width, window.outerHeight) / 3.5
       const centerX = width / 2
       const centerY = window.outerHeight / 2
 
@@ -49,7 +88,7 @@ const Hero = () => {
         const y = centerY + Math.sin(angle) * radius
 
         // for the second animation
-        const extendedRadius = radius + 200
+        const extendedRadius = radius + 100
         const endX = centerX + Math.cos(angle) * extendedRadius
         const endY = centerY + Math.sin(angle) * extendedRadius
 
@@ -71,7 +110,7 @@ const Hero = () => {
               duration: 40,
               x: endX - width / 2,
               y: endY - window.outerHeight / 2,
-              rotation: -50 + Math.random() * 100,
+              rotation: -30 + Math.random() * 100,
               onComplete: () => {
                 tl.timeScale(70)
                 tl.tweenTo('explosion').then(() => {
@@ -107,280 +146,14 @@ const Hero = () => {
     <HeroWrapper ref={heroRef}>
       <Container>
         <BlobWrapper className="grid-container">
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-1">Apps</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-2">Design</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-3">
-                Cloud infrastructure
-              </LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-4">Branding</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-5">Animation</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-6">SEO</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-7">Social media</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob blob-special-1"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-8">Websites</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-9">UI</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-10">UX</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob blob-special-2"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-11">Developing</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-12">Messaging</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-13">Motion</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-14">Print</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-15">Wireframing</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-17">Discovery</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-16">Ecommerce</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
-          <LabelWrapper
-            className="blob"
-            style={{
-              padding: `${Math.floor(Math.random() * 16) + 1}px`,
-              transform: `rotate(${
-                (Math.random() * 2 + 3) *
-                (Math.random() < 0.5 ? 1 : -1) *
-                (Math.random() < 0.5 ? 1 : -1)
-              }deg)`,
-            }}
-          >
-            <Parallax trigger={heroRef} speed={-1} $togglemobile>
-              <LabelBlob className="inner-blob blob-18">Print</LabelBlob>
-            </Parallax>
-          </LabelWrapper>
+          {labels.map((label, index) => (
+            <Label
+              key={index}
+              className={`blob blob-${index + 1}`}
+              text={label}
+              heroRef={heroRef}
+            />
+          ))}
         </BlobWrapper>
 
         <TextWrapper>

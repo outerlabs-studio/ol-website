@@ -17,7 +17,7 @@ export const SmallText = styled.p`
 export const Normal = css`
   font-size: 1.3vw;
   font-weight: 400;
-  line-height: 140%;
+  line-height: 1.4;
 
   ${media.desktop`font-size: 16px;`}
   ${media.thone`font-size: 18px;`}

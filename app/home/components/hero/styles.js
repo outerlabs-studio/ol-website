@@ -87,15 +87,17 @@ export const LinkWrapper = styled.div`
 `
 export const DescriptionWrapper = styled.div`
   grid-column: 3;
-  max-width: 20rem;
+  max-width: 62%;
 
   .link-wrapper {
     display: flex;
-    gap: 1rem;
-    margin-top: 2vh;
+    margin-top: 2vw;
     align-items: center;
+
+    ${media.desktop`margin-top: 1rem;`}
   }
 
+  ${media.desktop`max-width: 20rem;`}
   ${media.thone`
     grid-column: 1 / 4;
     grid-row: 1;
