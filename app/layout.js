@@ -1,4 +1,5 @@
 import { StyledComponentsRegistry } from 'lib'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: {
@@ -113,6 +114,7 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <Analytics />
       </body>
     </html>
   )
