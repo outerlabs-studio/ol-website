@@ -40,7 +40,7 @@ const Team = () => {
     <TeamSection>
       <Container>
         <LabelWrapper>
-          <Label $reverse>Team</Label>
+          <Label $reverse>Leadership</Label>
         </LabelWrapper>
       </Container>
       <Member
@@ -64,7 +64,7 @@ const Team = () => {
       <Member
         name="Chanul Dandeniya"
         image="/chanul.jpg"
-        pos="Creative director"
+        pos="Lead strategist"
         num={4}
       />
     </TeamSection>
