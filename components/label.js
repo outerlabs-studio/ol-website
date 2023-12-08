@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { NormalText } from 'styles'
+import { NormalText, media } from 'styles'
 
 const LabelWrapper = styled.div`
   display: flex;
@@ -10,12 +10,17 @@ const LabelWrapper = styled.div`
   height: fit-content;
 `
 const LittleCircle = styled.span`
-  height: 10px;
-  width: 10px;
+  height: 0.6vw;
+  width: 0.6vw;
   background-color: ${({ $reverse, theme }) =>
     $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
   border-radius: 50%;
   display: inline-block;
+
+  ${media.desktop`
+    width: 10px;
+    height: 10px;
+  `}
 `
 
 const Label = ({ children, className, $reverse = false }) => {

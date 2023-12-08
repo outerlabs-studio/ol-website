@@ -153,20 +153,14 @@ const Footer = () => {
             <div className="reveal-footer-1">We{`'`}d&nbsp;</div>
           </div>
           <div className="overflow">
-            <div className="reveal-footer-1">{`<`}3&nbsp;</div>
-          </div>
-          <div className="overflow">
-            <div className="reveal-footer-1">to</div>
+            <div className="reveal-footer-1">look</div>
           </div>
           <br />
           <div className="overflow">
-            <div className="reveal-footer-1">work&nbsp;</div>
+            <div className="reveal-footer-1">good&nbsp;</div>
           </div>
           <div className="overflow">
-            <div className="reveal-footer-1">with&nbsp;</div>
-          </div>
-          <div className="overflow">
-            <div className="reveal-footer-1">you</div>
+            <div className="reveal-footer-1">together</div>
           </div>
         </div>
 

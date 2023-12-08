@@ -8,6 +8,7 @@ import {
   CustomGridWrapper,
   TopImageWrapper,
   BottomImageWrapper,
+  ParagraphWrapper,
 } from './styles'
 import { CustomButton, CustomImage, Label, Marquee, Parallax } from 'components'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
@@ -105,7 +106,6 @@ const About = () => {
         </Parallax>
       </GridWrapper>
       <Container>
-        {/* <Parallax speed={3.1} trigger={sectionTarget} $toggleMobile> */}
         <CustomGridWrapper className="parallax-content">
           <div className="overflow">
             <div className="reveal-about-1">
@@ -121,19 +121,18 @@ const About = () => {
                 <div className="reveal-about-1">ten times out of ten</div>
               </div>
             </div>
-            <div>
+            <ParagraphWrapper>
               {text.split(' ').map((element, index) => (
                 <div className="overflow" key={index}>
                   <div className="reveal-about-2">{element}&nbsp;</div>
                 </div>
               ))}
-            </div>
+            </ParagraphWrapper>
             <div className="reveal-about-button">
               <CustomButton href="/about">Meet the team</CustomButton>
             </div>
           </ContentWrapper>
         </CustomGridWrapper>
-        {/* </Parallax> */}
       </Container>
     </AboutSection>
   )

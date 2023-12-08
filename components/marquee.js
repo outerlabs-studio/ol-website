@@ -7,6 +7,7 @@ const StyledMarquee = styled.div`
   overflow: hidden;
   will-change: transform;
   z-index: 1;
+  text-transform: uppercase;
 
   @include reduced-motion {
     --duration: 50s !important;

@@ -12,7 +12,7 @@ const ImageSection = () => {
           <SmallText>Chris Do is not affiliated with Outer Labs</SmallText>
         </Container>
       </OverlayWrapper>
-      <CustomImage src="/RGD.JPG" alt="The team" speed={1} />
+      <CustomImage src="/RGD.JPG" alt="The team" speed={2} />
     </ImageWrapper>
   )
 }

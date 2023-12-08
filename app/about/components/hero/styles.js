@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { MediumText, Medium, Z_INDEX } from 'styles'
+import { MediumText, Z_INDEX, Huge } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
@@ -18,7 +18,7 @@ export const TextWrapper = styled.div`
   z-index: ${Z_INDEX.hero + 1};
 
   .reveal-hero-1 {
-    ${Medium}
+    ${Huge}
   }
 `
 export const LabelWrapper = styled.div`

@@ -114,3 +114,8 @@ export const ContentWrapper = styled.div`
     ${Normal}
   }
 `
+export const ParagraphWrapper = styled.div`
+  max-width: 90%;
+
+  ${media.desktop`max-width: 100%;`}
+`

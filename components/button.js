@@ -9,13 +9,13 @@ import Link from 'next/link'
 import { gsap } from 'gsap'
 import styled, { css } from 'styled-components'
 import { useIsTouchDevice } from 'hooks'
-import { Normal } from 'styles'
+import { Normal, media } from 'styles'
 import { useIsomorphicLayoutEffect } from 'react-use'
 
 const ButtonWrapper = styled.a`
   display: block;
   position: relative;
-  padding: 0.5rem 2rem;
+  padding: 0.5vw 2.5vw;
   background-color: ${({ $reverse, theme }) =>
     $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
   border-radius: 35px;
@@ -25,6 +25,8 @@ const ButtonWrapper = styled.a`
   height: fit-content;
   width: fit-content;
   will-change: transform;
+
+  ${media.desktop`padding: 0.5rem 2rem;`}
 `
 
 const ButtonStyle = css`
