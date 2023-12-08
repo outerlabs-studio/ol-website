@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { MediumText, Z_INDEX, Huge, media } from 'styles'
+import { MediumText, Z_INDEX, Huge, media, Medium } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
@@ -15,10 +15,12 @@ export const TextWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: ${Z_INDEX.hero + 1};
+  z-index: ${Z_INDEX.hero - 1};
 
   .reveal-hero-1 {
     ${Huge}
+
+    ${media.thone`${Medium}`}
   }
 `
 export const LabelWrapper = styled.div`

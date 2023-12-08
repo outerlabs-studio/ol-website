@@ -14,7 +14,7 @@ export const AboutWrapper = styled.section`
 `
 export const TextWrapper = styled.div`
   grid-column: 2 / span 2;
-  max-width: 90%;
+  max-width: 85%;
 
   ${media.thone`
     grid-column: 1 / 4;
@@ -25,10 +25,14 @@ export const TextWrapper = styled.div`
     ${Huge}
     display: inline-flex;
   }
+
+  .reveal-about-4 {
+    ${Normal}
+  }
 `
 export const InfoWrapper = styled.div`
   grid-column: 2 / span 2;
-  margin-top: 6rem;
+  margin-top: 8vw;
   display: flex;
   gap: 8rem;
   flex-wrap: wrap;

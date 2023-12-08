@@ -179,9 +179,9 @@ const Footer = () => {
                   <>
                     <div className="overflow item-1">
                       <CustomLink
-                        href="mailto@hello@outerlabs.studio"
+                        href="mailto:hello@outerlabs.studio"
                         $reverse
-                        className="reveal-footer-4"
+                        className="reveal-footer-1"
                       >
                         hello@outerlabs.studio
                       </CustomLink>
@@ -249,9 +249,9 @@ const Footer = () => {
                     </LinksWrapper>
                     <div className="overflow item-1">
                       <CustomLink
-                        href="mailto@hello@outerlabs.studio"
+                        href="mailto:hello@outerlabs.studio"
                         $reverse
-                        className="reveal-footer-4"
+                        className="reveal-footer-1"
                       >
                         hello@outerlabs.studio
                       </CustomLink>
@@ -304,9 +304,9 @@ const Footer = () => {
                 </LinksWrapper>
                 <div className="overflow item-1">
                   <CustomLink
-                    href="mailto@hello@outerlabs.studio"
+                    href="mailto:hello@outerlabs.studio"
                     $reverse
-                    className="reveal-footer-4"
+                    className="reveal-footer-1"
                   >
                     hello@outerlabs.studio
                   </CustomLink>

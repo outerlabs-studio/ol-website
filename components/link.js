@@ -24,19 +24,20 @@ const StyledSpan = styled.span`
   position: absolute;
 `
 
-const CustomLink = ({
-  href,
-  to,
-  target = '_blank',
-  children,
-  $reverse = false,
-  onClick,
-  ...rest
-}) => {
+const CustomLink = (props) => {
   const line1 = useRef(null)
   const line2 = useRef(null)
   const tl = useRef()
-
+  const {
+    href,
+    to,
+    target = '_blank',
+    children,
+    $reverse = false,
+    onClick,
+    ...rest
+  } = props
+  
   useIsomorphicLayoutEffect(() => {
     tl.current = gsap
       .timeline({ paused: true })
@@ -66,13 +67,14 @@ const CustomLink = ({
 
   if (href) {
     return (
-      <Link href={href} passHref legacyBehavior>
-        <StyledLink
-          {...linkAttributes}
-          href={href}
-          target={target}
-          rel={target === '_blank' ? 'noopener noreferrer' : ''}
-        >
+      <Link
+        href={href}
+        target={target || '_blank'}
+        rel={!target ? 'noopener noreferrer' : undefined}
+        passHref
+        legacyBehavior
+      >
+        <StyledLink {...linkAttributes}>
           <div ref={line1}>{children}</div>
           <StyledSpan ref={line2}>{children}</StyledSpan>
         </StyledLink>
@@ -82,10 +84,10 @@ const CustomLink = ({
 
   return (
     <StyledLink
-      {...linkAttributes}
       href={to}
-      target={target}
-      rel={target === '_blank' ? 'noopener noreferrer' : ''}
+      target={target || '_blank'}
+      rel={!target ? 'noopener noreferrer' : undefined}
+      {...linkAttributes}
     >
       <div ref={line1}>{children}</div>
       <StyledSpan ref={line2}>{children}</StyledSpan>

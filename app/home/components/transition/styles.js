@@ -18,9 +18,9 @@ export const InnerWrapper = styled.div`
   ${media.thone`padding: 8rem 0;`}
 
   .label {
-    margin-top: 0.3rem;
+    margin-top: 0.2vw;
 
-    ${media.thone`margin-top: 0;`}
+    ${media.desktop`margin-top: 0;`}
   }
 `
 export const TextWrapper = styled.div`

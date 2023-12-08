@@ -25,7 +25,8 @@ export const TopbarWrapper = styled.div`
 export const ProjectList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5vw;
+  row-gap: 3vw;
+  column-gap: 1.5vw;
 
   ${media.thone`
     grid-template-columns: 1fr;
@@ -38,10 +39,12 @@ export const Project = styled(Link)`
 export const CustomTitle = styled(NormalText)`
   font-weight: 600;
   margin-top: 0.5rem;
+  margin-left: 2vw;
   color: ${({ theme }) => `rgb(${theme.text})`};
 `
 export const CustomDescription = styled(SmallText)`
   color: ${({ theme }) => `rgb(${theme.accent2})`};
+  margin-left: 2vw;
 `
 export const ImageWrapper = styled.div`
   position: relative;

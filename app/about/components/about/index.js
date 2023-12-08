@@ -9,7 +9,8 @@ import gsap from 'gsap'
 
 const About = () => {
   const sectionTarget = useRef()
-  const text = `We get shit done. Picture a small office where creative minds, fueled by an endless supply of coffee, show how to draw squares on a blank canvas. We're not just about coding and design; we're about creating digital magic with a dash of fun and a sprinkle of the`
+  const text = `Outer Labs is a beacon of creativity in the digital world, specializing in elevating brands within the crypto, e-commerce, and entertainment sectors. Our origin as a visionary group of designers and technologists set the stage for our unique approach: crafting bespoke digital experiences that resonate deeply with each brand's identity.  `
+  const text2 = `We excel in translating the essence of your brand into dynamic digital solutions, whether it's through cutting-edge crypto apps, engaging e-commerce platforms, or compelling entertainment experiences. Our rapid rise in the digital design realm is a testament to our commitment to innovation and brand-centric strategy. Outer Labs is where brands find their digital voice and shape their future in an ever-evolving digital landscape. Here, every project is an opportunity to explore new horizons and redefine what's possible. Join us in this exciting journey where your brand's potential knows no bounds.`
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -26,11 +27,21 @@ const About = () => {
         {
           yPercent: 100,
           duration: 1,
-          stagger: 0.02,
+          stagger: 0.01,
           ease: 'power3.inOut',
         },
         0,
       )
+        .from(
+          gsap.utils.toArray('.reveal-about-4'),
+          {
+            yPercent: 100,
+            duration: 1,
+            stagger: 0.005,
+            ease: 'power3.inOut',
+          },
+          0.5,
+        )
         .from(
           gsap.utils.toArray('.reveal-about-2'),
           {
@@ -51,14 +62,6 @@ const About = () => {
           },
           0.75,
         )
-
-      gsap.to(gsap.utils.toArray('.reveal-about-4'), {
-        fontWeight: 800,
-        repeat: -1,
-        yoyo: true,
-        duration: 0.2,
-        stagger: 0.05,
-      })
     })
 
     return () => ctx.revert()
@@ -79,20 +82,13 @@ const About = () => {
                 <div className="reveal-about-1">{element}&nbsp;</div>
               </div>
             ))}
-            <div className="overflow">
-              <div className="reveal-about-1">
-                <div className="reveal-about-4">u</div>
-                <div className="reveal-about-4">n</div>
-                <div className="reveal-about-4">e</div>
-                <div className="reveal-about-4">x</div>
-                <div className="reveal-about-4">p</div>
-                <div className="reveal-about-4">e</div>
-                <div className="reveal-about-4">c</div>
-                <div className="reveal-about-4">t</div>
-                <div className="reveal-about-4">e</div>
-                <div className="reveal-about-4">d</div>.
+          </TextWrapper>
+          <TextWrapper>
+            {text2.split(' ').map((element, index) => (
+              <div key={index} className="overflow">
+                <div className="reveal-about-4">{element}&nbsp;</div>
               </div>
-            </div>
+            ))}
           </TextWrapper>
           <InfoWrapper>
             <div className="col col-1">
@@ -108,7 +104,7 @@ const About = () => {
                 <div className="reveal-about-2">Client profit</div>
               </div>
               <div className="overflow">
-                <div className="reveal-about-3">8 figures</div>
+                <div className="reveal-about-3">6 figures</div>
               </div>
             </div>
             <div className="col col-3">
