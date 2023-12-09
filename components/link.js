@@ -31,13 +31,13 @@ const CustomLink = (props) => {
   const {
     href,
     to,
-    target = '_blank',
+    target,
     children,
     $reverse = false,
     onClick,
     ...rest
   } = props
-  
+
   useIsomorphicLayoutEffect(() => {
     tl.current = gsap
       .timeline({ paused: true })
@@ -67,14 +67,12 @@ const CustomLink = (props) => {
 
   if (href) {
     return (
-      <Link
-        href={href}
-        target={target || '_blank'}
-        rel={!target ? 'noopener noreferrer' : undefined}
-        passHref
-        legacyBehavior
-      >
-        <StyledLink {...linkAttributes}>
+      <Link href={href} passHref legacyBehavior>
+        <StyledLink
+          target={target || '_blank'}
+          rel={!target ? 'noopener noreferrer' : undefined}
+          {...linkAttributes}
+        >
           <div ref={line1}>{children}</div>
           <StyledSpan ref={line2}>{children}</StyledSpan>
         </StyledLink>

@@ -18,6 +18,7 @@ import { use100vh } from 'react-div-100vh'
 
 const Hero = () => {
   const trigger = useRef()
+  const trigger2 = useRef()
   const lenis = useLenis()
   const { width } = useWindowSize()
   const pxHeight = use100vh()
@@ -94,7 +95,7 @@ const Hero = () => {
 
   return (
     <HeroWrapper ref={trigger}>
-      <div className="content-wrap" style={{ height: height }}>
+      <div className="content-wrap" style={{ height: height }} ref={trigger2}>
         <Container>
           <CustomGridWrapper>
             <LinkWrapper>
@@ -132,12 +133,9 @@ const Hero = () => {
                 </CustomButton>
                 {width <= 600 && (
                   <CustomButton
-                    href="/"
+                    href="/contact"
                     className="reveal-button"
                     $reverse
-                    onClick={() => {
-                      lenis.scrollTo('#contact', { offset: 800 })
-                    }}
                   >
                     Get in touch
                   </CustomButton>
@@ -149,13 +147,7 @@ const Hero = () => {
         {width > 600 && (
           <ButtonWrapper>
             <Parallax speed={1} trigger={trigger}>
-              <CustomButton
-                className="reveal-button"
-                href="/"
-                onClick={() => {
-                  lenis.scrollTo('#contact', { offset: 800 })
-                }}
-              >
+              <CustomButton className="reveal-button" href="/contact">
                 Get in touch
               </CustomButton>
             </Parallax>
@@ -165,7 +157,7 @@ const Hero = () => {
           <div className="overflow">
             <div className="reveal-hero-3">O</div>
           </div>
-          <Parallax speed={-2} trigger={trigger} $toggleMobile>
+          <Parallax speed={-2} trigger={trigger2} $toggleMobile>
             <div className="overflow">
               <div className="reveal-hero-3">u</div>
             </div>
@@ -173,7 +165,7 @@ const Hero = () => {
           <div className="overflow">
             <div className="reveal-hero-3">t</div>
           </div>
-          <Parallax speed={-1} trigger={trigger} $toggleMobile>
+          <Parallax speed={-1} trigger={trigger2} $toggleMobile>
             <div className="overflow">
               <div className="reveal-hero-3">e</div>
             </div>
@@ -181,7 +173,7 @@ const Hero = () => {
           <div className="overflow">
             <div className="reveal-hero-3">r&nbsp;</div>
           </div>
-          <Parallax speed={-1.5} trigger={trigger} $toggleMobile>
+          <Parallax speed={-1.5} trigger={trigger2} $toggleMobile>
             <div className="overflow">
               <div className="reveal-hero-3">L</div>
             </div>
@@ -189,12 +181,12 @@ const Hero = () => {
           <div className="overflow">
             <div className="reveal-hero-3">a</div>
           </div>
-          <Parallax speed={-0.5} trigger={trigger} $toggleMobile>
+          <Parallax speed={-0.5} trigger={trigger2} $toggleMobile>
             <div className="overflow">
               <div className="reveal-hero-3">b</div>
             </div>
           </Parallax>
-          <Parallax speed={-3} trigger={trigger} $toggleMobile>
+          <Parallax speed={-3} trigger={trigger2} $toggleMobile>
             <div className="overflow">
               <div className="reveal-hero-3">s</div>
             </div>

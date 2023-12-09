@@ -131,14 +131,7 @@ const CustomButton = (props) => {
   }, [])
 
   return (
-    <Link
-      href={href}
-      target={target || '_blank'}
-      rel={!target ? 'noopener noreferrer' : undefined}
-      passHref
-      legacyBehavior
-      {...rest}
-    >
+    <Link href={href} passHref legacyBehavior {...rest}>
       <ButtonWrapper
         ref={movingContainerRef}
         onMouseEnter={handleMouseEnter}
@@ -147,6 +140,8 @@ const CustomButton = (props) => {
         onClick={onClick}
         $reverse={$reverse}
         className={className}
+        target={target || '_self'}
+        rel={!target ? 'noopener noreferrer' : undefined}
         role="button"
       >
         <StyledButton>

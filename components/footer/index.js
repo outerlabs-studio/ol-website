@@ -145,6 +145,54 @@ const Footer = () => {
     return () => ctx.revert()
   }, [width])
 
+  const Links = (
+    <LinksWrapper className="item-2">
+      <div className="overflow">
+        <CustomLink
+          href="https://instagram.com/outerlabs"
+          $reverse
+          target="_blank"
+          className="reveal-footer-2"
+        >
+          Instagram
+        </CustomLink>
+      </div>
+      <div className="overflow">
+        <CustomLink
+          href="https://www.linkedin.com/company/outerlabs"
+          $reverse
+          target="_blank"
+          className="reveal-footer-2"
+        >
+          LinkedIn
+        </CustomLink>
+      </div>
+      <div className="overflow">
+        <CustomLink
+          href="https://www.dribbble.com/outerlabs"
+          $reverse
+          target="_blank"
+          className="reveal-footer-2"
+        >
+          Dribbble
+        </CustomLink>
+      </div>
+    </LinksWrapper>
+  )
+
+  const Email = (
+    <div className="overflow item-1">
+      <CustomLink
+        href="mailto:hello@outerlabs.studio"
+        target="_blank"
+        $reverse
+        className="reveal-footer-1"
+      >
+        hello@outerlabs.studio
+      </CustomLink>
+    </div>
+  )
+
   return (
     <FooterWrapper ref={footerTarget} id="contact">
       <ContentWrapper>
@@ -165,7 +213,7 @@ const Footer = () => {
         </div>
 
         <div className="reveal-footer-button">
-          <CustomButton href="mailto:hello@outerlabs.studio">
+          <CustomButton href="mailto:hello@outerlabs.studio" target="_blank">
             Let's talk
           </CustomButton>
         </div>
@@ -177,85 +225,13 @@ const Footer = () => {
               <>
                 {width > sizes.tablet ? (
                   <>
-                    <div className="overflow item-1">
-                      <CustomLink
-                        href="mailto:hello@outerlabs.studio"
-                        $reverse
-                        className="reveal-footer-1"
-                      >
-                        hello@outerlabs.studio
-                      </CustomLink>
-                    </div>
-                    <LinksWrapper className="item-2">
-                      <div className="overflow">
-                        <CustomLink
-                          href="https://instagram.com/outerlabs"
-                          $reverse
-                          className="reveal-footer-2"
-                        >
-                          Instagram
-                        </CustomLink>
-                      </div>
-                      <div className="overflow">
-                        <CustomLink
-                          href="https://www.linkedin.com/company/outerlabs"
-                          $reverse
-                          className="reveal-footer-2"
-                        >
-                          LinkedIn
-                        </CustomLink>
-                      </div>
-                      <div className="overflow">
-                        <CustomLink
-                          href="https://www.dribbble.com/outerlabs"
-                          $reverse
-                          className="reveal-footer-2"
-                        >
-                          Dribbble
-                        </CustomLink>
-                      </div>
-                    </LinksWrapper>
+                    {Email}
+                    {Links}
                   </>
                 ) : (
                   <>
-                    <LinksWrapper className="item-2">
-                      <div className="overflow">
-                        <CustomLink
-                          href="https://instagram.com/outerlabs"
-                          $reverse
-                          className="reveal-footer-2"
-                        >
-                          Instagram
-                        </CustomLink>
-                      </div>
-                      <div className="overflow">
-                        <CustomLink
-                          href="https://www.linkedin.com/company/outerlabs"
-                          $reverse
-                          className="reveal-footer-2"
-                        >
-                          LinkedIn
-                        </CustomLink>
-                      </div>
-                      <div className="overflow">
-                        <CustomLink
-                          href="https://www.dribbble.com/outerlabs"
-                          $reverse
-                          className="reveal-footer-2"
-                        >
-                          Dribbble
-                        </CustomLink>
-                      </div>
-                    </LinksWrapper>
-                    <div className="overflow item-1">
-                      <CustomLink
-                        href="mailto:hello@outerlabs.studio"
-                        $reverse
-                        className="reveal-footer-1"
-                      >
-                        hello@outerlabs.studio
-                      </CustomLink>
-                    </div>
+                    {Links}
+                    {Email}
                   </>
                 )}
                 <div className="item-3">
@@ -273,44 +249,8 @@ const Footer = () => {
               </>
             ) : (
               <>
-                <LinksWrapper className="item-2">
-                  <div className="overflow">
-                    <CustomLink
-                      href="https://instagram.com/outerlabs"
-                      $reverse
-                      className="reveal-footer-2"
-                    >
-                      Instagram
-                    </CustomLink>
-                  </div>
-                  <div className="overflow">
-                    <CustomLink
-                      href="https://www.linkedin.com/company/outerlabs"
-                      $reverse
-                      className="reveal-footer-2"
-                    >
-                      LinkedIn
-                    </CustomLink>
-                  </div>
-                  <div className="overflow">
-                    <CustomLink
-                      href="https://www.dribbble.com/outerlabs"
-                      $reverse
-                      className="reveal-footer-2"
-                    >
-                      Dribbble
-                    </CustomLink>
-                  </div>
-                </LinksWrapper>
-                <div className="overflow item-1">
-                  <CustomLink
-                    href="mailto:hello@outerlabs.studio"
-                    $reverse
-                    className="reveal-footer-1"
-                  >
-                    hello@outerlabs.studio
-                  </CustomLink>
-                </div>
+                {Links}
+                {Email}
               </>
             )}
           </CustomGridWrapper>
