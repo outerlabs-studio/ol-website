@@ -45,7 +45,7 @@ const Team = () => {
       </Container>
       <Member
         name="Kyrylo Orlov"
-        image="/kyrylo.jpg"
+        image="/kyrylo.webp"
         pos="Founding Director"
         num={1}
       />
@@ -57,13 +57,13 @@ const Team = () => {
       />
       <Member
         name="Ismaeel Akram"
-        image="/ismaeel.jpg"
+        image="/ismaeel.webp"
         pos="Lead App Developer"
         num={3}
       />
       <Member
         name="Chanul Dandeniya"
-        image="/chanul.jpg"
+        image="/chanul.webp"
         pos="Lead strategist"
         num={4}
       />

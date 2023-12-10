@@ -73,7 +73,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html lang="en-US">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/lrk0fqe.css" />
 
