@@ -140,8 +140,8 @@ const CustomButton = (props) => {
         onClick={onClick}
         $reverse={$reverse}
         className={className}
-        target={target || '_self'}
-        rel={!target ? 'noopener noreferrer' : undefined}
+        target={target === '_blank' ? '_blank' : undefined}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
         role="button"
       >
         <StyledButton>

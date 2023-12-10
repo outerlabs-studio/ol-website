@@ -69,8 +69,8 @@ const CustomLink = (props) => {
     return (
       <Link href={href} passHref legacyBehavior>
         <StyledLink
-          target={target || '_blank'}
-          rel={!target ? 'noopener noreferrer' : undefined}
+          target={target === '_blank' ? '_blank' : undefined}
+          rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           {...linkAttributes}
         >
           <div ref={line1}>{children}</div>
@@ -83,8 +83,8 @@ const CustomLink = (props) => {
   return (
     <StyledLink
       href={to}
-      target={target || '_blank'}
-      rel={!target ? 'noopener noreferrer' : undefined}
+      target={target === '_blank' ? '_blank' : undefined}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       {...linkAttributes}
     >
       <div ref={line1}>{children}</div>

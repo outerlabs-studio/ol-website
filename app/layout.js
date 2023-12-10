@@ -4,10 +4,10 @@ import { Analytics } from '@vercel/analytics/react'
 export const metadata = {
   title: {
     template: '%s | Outer Labs',
-    default: 'Outer Labs | Websites, apps, & branding',
+    default: 'Outer Labs | Websites, apps, & branding studio',
   },
   description:
-    'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+    'Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.',
   keywords: [
     'Outer Labs',
     'Outer Labs Studio',
@@ -17,6 +17,11 @@ export const metadata = {
     'web design',
     'web development',
     'app development',
+    'websites',
+    'apps',
+    'branding',
+    'branding studio',
+    'creative services',
     'creative direction',
     'creative web design',
     'creative web development',
