@@ -36,8 +36,10 @@ export const ButtonWrapper = styled.div`
   z-index: 4;
 
   a {
-    padding: 0.75rem 8vw;
-    border-radius: 80px;
+    padding: 0.75vw 5vw;
+    border-radius: 80vw;
+
+    ${media.desktop`border-radius: 80px;`}
 
     div {
       ${Huge}

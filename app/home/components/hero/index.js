@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
-import { useLenis } from '@studio-freight/react-lenis'
 import { Container, sizes } from 'styles'
 import {
   ButtonWrapper,

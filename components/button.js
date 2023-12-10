@@ -18,7 +18,7 @@ const ButtonWrapper = styled.a`
   padding: 0.5vw 2.5vw;
   background-color: ${({ $reverse, theme }) =>
     $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
-  border-radius: 35px;
+  border-radius: 35vw;
   color: ${({ $reverse, theme }) =>
     $reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
   text-decoration: none;
@@ -26,7 +26,10 @@ const ButtonWrapper = styled.a`
   width: fit-content;
   will-change: transform;
 
-  ${media.desktop`padding: 0.5rem 2rem;`}
+  ${media.desktop`
+    padding: 0.5rem 2rem;
+    border-radius: 35px;
+  `}
 `
 
 const ButtonStyle = css`
@@ -37,6 +40,7 @@ const ButtonStyle = css`
   flex-direction: column;
   overflow: hidden;
   will-change: transform;
+  white-space: nowrap;
 
   &:disabled {
     background-color: var(--black);

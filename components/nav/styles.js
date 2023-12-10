@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { Huge, Normal, wtskrappa } from 'styles'
+import { Huge, Normal, Small, media, wtskrappa } from 'styles'
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -29,16 +29,23 @@ export const NavWrapper = styled.nav`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0;
+  padding: 0.5vw 0;
+
+  ${media.desktop`padding: 0.5rem 0;`}
 `
 export const LinkList = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 2vw;
   align-items: center;
+
+  ${media.desktop`gap: 2rem;`}
+  ${media.phablet`gap: 1rem;`}
 
   a {
     ${Normal}
     color: ${({ theme }) => `rgb(${theme.accent1})`};
+
+    ${media.phablet`${Small}`}
   }
 `
 export const Logo = styled.a`
@@ -52,5 +59,9 @@ export const Logo = styled.a`
     color: ${({ theme }) => `rgb(${theme.accent1})`};
     font-family: ${wtskrappa.style.fontFamily};
     -webkit-font-smoothing: antialiased;
+
+    ${media.phablet`
+      font-size: 10vw;
+    `}
   }
 `

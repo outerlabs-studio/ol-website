@@ -40,6 +40,7 @@ export const TitleWrapper = styled.div`
     font-size: 41.5vw;
     z-index: 1;
     will-change: transform;
+    white-space: nowrap;
 
     ${media.thone`
       font-size: 69vw;
