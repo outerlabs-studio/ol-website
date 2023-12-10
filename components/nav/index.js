@@ -12,8 +12,8 @@ import { animatePageOut } from 'lib'
 
 const Nav = () => {
   const [hide, setHide] = useState(true)
-  const path = usePathname()
   const router = useRouter()
+  const path = usePathname()
   const lenis = useLenis()
 
   useLenis(({ scroll, direction }) => {
@@ -44,10 +44,12 @@ const Nav = () => {
       <Container>
         <NavWrapper>
           <Logo
+            href="/"
             role="link"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault()
               if (path === '/') lenis.scrollTo(0)
-              else animatePageOut('/', router)
+              else animatePageOut('/', router, path)
             }}
           >
             <div className="overflow">
@@ -60,11 +62,13 @@ const Nav = () => {
           <LinkList>
             <div className="overflow">
               <CustomLink
+                href="/#projects"
                 className="reveal-nav-1"
                 role="link"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault()
                   if (path === '/') lenis.scrollTo('#projects', { offset: 70 })
-                  else animatePageOut('/#projects', router)
+                  else animatePageOut('/#projects', router, path)
                 }}
               >
                 Projects

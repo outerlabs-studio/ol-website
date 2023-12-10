@@ -6,7 +6,7 @@
 
 import React, { useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import gsap from 'gsap'
 import styled, { css } from 'styled-components'
 import { useIsTouchDevice } from 'hooks'
@@ -74,6 +74,7 @@ const CustomButton = (props) => {
   const isTouchDevice = useIsTouchDevice()
   const movingContainerRef = useRef(null)
   const router = useRouter()
+  const pathName = usePathname()
 
   let line1 = useRef(null)
   let line2 = useRef(null)
@@ -139,14 +140,16 @@ const CustomButton = (props) => {
     })
   }, [])
 
-  const handleClick = () => {
-    animatePageOut(href, router)
+  const handleClick = (e) => {
+    e.preventDefault()
+    animatePageOut(href, router, pathName)
   }
 
   if (href) {
     return (
       <div onClick={handleClick}>
         <ButtonWrapper
+          href={href}
           ref={movingContainerRef}
           onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}

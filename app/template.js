@@ -6,10 +6,10 @@ import { Footer, Nav, Scrollbar } from 'components'
 import { useIsTouchDevice } from 'hooks'
 import { Lenis } from '@studio-freight/react-lenis'
 import Tempus from '@studio-freight/tempus'
-import { GlobalStyle, Medium, lightTheme } from 'styles'
+import { GlobalStyle, lightTheme } from 'styles'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { animatePageIn } from 'lib'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 if (typeof window !== 'undefined') {
   gsap.defaults({ ease: 'none' })

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { gsap } from 'gsap'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { Normal } from 'styles'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { animatePageOut } from 'lib'
 
 const StyledLink = styled.a`
@@ -29,6 +29,7 @@ const CustomLink = (props) => {
   const line1 = useRef(null)
   const line2 = useRef(null)
   const router = useRouter()
+  const pathname = usePathname()
   const tl = useRef()
   const {
     href,
@@ -67,14 +68,16 @@ const CustomLink = (props) => {
     ...rest,
   }
 
-  const handleClick = () => {
-    animatePageOut(href, router)
+  const handleClick = (e) => {
+    e.preventDefault()
+    animatePageOut(href, router, pathname)
   }
 
   if (href) {
     return (
       <div onClick={handleClick}>
         <StyledLink
+          href={href}
           role="link"
           target={target === '_blank' ? '_blank' : undefined}
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}
