@@ -1,6 +1,5 @@
 'use client'
 
-import { Layout } from 'layouts/default'
 import { Container, Huge, media } from 'styles'
 import styled from 'styled-components'
 import { wtskrappa } from 'styles'
@@ -95,37 +94,35 @@ export default function NotFoundPage() {
     return () => ctx.revert()
   }, [])
   return (
-    <Layout>
-      <PageWrapper>
-        <Container>
-          <ButtonWrapper>
-            <CustomButton href="/" className="reveal-404-2" $reverse>
-              Return home
-            </CustomButton>
-          </ButtonWrapper>
-          <ContentWrapper>
-            <div className="top-line">
-              <div className="overflow">
-                <div className="reveal-404-1">ERROR&nbsp;</div>
-              </div>
-              <div className="overflow">
-                <div className="reveal-404-1">404</div>
-              </div>
+    <PageWrapper>
+      <Container>
+        <ButtonWrapper>
+          <CustomButton href="/" className="reveal-404-2" $reverse>
+            Return home
+          </CustomButton>
+        </ButtonWrapper>
+        <ContentWrapper>
+          <div className="top-line">
+            <div className="overflow">
+              <div className="reveal-404-1">ERROR&nbsp;</div>
             </div>
-            <div className="bottom-line">
-              <div className="overflow">
-                <div className="reveal-404-1">PAGE&nbsp;</div>
-              </div>
-              <div className="overflow">
-                <div className="reveal-404-1">NOT&nbsp;</div>
-              </div>
-              <div className="overflow">
-                <div className="reveal-404-1">FOUND</div>
-              </div>
+            <div className="overflow">
+              <div className="reveal-404-1">404</div>
             </div>
-          </ContentWrapper>
-        </Container>
-      </PageWrapper>
-    </Layout>
+          </div>
+          <div className="bottom-line">
+            <div className="overflow">
+              <div className="reveal-404-1">PAGE&nbsp;</div>
+            </div>
+            <div className="overflow">
+              <div className="reveal-404-1">NOT&nbsp;</div>
+            </div>
+            <div className="overflow">
+              <div className="reveal-404-1">FOUND</div>
+            </div>
+          </div>
+        </ContentWrapper>
+      </Container>
+    </PageWrapper>
   )
 }

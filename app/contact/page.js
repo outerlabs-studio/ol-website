@@ -1,4 +1,3 @@
-import { Layout } from 'layouts/default'
 import { Hero } from './components'
 
 export const metadata = {
@@ -6,9 +5,5 @@ export const metadata = {
 }
 
 export default function Contact() {
-  return (
-    <Layout>
-      <Hero />
-    </Layout>
-  )
+  return <Hero />
 }

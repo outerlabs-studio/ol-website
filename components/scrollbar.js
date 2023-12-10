@@ -11,7 +11,7 @@ const ScrollbarWrapper = styled.div`
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 9998;
 
   .inner {
     height: 100%;

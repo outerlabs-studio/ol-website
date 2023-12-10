@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9998;
+  z-index: 9997;
   /* background-color: ${({ theme }) => `rgb(${theme.accent1})`}; */
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   transition: transform 0.3s ease-in-out;

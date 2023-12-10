@@ -1,15 +1,15 @@
 'use client'
 
+import { useRef } from 'react'
+import { useIsomorphicLayoutEffect } from 'react-use'
+import styled, { ThemeProvider } from 'styled-components'
+import { Footer, Nav, Scrollbar } from 'components'
+import { useIsTouchDevice } from 'hooks'
 import { Lenis } from '@studio-freight/react-lenis'
 import Tempus from '@studio-freight/tempus'
-import { Footer, Nav, Scrollbar } from 'components'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, lightTheme } from 'styles'
-import { useIsomorphicLayoutEffect } from 'react-use'
-import { useRef } from 'react'
-import { useIsTouchDevice } from 'hooks'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 if (typeof window !== 'undefined') {
   gsap.defaults({ ease: 'none' })
@@ -30,7 +30,17 @@ if (typeof window !== 'undefined') {
   console.log('👋 Hello! 👀')
 }
 
-export function Layout({ children }) {
+const TransitionElement = styled.div`
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+  position: fixed;
+`
+
+export default function Template({ children }) {
   const mainTarget = useRef()
   const touchDevice = useIsTouchDevice()
 
@@ -41,13 +51,14 @@ export function Layout({ children }) {
 
     return () => ctx.revert()
   }, [])
+
   return (
     <Lenis root>
       <ThemeProvider theme={lightTheme}>
         <GlobalStyle />
-
         {touchDevice ? null : <Scrollbar />}
         <main ref={mainTarget}>
+          {/* <TransitionElement id="transition-element" /> */}
           <Nav />
           {children}
           <Footer />
