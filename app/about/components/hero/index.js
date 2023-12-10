@@ -59,6 +59,7 @@ const Hero = () => {
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline({
+        delay: 0.75,
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top bottom-=10',
