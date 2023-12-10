@@ -12,7 +12,7 @@ export const ServicesWrapper = styled.section`
 
   ${media.thone`padding: 4rem 0;`}
 
-  a {
+  .reveal-services-button {
     margin-right: 2rem;
 
     ${media.desktop`margin-right: 0;`}

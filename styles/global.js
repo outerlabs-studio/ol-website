@@ -50,6 +50,10 @@ const GlobalStyle = createGlobalStyle`
     gap: 1vmax;
   }
 
+  main {
+    overflow-x: hidden;
+  }
+
   .overflow {
     overflow: hidden;
     height: fit-content;

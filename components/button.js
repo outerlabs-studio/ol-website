@@ -147,7 +147,7 @@ const CustomButton = (props) => {
 
   if (href) {
     return (
-      <div onClick={handleClick}>
+      <div onClick={handleClick} className={className}>
         <ButtonWrapper
           href={href}
           ref={movingContainerRef}
@@ -156,7 +156,6 @@ const CustomButton = (props) => {
           onMouseLeave={handleMouseExit}
           onClick={onClick}
           $reverse={$reverse}
-          className={className}
           target={target === '_blank' ? '_blank' : undefined}
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           role="button"
