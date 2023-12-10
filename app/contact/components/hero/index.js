@@ -14,7 +14,7 @@ const Hero = () => {
 
   useEffect(() => {
     const marqueeHeight = initialMarqueeRef.current.offsetHeight
-    const count = Math.floor(height / marqueeHeight) + 1
+    const count = Math.floor(height / marqueeHeight)
     setMarqueeCount(count)
   }, [height, width])
 

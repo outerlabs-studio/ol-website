@@ -18,7 +18,6 @@ export const HeroWrapper = styled.section`
 `
 export const MarqueeWrapper = styled.div`
   position: relative;
-  padding-bottom: 1rem;
 
   .first {
     margin-left: 6vw;
