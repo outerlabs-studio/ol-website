@@ -79,6 +79,7 @@ const CustomLink = (props) => {
         <StyledLink
           href={href}
           role="link"
+          onClick={(e) => e.preventDefault()}
           target={target === '_blank' ? '_blank' : undefined}
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           {...linkAttributes}
