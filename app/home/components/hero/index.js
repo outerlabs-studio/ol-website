@@ -99,21 +99,30 @@ const Hero = () => {
             <LinkWrapper>
               <div className="overflow">
                 <div className="reveal-hero-2">
-                  <CustomLink href="https://instagram.com/outerlabs">
+                  <CustomLink
+                    target="_blank"
+                    to="https://instagram.com/outerlabs"
+                  >
                     Instagram
                   </CustomLink>
                 </div>
               </div>
               <div className="overflow">
                 <div className="reveal-hero-2">
-                  <CustomLink href="https://www.linkedin.com/company/outerlabs">
+                  <CustomLink
+                    target="_blank"
+                    to="https://www.linkedin.com/company/outerlabs"
+                  >
                     LinkedIn
                   </CustomLink>
                 </div>
               </div>
               <div className="overflow">
                 <div className="reveal-hero-2">
-                  <CustomLink href="https://www.dribbble.com/outerlabs">
+                  <CustomLink
+                    target="_blank"
+                    to="https://www.dribbble.com/outerlabs"
+                  >
                     Dribbble
                   </CustomLink>
                 </div>

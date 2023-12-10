@@ -6,11 +6,13 @@
 
 import React, { useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { gsap } from 'gsap'
+import { useRouter } from 'next/navigation'
+import gsap from 'gsap'
 import styled, { css } from 'styled-components'
 import { useIsTouchDevice } from 'hooks'
 import { Normal, media } from 'styles'
 import { useIsomorphicLayoutEffect } from 'react-use'
+import { animatePageOut } from 'lib'
 
 const ButtonWrapper = styled.a`
   display: block;
@@ -25,6 +27,7 @@ const ButtonWrapper = styled.a`
   height: fit-content;
   width: fit-content;
   will-change: transform;
+  cursor: pointer;
 
   ${media.desktop`
     padding: 0.5rem 2rem;
@@ -66,10 +69,12 @@ const StyledButton = styled.div`
  * @returns {React.ReactElement} CustomButton component.
  */
 const CustomButton = (props) => {
-  const { href, target, children, $reverse, onClick, className, ...rest } =
+  const { href, to, target, children, $reverse, onClick, className, ...rest } =
     props
   const isTouchDevice = useIsTouchDevice()
   const movingContainerRef = useRef(null)
+  const router = useRouter()
+
   let line1 = useRef(null)
   let line2 = useRef(null)
   const tl = useRef()
@@ -134,26 +139,53 @@ const CustomButton = (props) => {
     })
   }, [])
 
+  const handleClick = () => {
+    animatePageOut(href, router)
+  }
+
+  if (href) {
+    return (
+      <div onClick={handleClick}>
+        <ButtonWrapper
+          ref={movingContainerRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseExit}
+          onClick={onClick}
+          $reverse={$reverse}
+          className={className}
+          target={target === '_blank' ? '_blank' : undefined}
+          rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+          role="button"
+        >
+          <StyledButton>
+            <div ref={(el) => (line1 = el)}>{children}</div>
+            <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>
+          </StyledButton>
+        </ButtonWrapper>
+      </div>
+    )
+  }
+
   return (
-    <Link href={href} passHref legacyBehavior {...rest}>
-      <ButtonWrapper
-        ref={movingContainerRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseExit}
-        onClick={onClick}
-        $reverse={$reverse}
-        className={className}
-        target={target === '_blank' ? '_blank' : undefined}
-        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-        role="button"
-      >
-        <StyledButton>
-          <div ref={(el) => (line1 = el)}>{children}</div>
-          <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>
-        </StyledButton>
-      </ButtonWrapper>
-    </Link>
+    <ButtonWrapper
+      href={to}
+      ref={movingContainerRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseExit}
+      onClick={onClick}
+      $reverse={$reverse}
+      className={className}
+      target={target === '_blank' ? '_blank' : undefined}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+      role="button"
+    >
+      <StyledButton>
+        <div ref={(el) => (line1 = el)}>{children}</div>
+        <StyledSpan ref={(el) => (line2 = el)}>{children}</StyledSpan>
+      </StyledButton>
+    </ButtonWrapper>
   )
 }
 

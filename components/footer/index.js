@@ -159,7 +159,7 @@ const Footer = () => {
         </div>
 
         <div className="reveal-footer-button">
-          <CustomButton href="mailto:hello@outerlabs.studio" target="_blank">
+          <CustomButton to="mailto:hello@outerlabs.studio" target="_blank">
             Let's talk
           </CustomButton>
         </div>
@@ -169,7 +169,7 @@ const Footer = () => {
           <CustomGridWrapper>
             <div className="overflow item-1">
               <CustomLink
-                href="mailto:hello@outerlabs.studio"
+                to="mailto:hello@outerlabs.studio"
                 target="_blank"
                 $reverse
                 className="reveal-footer-1"
@@ -180,7 +180,7 @@ const Footer = () => {
             <LinksWrapper className="item-2">
               <div className="overflow">
                 <CustomLink
-                  href="https://instagram.com/outerlabs"
+                  to="https://instagram.com/outerlabs"
                   $reverse
                   target="_blank"
                   className="reveal-footer-2"
@@ -190,7 +190,7 @@ const Footer = () => {
               </div>
               <div className="overflow">
                 <CustomLink
-                  href="https://www.linkedin.com/company/outerlabs"
+                  to="https://www.linkedin.com/company/outerlabs"
                   $reverse
                   target="_blank"
                   className="reveal-footer-2"
@@ -200,7 +200,7 @@ const Footer = () => {
               </div>
               <div className="overflow">
                 <CustomLink
-                  href="https://www.dribbble.com/outerlabs"
+                  to="https://www.dribbble.com/outerlabs"
                   $reverse
                   target="_blank"
                   className="reveal-footer-2"

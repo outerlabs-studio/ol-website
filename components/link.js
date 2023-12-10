@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useCallback, useRef } from 'react'
-import Link from 'next/link'
 import styled from 'styled-components'
 import { gsap } from 'gsap'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { Normal } from 'styles'
+import { useRouter } from 'next/navigation'
+import { animatePageOut } from 'lib'
 
 const StyledLink = styled.a`
   ${Normal}
@@ -27,6 +28,7 @@ const StyledSpan = styled.span`
 const CustomLink = (props) => {
   const line1 = useRef(null)
   const line2 = useRef(null)
+  const router = useRouter()
   const tl = useRef()
   const {
     href,
@@ -65,10 +67,15 @@ const CustomLink = (props) => {
     ...rest,
   }
 
+  const handleClick = () => {
+    animatePageOut(href, router)
+  }
+
   if (href) {
     return (
-      <Link href={href} passHref legacyBehavior>
+      <div onClick={handleClick}>
         <StyledLink
+          role="link"
           target={target === '_blank' ? '_blank' : undefined}
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           {...linkAttributes}
@@ -76,7 +83,7 @@ const CustomLink = (props) => {
           <div ref={line1}>{children}</div>
           <StyledSpan ref={line2}>{children}</StyledSpan>
         </StyledLink>
-      </Link>
+      </div>
     )
   }
 

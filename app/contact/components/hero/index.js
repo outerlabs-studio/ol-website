@@ -48,7 +48,7 @@ const Hero = () => {
   return (
     <HeroWrapper className="hero">
       <ButtonWrapper>
-        <CustomButton href="mailto:hello@outerlabs.studio">
+        <CustomButton target="_blank" to="mailto:hello@outerlabs.studio">
           Let's chat
         </CustomButton>
       </ButtonWrapper>

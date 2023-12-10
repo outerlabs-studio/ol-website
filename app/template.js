@@ -1,15 +1,15 @@
 'use client'
 
-import { useRef } from 'react'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import styled, { ThemeProvider } from 'styled-components'
 import { Footer, Nav, Scrollbar } from 'components'
 import { useIsTouchDevice } from 'hooks'
 import { Lenis } from '@studio-freight/react-lenis'
 import Tempus from '@studio-freight/tempus'
-import { GlobalStyle, lightTheme } from 'styles'
+import { GlobalStyle, Medium, lightTheme } from 'styles'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { animatePageIn } from 'lib'
 
 if (typeof window !== 'undefined') {
   gsap.defaults({ ease: 'none' })
@@ -36,20 +36,15 @@ const TransitionElement = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: black;
-  z-index: 9999;
+  z-index: 9998;
   position: fixed;
 `
 
 export default function Template({ children }) {
-  const mainTarget = useRef()
   const touchDevice = useIsTouchDevice()
 
   useIsomorphicLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to(mainTarget.current, { opacity: 1 })
-    })
-
-    return () => ctx.revert()
+    animatePageIn()
   }, [])
 
   return (
@@ -57,8 +52,8 @@ export default function Template({ children }) {
       <ThemeProvider theme={lightTheme}>
         <GlobalStyle />
         {touchDevice ? null : <Scrollbar />}
-        <main ref={mainTarget}>
-          {/* <TransitionElement id="transition-element" /> */}
+        <main>
+          <TransitionElement id="transition-element" />
           <Nav />
           {children}
           <Footer />

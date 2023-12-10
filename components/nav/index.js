@@ -8,6 +8,7 @@ import CustomLink from 'components/link'
 import { Container } from 'styles'
 import { HeaderWrapper, LinkList, Logo, NavWrapper } from './styles'
 import gsap from 'gsap'
+import { animatePageOut } from 'lib'
 
 const Nav = () => {
   const [hide, setHide] = useState(true)
@@ -46,7 +47,7 @@ const Nav = () => {
             role="link"
             onClick={() => {
               if (path === '/') lenis.scrollTo(0)
-              else router.push('/')
+              else animatePageOut('/', router)
             }}
           >
             <div className="overflow">
@@ -63,14 +64,14 @@ const Nav = () => {
                 role="link"
                 onClick={() => {
                   if (path === '/') lenis.scrollTo('#projects', { offset: 70 })
-                  else router.push('/#projects')
+                  else animatePageOut('/#projects', router)
                 }}
               >
                 Projects
               </CustomLink>
             </div>
             <div className="overflow">
-              <CustomLink target="_self" href="/about" className="reveal-nav-1">
+              <CustomLink href="/about" className="reveal-nav-1">
                 About
               </CustomLink>
             </div>
