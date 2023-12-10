@@ -261,7 +261,7 @@ const Footer = () => {
         <FerrisWheel ref={ferrisWheelRef}>
           {ferrisWheelItems.map((_, index) => (
             <ItemWrapper key={index} className="ferris-item">
-              <img src="/emoji.svg" alt="Heart eyes emoji" />
+              <img src="/emoji.png" alt="Heart eyes emoji" />
             </ItemWrapper>
           ))}
         </FerrisWheel>
