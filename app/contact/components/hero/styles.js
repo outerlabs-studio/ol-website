@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { Display, Huge } from 'styles'
+import { Display, Huge, media } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
