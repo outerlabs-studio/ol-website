@@ -47,7 +47,7 @@ export const Logo = styled.a`
 
   .reveal-nav-1 {
     ${Huge}
-    font-weight: 800!important;
+    font-weight: normal;
     text-decoration: none;
     color: ${({ theme }) => `rgb(${theme.accent1})`};
     font-family: ${wtskrappa.style.fontFamily};
