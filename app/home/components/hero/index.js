@@ -19,7 +19,6 @@ import { use100vh } from 'react-div-100vh'
 const Hero = () => {
   const trigger = useRef()
   const trigger2 = useRef()
-  const lenis = useLenis()
   const { width } = useWindowSize()
   const pxHeight = use100vh()
   const [height, setHeight] = useState(null)
@@ -131,28 +130,26 @@ const Hero = () => {
                 <CustomButton href="/about" className="reveal-button">
                   Learn more
                 </CustomButton>
-                {width <= 600 && (
-                  <CustomButton
-                    href="/contact"
-                    className="reveal-button"
-                    $reverse
-                  >
-                    Get in touch
-                  </CustomButton>
-                )}
+                <CustomButton
+                  href="/contact"
+                  className="reveal-button small"
+                  $reverse
+                >
+                  Get in touch
+                </CustomButton>
               </div>
             </DescriptionWrapper>
           </CustomGridWrapper>
         </Container>
-        {width > 600 && (
-          <ButtonWrapper>
-            <Parallax speed={1} trigger={trigger}>
-              <CustomButton className="reveal-button" href="/contact">
-                Get in touch
-              </CustomButton>
-            </Parallax>
-          </ButtonWrapper>
-        )}
+
+        <ButtonWrapper>
+          <Parallax speed={1} trigger={trigger}>
+            <CustomButton className="reveal-button" href="/contact">
+              Get in touch
+            </CustomButton>
+          </Parallax>
+        </ButtonWrapper>
+
         <TitleWrapper>
           <div className="overflow">
             <div className="reveal-hero-3">O</div>

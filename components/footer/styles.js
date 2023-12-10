@@ -52,28 +52,14 @@ export const CustomGridWrapper = styled(GridWrapper)`
     width: fit-content;
   }
 
+  .item-4 {
+    grid-column: 4;
+  }
+
   ${media.tablet`
-    .item-1 {
-      grid-column: 2;
-    }
     .item-2 {
-      grid-column: 1;
-    }
-    .item-3 {
       grid-column: 3;
     }
-    .item-4 {
-      grid-column: 4;
-    }
-    ${media.thone`
-      .item-1 {
-        grid-column: 4;
-      }
-      .item-4 {
-        grid-column: 4;
-        display: none;
-      }
-    `}
   `}
 `
 export const LinksWrapper = styled.div`
@@ -81,7 +67,7 @@ export const LinksWrapper = styled.div`
   gap: 2rem;
 
   ${media.desktop`gap: 1rem;`}
-  ${media.tablet`flex-direction: column;`}
+  ${media.thone`display: none;s`}
 `
 
 export const WheelWrapper = styled.div`

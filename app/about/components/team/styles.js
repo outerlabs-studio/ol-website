@@ -30,7 +30,7 @@ export const TeamMemberItem = styled.div`
   ${media.thone`
     display: flex;
     flex-direction: column-reverse;
-
+    justify-content: center;
   `}
 
   &:nth-child(2) {

@@ -70,7 +70,7 @@ export const ButtonWrapper = styled.div`
     transform: translate(-30%, -80%);
   `}
   ${media.thone`
-    position: relative;
+    display: none;
   `}
 `
 export const LinkWrapper = styled.div`
@@ -95,6 +95,15 @@ export const DescriptionWrapper = styled.div`
     align-items: center;
 
     ${media.desktop`margin-top: 1rem;`}
+
+    .small {
+      display: none;
+
+      ${media.thone`
+        display: unset;
+        margin-left: 1rem;
+      `}
+    }
   }
 
   ${media.desktop`max-width: 20rem;`}

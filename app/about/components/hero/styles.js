@@ -57,4 +57,9 @@ export const BlobWrapper = styled.div`
   margin: 0 auto;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(4, auto);
+
+  ${media.phablet`
+    left: 59%;
+    transform: translate(-50%, -59%);
+  `}
 `

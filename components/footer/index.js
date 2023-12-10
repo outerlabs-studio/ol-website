@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useState } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import { CustomLink, CustomButton } from 'components'
 import { Container, sizes } from 'styles'
@@ -21,14 +21,12 @@ const currentYear = new Date().getFullYear()
 const Footer = () => {
   const footerTarget = useRef(null)
   const ferrisWheelRef = useRef(null)
+  const [items, setItems] = useState(8)
   const { width } = useWindowSize()
 
-  const ferrisWheelItems = useMemo(
-    () => new Array(width > sizes.thone ? 8 : 7).fill(0),
-    [],
-  )
-
   useIsomorphicLayoutEffect(() => {
+    if (width <= sizes.thone) setItems(7)
+
     let ctx = gsap.context(() => {
       let revealTl = gsap.timeline({
         scrollTrigger: {
@@ -145,54 +143,6 @@ const Footer = () => {
     return () => ctx.revert()
   }, [width])
 
-  const Links = (
-    <LinksWrapper className="item-2">
-      <div className="overflow">
-        <CustomLink
-          href="https://instagram.com/outerlabs"
-          $reverse
-          target="_blank"
-          className="reveal-footer-2"
-        >
-          Instagram
-        </CustomLink>
-      </div>
-      <div className="overflow">
-        <CustomLink
-          href="https://www.linkedin.com/company/outerlabs"
-          $reverse
-          target="_blank"
-          className="reveal-footer-2"
-        >
-          LinkedIn
-        </CustomLink>
-      </div>
-      <div className="overflow">
-        <CustomLink
-          href="https://www.dribbble.com/outerlabs"
-          $reverse
-          target="_blank"
-          className="reveal-footer-2"
-        >
-          Dribbble
-        </CustomLink>
-      </div>
-    </LinksWrapper>
-  )
-
-  const Email = (
-    <div className="overflow item-1">
-      <CustomLink
-        href="mailto:hello@outerlabs.studio"
-        target="_blank"
-        $reverse
-        className="reveal-footer-1"
-      >
-        hello@outerlabs.studio
-      </CustomLink>
-    </div>
-  )
-
   return (
     <FooterWrapper ref={footerTarget} id="contact">
       <ContentWrapper>
@@ -221,45 +171,58 @@ const Footer = () => {
       <BottomLine>
         <Container>
           <CustomGridWrapper>
-            {width > sizes.thone ? (
-              <>
-                {width > sizes.tablet ? (
-                  <>
-                    {Email}
-                    {Links}
-                  </>
-                ) : (
-                  <>
-                    {Links}
-                    {Email}
-                  </>
-                )}
-                <div className="item-3">
-                  <div className="overflow">
-                    <div className="reveal-footer-3">25 Broadway</div>
-                  </div>
-                  <br />
-                  <div className="overflow">
-                    <div className="reveal-footer-3">New York, NY 10004</div>
-                  </div>
-                </div>
-                <div className="overflow item-4">
-                  <div className="reveal-footer-3">{currentYear}</div>
-                </div>
-              </>
-            ) : (
-              <>
-                {Links}
-                {Email}
-              </>
-            )}
+            <div className="overflow item-1">
+              <CustomLink
+                href="mailto:hello@outerlabs.studio"
+                target="_blank"
+                $reverse
+                className="reveal-footer-1"
+              >
+                hello@outerlabs.studio
+              </CustomLink>
+            </div>
+            <LinksWrapper className="item-2">
+              <div className="overflow">
+                <CustomLink
+                  href="https://instagram.com/outerlabs"
+                  $reverse
+                  target="_blank"
+                  className="reveal-footer-2"
+                >
+                  Instagram
+                </CustomLink>
+              </div>
+              <div className="overflow">
+                <CustomLink
+                  href="https://www.linkedin.com/company/outerlabs"
+                  $reverse
+                  target="_blank"
+                  className="reveal-footer-2"
+                >
+                  LinkedIn
+                </CustomLink>
+              </div>
+              <div className="overflow">
+                <CustomLink
+                  href="https://www.dribbble.com/outerlabs"
+                  $reverse
+                  target="_blank"
+                  className="reveal-footer-2"
+                >
+                  Dribbble
+                </CustomLink>
+              </div>
+            </LinksWrapper>
+            <div className="overflow item-4">
+              <div className="reveal-footer-3">{currentYear}</div>
+            </div>
           </CustomGridWrapper>
         </Container>
       </BottomLine>
 
       <WheelWrapper>
         <FerrisWheel ref={ferrisWheelRef}>
-          {ferrisWheelItems.map((_, index) => (
+          {new Array(items).fill(0).map((_, index) => (
             <ItemWrapper key={index} className="ferris-item">
               <img src="/emoji.png" alt="Heart eyes emoji" />
             </ItemWrapper>
