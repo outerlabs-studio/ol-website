@@ -1,13 +1,14 @@
 import { StyledComponentsRegistry } from 'lib'
 import { Analytics } from '@vercel/analytics/react'
 
+const description = `Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.`
+
 export const metadata = {
   title: {
     template: '%s | Outer Labs',
     default: 'Outer Labs | Websites, apps, & branding studio',
   },
-  description:
-    'Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.',
+  description: description,
   keywords: [
     'Outer Labs',
     'Outer Labs Studio',
@@ -45,16 +46,15 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Outer Labs Studio',
-    description:
-      'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
-    url: 'https://outerlabs.studio',
+    description: description,
+    url: 'https://www.outerlabs.studio',
     locale: 'en_US',
     type: 'website',
     images: {
       url: `${
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000'
-          : 'https://outerlabs.studio'
+          : 'https://www.outerlabs.studio'
       }/og-image.jpg`,
       width: 1200,
       height: 630,
@@ -62,15 +62,14 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Outer Labs | Design and Development Studio',
-    description:
-      'Outer Labs offers a wide range of creative and strategic services for remarkable brands, companies and organizations. Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences.',
+    title: 'Outer Labs | Websites, apps, & branding studio',
+    description: description,
     creator: '@kyryloren',
     images: [
       `${
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000'
-          : 'https://outerlabs.studio'
+          : 'https://www.outerlabs.studio'
       }/og-image.jpg`,
     ],
   },
