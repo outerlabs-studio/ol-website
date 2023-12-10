@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useMemo, useState } from 'react'
+import { useRef } from 'react'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import { CustomLink, CustomButton } from 'components'
 import { Container, sizes } from 'styles'
@@ -16,17 +16,13 @@ import {
 } from './styles'
 import gsap from 'gsap'
 
-const currentYear = new Date().getFullYear()
-
 const Footer = () => {
   const footerTarget = useRef(null)
   const ferrisWheelRef = useRef(null)
-  const [items, setItems] = useState(8)
   const { width } = useWindowSize()
+  const currentYear = new Date().getFullYear()
 
   useIsomorphicLayoutEffect(() => {
-    if (width <= sizes.thone) setItems(7)
-
     let ctx = gsap.context(() => {
       let revealTl = gsap.timeline({
         scrollTrigger: {
@@ -222,7 +218,7 @@ const Footer = () => {
 
       <WheelWrapper>
         <FerrisWheel ref={ferrisWheelRef}>
-          {new Array(items).fill(0).map((_, index) => (
+          {new Array(8).fill(0).map((_, index) => (
             <ItemWrapper key={index} className="ferris-item">
               <img src="/emoji.webp" alt="Heart eyes emoji" />
             </ItemWrapper>
