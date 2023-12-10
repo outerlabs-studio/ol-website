@@ -208,6 +208,16 @@ const Footer = () => {
                   Dribbble
                 </CustomLink>
               </div>
+              <div className="overflow">
+                <CustomLink
+                  to="https://www.github.com/outerlabs-studio"
+                  $reverse
+                  target="_blank"
+                  className="reveal-footer-2"
+                >
+                  GitHub
+                </CustomLink>
+              </div>
             </LinksWrapper>
             <div className="overflow item-4">
               <div className="reveal-footer-3">{currentYear}</div>

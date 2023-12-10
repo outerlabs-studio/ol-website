@@ -47,20 +47,17 @@ export const BottomLine = styled.div`
 `
 export const CustomGridWrapper = styled(GridWrapper)`
   align-items: end;
+  grid-template-columns: 21% 1fr 1fr auto;
 
   a {
     width: fit-content;
   }
 
+  ${media.thone`grid-template-columns: auto 1fr 1fr auto;`}
+
   .item-4 {
     grid-column: 4;
   }
-
-  ${media.tablet`
-    .item-2 {
-      grid-column: 3;
-    }
-  `}
 `
 export const LinksWrapper = styled.div`
   display: flex;

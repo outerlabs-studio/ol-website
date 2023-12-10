@@ -80,6 +80,7 @@ export const LinkWrapper = styled.div`
   position: relative;
   gap: 2rem;
 
+  ${media.tablet`gap: 1rem;`}
   ${media.thone`
     grid-column: 1 / 4;
     justify-content: space-between;

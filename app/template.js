@@ -38,6 +38,7 @@ const TransitionElement = styled.div`
   background-color: black;
   z-index: 9998;
   position: fixed;
+  will-change: transform, border-bottom-left-radius, border-top-left-radius;
 `
 
 export default function Template({ children }) {

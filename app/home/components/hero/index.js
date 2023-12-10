@@ -93,7 +93,11 @@ const Hero = () => {
 
   return (
     <HeroWrapper ref={trigger}>
-      <div className="content-wrap" style={{ height: height }} ref={trigger2}>
+      <div
+        className="content-wrap"
+        style={{ minHeight: height }}
+        ref={trigger2}
+      >
         <Container>
           <CustomGridWrapper>
             <LinkWrapper>
@@ -124,6 +128,16 @@ const Hero = () => {
                     to="https://www.dribbble.com/outerlabs"
                   >
                     Dribbble
+                  </CustomLink>
+                </div>
+              </div>
+              <div className="overflow">
+                <div className="reveal-hero-2">
+                  <CustomLink
+                    target="_blank"
+                    to="https://www.github.com/outerlabs-studio"
+                  >
+                    GitHub
                   </CustomLink>
                 </div>
               </div>
