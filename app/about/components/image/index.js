@@ -9,10 +9,10 @@ const ImageSection = () => {
     <ImageWrapper>
       <OverlayWrapper>
         <Container>
-          <SmallText>Chris Do is not affiliated with Outer Labs</SmallText>
+          <SmallText>RGD Design Thinkers 2023 Toronto, Canada</SmallText>
         </Container>
       </OverlayWrapper>
-      <CustomImage src="/RGD.JPG" alt="The team" speed={2} />
+      <CustomImage src="/toronto.webp" alt="The team" speed={2} />
     </ImageWrapper>
   )
 }

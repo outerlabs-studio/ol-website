@@ -8,6 +8,10 @@ const LabelWrapper = styled.div`
   align-items: center;
   gap: 0.5rem;
   height: fit-content;
+
+  p {
+    text-transform: capitalize;
+  }
 `
 const LittleCircle = styled.span`
   height: 0.6vw;

@@ -38,7 +38,7 @@ const Projects = () => {
               />
             </ImageWrapper>
             <CustomTitle>TechCodes</CustomTitle>
-            <CustomDescription>Computer science nonprofit</CustomDescription>
+            <CustomDescription>Teaching kids how to code</CustomDescription>
           </Project>
           <Project href="/">
             <ImageWrapper>
@@ -56,7 +56,9 @@ const Projects = () => {
               />
             </ImageWrapper>
             <CustomTitle>Astro Studios</CustomTitle>
-            <CustomDescription>A podcast company</CustomDescription>
+            <CustomDescription>
+              The next-generation of podcasting
+            </CustomDescription>
           </Project>
           <Project href="/">
             <ImageWrapper>
@@ -95,6 +97,26 @@ const Projects = () => {
             </ImageWrapper>
             <CustomTitle>Sarah Khosla</CustomTitle>
             <CustomDescription>Portfolio</CustomDescription>
+          </Project>
+          <Project href="/">
+            <ImageWrapper>
+              <MarqueeWrapper>
+                <Marquee repeat={3}>
+                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
+                </Marquee>
+              </MarqueeWrapper>
+              <CustomImage
+                src={
+                  'data:image/webp;base64,UklGRmADAABXRUJQVlA4WAoAAAAgAAAAngEA2QAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggcgEAADAcAJ0BKp8B2gA+7Xa4VqmnJSOgKAEwHYlpbuFrkVggOz6iQevc+QBaWych77ZOQ99snIfF0v3+Lk5xSPr4lybxcnIe+2ZFjkHdqKfHBalLp7ZQM5BkdgjrvsRS4W/gxVybMi0qBZa4Lst/Oc4rBHKNLWPB74vvEu74vYoFXA75CHV4j+dxUynFV6cLcZ1C5jKkelQ3smB3N17dyc5tq8Xa7k5dA7bsWZ5TN6GBKFqHz9EdZOAuTs1kUOeoqnAZJ+n5HcVP3pDyUCrbHEIZJ+iOsm2wEfTbYCrJtmZrJtsBVtjiHWTXLWF+wAD++bIPVaTTPPMD10poBDRxbzV+vHLZP46aGd1rK3twJCmLx2C0k/uBwZztt0AWTStyYjDLhoHaRqnKqynAbqbhAsDNbcv8EIQ2iNarzF1+PET4hU8Dqf2RtikzAPVrx+ILVDWaesiD0wxIB1wwGxXLGnkCGOF/sL5Rk5o3baczkFTOuvpgAAA='
+                }
+                alt="Trader Royale"
+                speed={0.5}
+              />
+            </ImageWrapper>
+            <CustomTitle>Trader Royale</CustomTitle>
+            <CustomDescription>
+              Crypto-based battle royale game
+            </CustomDescription>
           </Project>
         </ProjectList>
       </Container>
