@@ -9,7 +9,7 @@ const ImageSection = () => {
     <ImageWrapper>
       <OverlayWrapper>
         <Container>
-          <SmallText>RGD Design Thinkers 2023 Toronto, Canada</SmallText>
+          <SmallText>RGD Design Thinkers Toronto, Canada 2023</SmallText>
         </Container>
       </OverlayWrapper>
       <CustomImage src="/toronto.webp" alt="The team" speed={2} />
