@@ -1,5 +1,6 @@
 import { StyledComponentsRegistry } from 'lib'
 import { Analytics } from '@vercel/analytics/react'
+import Script from 'next/script'
 
 const description = `Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.`
 
@@ -120,6 +121,24 @@ export default function RootLayout({ children }) {
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         <Analytics />
       </body>
+      {process.env.NODE_ENV === 'production' && (
+        <>
+          <Script
+            async
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`}
+          />
+          <Script
+            strategy="lazyOnload"
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}');`,
+            }}
+          />
+        </>
+      )}
     </html>
   )
 }
