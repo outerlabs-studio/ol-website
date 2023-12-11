@@ -9,7 +9,7 @@ import gsap from 'gsap'
 
 const About = () => {
   const sectionTarget = useRef()
-  const text = `Outer Labs is a beacon of creativity in the digital world, specializing in elevating brands within the crypto, e-commerce, and entertainment sectors. Our origin as a visionary group of designers and technologists set the stage for our unique approach: crafting bespoke digital experiences that resonate deeply with each brand's identity.  `
+  const text = `We go beyond the mainstream because we understand that our work is more than a task list; it's a dedication to brilliance. Your projects are not just assignments; they're canvases for us to paint excellence. Every line of code and every pixel is meticulously crafted to surpass expectations.`
   const text2 = `We excel in translating the essence of your brand into dynamic digital solutions, whether it's through cutting-edge crypto apps, engaging e-commerce platforms, or compelling entertainment experiences. Our rapid rise in the digital design realm is a testament to our commitment to innovation and brand-centric strategy. Outer Labs is where brands find their digital voice and shape their future in an ever-evolving digital landscape. Here, every project is an opportunity to explore new horizons and redefine what's possible. Join us in this exciting journey where your brand's potential knows no bounds.`
 
   useIsomorphicLayoutEffect(() => {
