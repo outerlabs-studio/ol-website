@@ -2,12 +2,13 @@ import { StyledComponentsRegistry } from 'lib'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 
+const title = 'Outer Labs | Websites, apps, & branding studio'
 const description = `Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.`
 
 export const metadata = {
   title: {
     template: '%s | Outer Labs',
-    default: 'Outer Labs | Websites, apps, & branding studio',
+    default: title,
   },
   description: description,
   keywords: [
@@ -46,7 +47,7 @@ export const metadata = {
     'nyc design agency',
   ],
   openGraph: {
-    title: 'Outer Labs Studio',
+    title: title,
     description: description,
     url: 'https://www.outerlabs.studio',
     locale: 'en_US',
@@ -63,7 +64,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Outer Labs | Websites, apps, & branding studio',
+    title: title,
     description: description,
     creator: '@kyryloren',
     images: [
