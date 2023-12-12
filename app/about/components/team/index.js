@@ -18,7 +18,11 @@ const Member = ({ image, name, pos, num }) => {
       <Container>
         <CustomGridWrapper>
           <ImageWrapper className="image-wrapper">
-            <CustomImage src={image} alt={name} />
+            <CustomImage
+              src={image}
+              alt={name}
+              sizes={`(min-width: 1020px) 30vw, (min-width: 620px) 52.11vw, calc(100vw - 32px)`}
+            />
           </ImageWrapper>
           <InformationWrapper>
             <MediumText>{pos}</MediumText>

@@ -25,7 +25,7 @@ const ParallaxWrapper = styled.div`
   }
 `
 
-const CustomImage = ({ src, alt, speed = 1 }) => {
+const CustomImage = ({ src, alt, sizes, speed = 1 }) => {
   const target = useRef()
 
   const { height: windowWidth } = useWindowSize()
@@ -68,6 +68,7 @@ const CustomImage = ({ src, alt, speed = 1 }) => {
       <Image
         src={src}
         alt={alt}
+        sizes={sizes}
         fill
         style={{ transform: 'scale(1.2)' }}
         ref={target}
