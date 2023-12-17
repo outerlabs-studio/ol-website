@@ -4,9 +4,9 @@ const Z_INDEX = {
   projects: 3,
   about: 4,
   footer: {
-    background: 1,
-    section: 2,
-    foreground: 3,
+    background: 0,
+    section: 1,
+    foreground: 2,
   },
 }
 

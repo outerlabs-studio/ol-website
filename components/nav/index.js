@@ -49,7 +49,9 @@ const Nav = () => {
             onClick={(e) => {
               e.preventDefault()
               if (path === '/') lenis.scrollTo(0)
-              else animatePageOut('/', router, path)
+              else if (path === '/techcodes') {
+                animatePageOut('/#projects', router, path)
+              } else animatePageOut('/', router, path)
             }}
           >
             <div className="overflow">

@@ -35,6 +35,12 @@ export const ProjectList = styled.div`
 `
 export const Project = styled(Link)`
   text-decoration: none;
+
+  &:hover {
+    img {
+      scale: 1.1 !important;
+    }
+  }
 `
 export const CustomTitle = styled(NormalText)`
   font-weight: 600;
@@ -58,6 +64,7 @@ export const ImageWrapper = styled.div`
   img {
     border-radius: inherit;
     object-fit: cover;
+    transition: scale 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 `
 export const MarqueeWrapper = styled.div`

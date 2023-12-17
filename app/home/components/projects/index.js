@@ -12,8 +12,13 @@ import {
   TopbarWrapper,
 } from './styles'
 import { CustomImage, Label, Marquee } from 'components'
+import { animatePageOut } from 'lib'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Projects = () => {
+  const router = useRouter()
+  const pathname = usePathname()
+
   return (
     <ProjectWrapper id="projects">
       <Container>
@@ -22,17 +27,16 @@ const Projects = () => {
           <NormalText>2021-23</NormalText>
         </TopbarWrapper>
         <ProjectList>
-          <Project href="/">
-            <ImageWrapper>
-              <MarqueeWrapper>
-                <Marquee repeat={3}>
-                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
-                </Marquee>
-              </MarqueeWrapper>
+          <Project
+            href="/techcodes"
+            onClick={(e) => {
+              e.preventDefault()
+              animatePageOut('/techcodes', router, pathname)
+            }}
+          >
+            <ImageWrapper className='zoom'>
               <CustomImage
-                src={
-                  'data:image/webp;base64,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'
-                }
+                src="/techcodes-3.webp"
                 alt="TechCodes"
                 speed={0.5}
               />
