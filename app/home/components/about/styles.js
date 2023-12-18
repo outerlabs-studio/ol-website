@@ -68,7 +68,7 @@ export const BottomImageWrapper = styled.div`
     top: 60vh;
   `}
   ${media.thone`
-    grid-column: 3 / 4;
+    grid-column: 3 / -1;
     max-width: 100%;
     top: 0;
     border-radius: 0;

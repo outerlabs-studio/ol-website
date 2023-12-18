@@ -11,7 +11,7 @@ export const Grid = css`
 
   ${media.thone`
     grid-gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr auto;
+    grid-template-columns: auto auto auto auto;
   `}
 `
 export const GridWrapper = styled.div`
