@@ -47,7 +47,7 @@ const About = () => {
             stagger: 0.005,
             ease: 'power3.inOut',
           },
-          0.5,
+          '-=1.5',
         )
         .from(
           '.reveal-about-3',
@@ -56,7 +56,7 @@ const About = () => {
             duration: 0.5,
             ease: 'power3.inOut',
           },
-          1.5,
+          1,
         )
     })
 

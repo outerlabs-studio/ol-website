@@ -71,6 +71,7 @@ const CustomImage = ({ src, alt, sizes, speed = 1 }) => {
         sizes={sizes}
         fill
         style={{ transform: 'scale(1.2)' }}
+        quality={100}
         ref={target}
       />
     </ParallaxWrapper>

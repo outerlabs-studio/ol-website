@@ -1,4 +1,4 @@
-import { Hero, About } from './components'
+import { Hero, About, Images, Services } from './components'
 
 export const metadata = {
   title: 'TechCodes - STEM Education',
@@ -9,6 +9,8 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Images />
+      <Services />
     </>
   )
 }
