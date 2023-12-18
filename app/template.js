@@ -1,6 +1,6 @@
 'use client'
 
-import { useIsomorphicLayoutEffect } from 'react-use'
+import { useEffect } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Footer, Nav, Scrollbar } from 'components'
 import { useIsTouchDevice } from 'hooks'
@@ -44,7 +44,7 @@ const TransitionElement = styled.div`
 export default function Template({ children }) {
   const touchDevice = useIsTouchDevice()
 
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     animatePageIn()
   }, [])
 
