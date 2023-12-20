@@ -12,7 +12,12 @@ const ImageSection = () => {
           <SmallText>RGD Design Thinkers Toronto, Canada 2023</SmallText>
         </Container>
       </OverlayWrapper>
-      <CustomImage src="/toronto.webp" alt="The team" speed={2} />
+      <CustomImage
+        src="/toronto.webp"
+        alt="The team"
+        speed={2}
+        blur={`LDEyul8^.8krtm.8ozIA_Mp0tSRO`}
+      />
     </ImageWrapper>
   )
 }

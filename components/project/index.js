@@ -24,7 +24,7 @@ import PropTypes from 'prop-types'
 export default function Project(props) {
   const {
     title,
-    heroImage: { src, alt },
+    heroImage: { src, alt, blur },
     about: { subtitle, paragraphs, live },
     images,
     services,
@@ -32,7 +32,7 @@ export default function Project(props) {
 
   return (
     <>
-      <Hero title={title} src={src} alt={alt} />
+      <Hero title={title} src={src} alt={alt} blur={blur} />
       <About subtitle={subtitle} paragraphs={paragraphs} live={live} />
       {images && <Images images={images} />}
       {services && <Services services={services} />}
@@ -45,6 +45,7 @@ Project.propTypes = {
   heroImage: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
+    blur: PropTypes.string,
   }).isRequired,
   about: PropTypes.shape({
     subtitle: PropTypes.string.isRequired,
@@ -55,6 +56,7 @@ Project.propTypes = {
     PropTypes.shape({
       src: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
+      blur: PropTypes.string,
     }),
   ).isRequired,
   services: PropTypes.arrayOf(

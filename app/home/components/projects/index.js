@@ -39,6 +39,7 @@ const Projects = () => {
                 src="/techcodes-3.webp"
                 alt="TechCodes"
                 speed={0.5}
+                blur={`L:O:@TRj-;of~qofM_ofIUj[WCRj`}
               />
             </ImageWrapper>
             <CustomTitle>TechCodes</CustomTitle>
@@ -56,6 +57,7 @@ const Projects = () => {
                 src="/astrostudios-1.webp"
                 alt="Astro Studios"
                 speed={0.5}
+                blur={`LxNAuQM|~nod~qt7M{ofj.j@IXV[`}
               />
             </ImageWrapper>
             <CustomTitle>Astro Studios</CustomTitle>

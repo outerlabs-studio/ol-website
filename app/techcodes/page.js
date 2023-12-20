@@ -35,7 +35,11 @@ export default function Home() {
     <>
       <Project
         title="TechCodes"
-        heroImage={{ src: '/techcodes-1.webp', alt: 'TechCodes' }}
+        heroImage={{
+          src: '/techcodes-1.webp',
+          alt: 'TechCodes',
+          blur: `LFIOC94:i^t5~p?aV@WBs7RjE3R*`,
+        }}
         about={{
           subtitle: `We partnered with TechCodes to promote inclusivity in STEM by making computer science education accessible and fun.`,
           paragraphs: [
@@ -46,10 +50,26 @@ export default function Home() {
           live: 'https://techcodes.outerlabs.studio',
         }}
         images={[
-          { src: '/techcodes-2.webp', alt: 'TechCodes brochure' },
-          { src: '/techcodes-4.webp', alt: 'TechTalks posters and branding' },
-          { src: '/techcodes-5.webp', alt: 'Code Overflow Figma mockups' },
-          { src: '/techcodes-6.webp', alt: 'TechCodes about page mockups' },
+          {
+            src: '/techcodes-2.webp',
+            alt: 'TechCodes brochure',
+            blur: `LTH-vBwf%Fbc?]n#s:ni~K%2oioz`,
+          },
+          {
+            src: '/techcodes-4.webp',
+            alt: 'TechTalks posters and branding',
+            blur: `L7HLoQD#0FNCI%~T%mD,0E-;00%M`,
+          },
+          {
+            src: '/techcodes-5.webp',
+            alt: 'Code Overflow Figma mockups',
+            blur: `L6Lg*HY600zn?.s:MiS|-.kPX8Vi`,
+          },
+          {
+            src: '/techcodes-6.webp',
+            alt: 'TechCodes about page mockups',
+            blur: `L8ODh90000_29F00V?~p00-;xvE1`,
+          },
         ]}
         services={[
           {

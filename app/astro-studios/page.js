@@ -35,7 +35,11 @@ export default function Home() {
     <>
       <Project
         title="Astro&nbsp;Studios"
-        heroImage={{ src: '/astrostudios-2.webp', alt: 'Astro Studios' }}
+        heroImage={{
+          src: '/astrostudios-2.webp',
+          alt: 'Astro Studios',
+          blur: `LHCP-N0K00~q%NV@D%%M4nxu-;IA`,
+        }}
         about={{
           subtitle: `In our collaboration with Astro Studios, we are transforming the podcast landscape for Generation Z by addressing mental health stigmas and enhancing accessibility; making podcasts an appealing and supportive resource for the well-being of young minds.`,
           paragraphs: [
@@ -46,12 +50,25 @@ export default function Home() {
           live: 'https://astrostudios.xyz',
         }}
         images={[
-          { src: '/astrostudios-4.webp', alt: 'Astro Studios team section' },
-          { src: '/astrostudios-3.webp', alt: 'Astro Studios' },
-          { src: '/astrostudios-5.webp', alt: 'Astro Studios about section' },
+          {
+            src: '/astrostudios-4.webp',
+            alt: 'Astro Studios team section',
+            blur: `LhM%QMWB00s:.ToLZ#WVNGkCo}e.`,
+          },
+          {
+            src: '/astrostudios-3.webp',
+            alt: 'Astro Studios',
+            blur: `L49%]I-:03xuxvt6M}j[00D,~mRl`,
+          },
+          {
+            src: '/astrostudios-5.webp',
+            alt: 'Astro Studios about section',
+            blur: `L6Lg*HY600zn?.s:MiS|-.kPX8Vi`,
+          },
           {
             src: '/astrostudios-6.webp',
             alt: 'Astro Studios information section',
+            blur: `L039F6-@8w4mx|ofV;WBN1j?t3WF`,
           },
         ]}
         services={[

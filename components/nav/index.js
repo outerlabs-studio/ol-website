@@ -15,6 +15,7 @@ const Nav = () => {
   const router = useRouter()
   const path = usePathname()
   const lenis = useLenis()
+  const logoName = 'Outer Labs'
 
   useLenis(({ scroll, direction }) => {
     if (path === '/' && scroll < 50) {
@@ -30,8 +31,8 @@ const Nav = () => {
 
       tl.from(gsap.utils.toArray('.reveal-nav-1'), {
         yPercent: 100,
-        duration: 2,
-        stagger: 0.1,
+        duration: 1.5,
+        stagger: 0.02,
         ease: 'power3.inOut',
       })
     })
@@ -54,12 +55,13 @@ const Nav = () => {
               } else animatePageOut('/', router, path)
             }}
           >
-            <div className="overflow">
-              <div className="reveal-nav-1">Outer&nbsp;</div>
-            </div>
-            <div className="overflow">
-              <div className="reveal-nav-1">Labs</div>
-            </div>
+            {logoName.split('').map((letter, index) => (
+              <div className="overflow" key={index}>
+                <div className="reveal-nav-1">
+                  {letter === ' ' ? '\u00A0' : letter}
+                </div>
+              </div>
+            ))}
           </Logo>
           <LinkList>
             <div className="overflow">

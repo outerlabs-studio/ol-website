@@ -6,7 +6,7 @@ import { Container } from 'styles'
 import { ImageWrapper, SectionWrapper, TitleWrapper } from './styles'
 import gsap from 'gsap'
 
-const Hero = ({ title, src, alt }) => {
+const Hero = ({ title, src, alt, blur }) => {
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline()
@@ -34,7 +34,7 @@ const Hero = ({ title, src, alt }) => {
           ))}
         </TitleWrapper>
         <ImageWrapper>
-          <CustomImage src={src} alt={alt} speed={1} />
+          <CustomImage src={src} alt={alt} speed={1} blur={blur} />
         </ImageWrapper>
       </Container>
     </SectionWrapper>

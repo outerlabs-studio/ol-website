@@ -96,12 +96,22 @@ const About = () => {
       <GridWrapper className="resize">
         <Parallax speed={-2} trigger={sectionTarget} $toggleMobile>
           <TopImageWrapper>
-            <CustomImage src="/meeting.JPG" alt="The team" speed={2} />
+            <CustomImage
+              src="/meeting.webp"
+              alt="The team"
+              speed={2}
+              blur={`L8C5;hRi02OG00xu~B$216E2=Xxu`}
+            />
           </TopImageWrapper>
         </Parallax>
         <Parallax speed={-2} trigger={sectionTarget} $toggleMobile>
           <BottomImageWrapper>
-            <CustomImage src="/boys.webp" alt="The team" speed={2} />
+            <CustomImage
+              src="/boys.webp"
+              alt="The team"
+              speed={2}
+              blur={`L14_qW#8~oD%g%IqNGMx00O?R5xG`}
+            />
           </BottomImageWrapper>
         </Parallax>
       </GridWrapper>

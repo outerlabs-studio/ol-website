@@ -13,6 +13,7 @@
     "@studio-freight/react-lenis": "^0.0.38",
     "@studio-freight/tempus": "^0.0.38",
     "@vercel/analytics": "^1.1.1",
+    "blurhash": "^2.0.5",
     "gsap": "^3.12.3",
     "next": "14.0.3",
     "react": "^18",

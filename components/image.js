@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
 import gsap from 'gsap'
 import { useRef } from 'react'
+import { blurHashToDataURL } from 'lib'
 
 const ParallaxWrapper = styled.div`
   position: absolute;
@@ -26,7 +27,7 @@ const ParallaxWrapper = styled.div`
   }
 `
 
-const CustomImage = ({ src, alt, sizes, speed = 1 }) => {
+const CustomImage = ({ src, alt, sizes, blur, speed = 1 }) => {
   const target = useRef()
 
   const { height: windowWidth } = useWindowSize()
@@ -70,6 +71,8 @@ const CustomImage = ({ src, alt, sizes, speed = 1 }) => {
         src={src}
         alt={alt}
         sizes={sizes}
+        placeholder={blur ? 'blur' : 'empty'}
+        blurDataURL={blur ? blurHashToDataURL(blur) : null}
         fill
         style={{ transform: 'scale(1.2)' }}
         quality={100}

@@ -6,7 +6,8 @@ import { Z_INDEX, media } from 'styles'
 export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 50vw;
+  height: 90svh;
+  min-height: 50vh;
   z-index: ${Z_INDEX.projects};
   ${media.desktop`height: 85vh;`}
 
