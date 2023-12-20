@@ -50,7 +50,7 @@ const Nav = () => {
             onClick={(e) => {
               e.preventDefault()
               if (path === '/') lenis.scrollTo(0)
-              else if (path === '/techcodes') {
+              else if (path === '/techcodes' || path === '/astro-studios') {
                 animatePageOut('/#projects', router, path)
               } else animatePageOut('/', router, path)
             }}
