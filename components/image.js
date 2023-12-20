@@ -10,6 +10,7 @@ const ParallaxWrapper = styled.div`
   position: absolute;
   height: inherit;
   width: inherit;
+  min-height: inherit;
   overflow: hidden;
   border-radius: inherit;
 

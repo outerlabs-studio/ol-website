@@ -26,7 +26,7 @@ export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100svh;
-  min-height: 40vw;
+  min-height: 50vw;
 
   ${media.thone`height: 60svh;`}
 `

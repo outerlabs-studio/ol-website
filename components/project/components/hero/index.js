@@ -6,9 +6,7 @@ import { Container } from 'styles'
 import { ImageWrapper, SectionWrapper, TitleWrapper } from './styles'
 import gsap from 'gsap'
 
-const Hero = () => {
-  const titleText = 'TechCodes'
-
+const Hero = ({ title, src, alt }) => {
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline()
@@ -29,14 +27,14 @@ const Hero = () => {
     <SectionWrapper>
       <Container>
         <TitleWrapper>
-          {titleText.split('').map((letter, index) => (
+          {title.split('').map((letter, index) => (
             <div className="overflow" key={index}>
               <div className="reveal-hero-1">{letter}</div>
             </div>
           ))}
         </TitleWrapper>
         <ImageWrapper>
-          <CustomImage src="/techcodes-1.webp" alt="TechCodes" speed={1} />
+          <CustomImage src={src} alt={alt} speed={1} />
         </ImageWrapper>
       </Container>
     </SectionWrapper>

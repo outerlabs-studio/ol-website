@@ -34,7 +34,7 @@ const Projects = () => {
               animatePageOut('/techcodes', router, pathname)
             }}
           >
-            <ImageWrapper className='zoom'>
+            <ImageWrapper className="zoom">
               <CustomImage
                 src="/techcodes-3.webp"
                 alt="TechCodes"
@@ -44,17 +44,16 @@ const Projects = () => {
             <CustomTitle>TechCodes</CustomTitle>
             <CustomDescription>Teaching kids how to code</CustomDescription>
           </Project>
-          <Project href="/">
+          <Project
+            href="/astro-studios"
+            onClick={(e) => {
+              e.preventDefault()
+              animatePageOut('/astro-studios', router, pathname)
+            }}
+          >
             <ImageWrapper>
-              <MarqueeWrapper>
-                <Marquee repeat={3}>
-                  <HugeText $m={'0 6vw 0 0'}>Coming&nbsp;&nbsp;Soon</HugeText>
-                </Marquee>
-              </MarqueeWrapper>
               <CustomImage
-                src={
-                  'data:image/webp;base64,UklGRl4CAABXRUJQVlA4WAoAAAAgAAAAJQAAJQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggcAAAADAHAJ0BKiYAJgA+5VqmTakko6I1WqgBIByJYwDPoB4IC+vT5qEFU3Wa6yoRrrOZwtsQ2+bzfntNlWZuw8T5LAukAAD+8drRcsqNsMA9Eoz2uJpaBtPfPiG3ja0rhx9mOU2tz7PQd5mRXkiB8bq4AAA='
-                }
+                src="/astrostudios-1.webp"
                 alt="Astro Studios"
                 speed={0.5}
               />
