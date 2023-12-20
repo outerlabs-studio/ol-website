@@ -22,7 +22,6 @@ const About = ({ subtitle, paragraphs, live }) => {
           trigger: sectionTarget.current,
           start: 'top-=10% bottom',
           toggleActions: 'play none none reset',
-          markers: true,
         },
       })
 
