@@ -87,7 +87,6 @@ export const ImageWrapper = styled.a`
     background-color: ${({ theme }) => `rgba(${theme.text}, 0.75)`};
   }
 
-  ${media.desktop`border-radius: 35px;`}
   ${media.thone`height: 60svh;`}
 `
 export const OverlayWrapper = styled.div`

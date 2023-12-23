@@ -29,6 +29,5 @@ export const ImageWrapper = styled.div`
   min-height: 50vw;
   border-radius: 2vw;
 
-  ${media.desktop`border-radius: 35px;`}
   ${media.thone`height: 60svh;`}
 `
