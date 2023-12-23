@@ -5,7 +5,6 @@
  */
 
 import React, { useRef, useCallback } from 'react'
-import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import gsap from 'gsap'
 import styled, { css } from 'styled-components'

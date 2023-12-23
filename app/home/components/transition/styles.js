@@ -5,7 +5,7 @@ import { Z_INDEX, media } from 'styles'
 
 export const TransitionSection = styled.section`
   position: relative;
-  padding-top: 10vw;
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   z-index: ${Z_INDEX.transition};
 
   ${media.thone`padding-top: 0;`}

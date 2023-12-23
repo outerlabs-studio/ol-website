@@ -99,7 +99,7 @@ const About = () => {
             <CustomImage
               src="/meeting.webp"
               alt="The team"
-              speed={2}
+              speed={1.5}
               blur={`L8C5;hRi02OG00xu~B$216E2=Xxu`}
             />
           </TopImageWrapper>
@@ -109,7 +109,7 @@ const About = () => {
             <CustomImage
               src="/boys.webp"
               alt="The team"
-              speed={2}
+              speed={1.5}
               blur={`L14_qW#8~oD%g%IqNGMx00O?R5xG`}
             />
           </BottomImageWrapper>

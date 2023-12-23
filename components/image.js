@@ -27,7 +27,14 @@ const ParallaxWrapper = styled.div`
   }
 `
 
-const CustomImage = ({ src, alt, sizes, blur, speed = 1 }) => {
+const CustomImage = ({
+  src,
+  alt,
+  sizes,
+  blur,
+  speed = 1,
+  priority = false,
+}) => {
   const target = useRef()
 
   const { height: windowWidth } = useWindowSize()
@@ -77,6 +84,7 @@ const CustomImage = ({ src, alt, sizes, blur, speed = 1 }) => {
         style={{ transform: 'scale(1.2)' }}
         quality={100}
         ref={target}
+        priority={priority}
       />
     </ParallaxWrapper>
   )

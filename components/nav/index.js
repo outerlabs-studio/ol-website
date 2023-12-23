@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { useLenis } from '@studio-freight/react-lenis'
@@ -11,19 +10,10 @@ import gsap from 'gsap'
 import { animatePageOut } from 'lib'
 
 const Nav = () => {
-  const [hide, setHide] = useState(true)
   const router = useRouter()
   const path = usePathname()
   const lenis = useLenis()
   const logoName = 'Outer Labs'
-
-  useLenis(({ scroll, direction }) => {
-    if (path === '/' && scroll < 50) {
-      setHide(true)
-    } else {
-      setHide(false)
-    }
-  })
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -41,7 +31,7 @@ const Nav = () => {
   }, [])
 
   return (
-    <HeaderWrapper $hide={hide}>
+    <HeaderWrapper>
       <Container>
         <NavWrapper>
           <Logo

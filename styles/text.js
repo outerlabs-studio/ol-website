@@ -15,9 +15,9 @@ export const SmallText = styled.p`
   margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `
 export const Normal = css`
-  font-size: 1.3vw;
+  font-size: 1.1vw;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.3;
 
   ${media.desktop`font-size: 16px;`}
   ${media.thone`font-size: 18px;`}
@@ -53,9 +53,9 @@ export const HugeText = styled.p`
   margin: ${({ $nm, $m }) => ($nm ? 0 : $m ? $m : 'unset')};
 `
 export const Display = css`
-  font-size: 8vw; // 180px
+  font-size: 9vw; // 180px
   font-weight: 400;
-  line-height: 110%;
+  line-height: 1.1;
 
   ${media.desktop`font-size: 10vw;`}
   ${media.thone`font-size: 15vw;`}

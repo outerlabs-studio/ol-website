@@ -1,218 +1,180 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { useIsomorphicLayoutEffect, useWindowSize } from 'react-use'
-import { Container, sizes } from 'styles'
+import { useCallback, useRef } from 'react'
+import { useIsTouchDevice } from 'hooks'
+import { useIsomorphicLayoutEffect } from 'react-use'
+import { CustomButton, CustomImage } from 'components'
+import { Container, NormalText } from 'styles'
 import {
-  ButtonWrapper,
-  CustomGridWrapper,
+  ContentWrap,
   DescriptionWrapper,
-  HeroWrapper,
-  LinkWrapper,
+  ImageWrapper,
+  LineOne,
+  LineTwo,
+  SectionWrapper,
   TitleWrapper,
+  CustomGridWrapper,
+  AboutButton,
+  AboutButtonWrapper,
+  OverlayWrapper,
 } from './styles'
 import gsap from 'gsap'
-import { CustomButton, CustomLink, Parallax } from 'components'
-import { use100vh } from 'react-div-100vh'
+import { animatePageOut } from 'lib'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Hero = () => {
-  const trigger = useRef()
-  const trigger2 = useRef()
-  const { width } = useWindowSize()
-  const pxHeight = use100vh()
-  const [height, setHeight] = useState(null)
-  const text = `Award winning digital design and development consultancy specializing in websites, apps, and branding.`
-
+  const isTouchDevice = useIsTouchDevice()
+  const movingContainerRef = useRef()
+  const router = useRouter()
+  const pathname = usePathname()
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline()
+
       tl.from(
-        gsap.utils.toArray('.reveal-hero-1'),
+        '.reveal-hero-1',
         {
           yPercent: 100,
-          duration: 2,
-          stagger: 0.02,
+          duration: 1.5,
+          stagger: 0.015,
           ease: 'power3.inOut',
         },
         0,
+      ).from(
+        '.reveal-hero-2',
+        {
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.inOut',
+        },
+        0.75,
       )
-        .from(
-          gsap.utils.toArray('.reveal-hero-2'),
-          {
-            yPercent: 100,
-            duration: 2,
-            stagger: 0.2,
-            ease: 'power3.inOut',
-          },
-          0,
-        )
-        .from(
-          gsap.utils.toArray('.reveal-hero-3'),
-          {
-            xPercent: -100,
-            duration: 1,
-            stagger: 0.03,
-            ease: 'power3.inOut',
-          },
-          0,
-        )
-        .fromTo(
-          '.reveal-button',
-          {
-            scale: 0,
-          },
-          { scale: 1, duration: 0.5, ease: 'power3.inOut' },
-          1,
-        )
-
-      if (width >= sizes.thone) {
-        tl.to(
-          trigger.current,
-          {
-            yPercent: 15,
-            scrollTrigger: {
-              trigger: trigger.current,
-              start: 'center center',
-              end: 'bottom+=15% top',
-              scrub: true,
-            },
-          },
-          0,
-        )
-      }
     })
 
     return () => ctx.revert()
-  }, [width])
+  }, [])
 
-  useEffect(() => {
-    if (height === null) {
-      setHeight(pxHeight)
-    }
-  }, [pxHeight])
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (isTouchDevice) return
+
+      const bounds = movingContainerRef.current.getBoundingClientRect()
+
+      // Calculate the distance from the cursor to the center of the element
+      const centerX = bounds.left + bounds.width / 2
+      const distanceX = e.clientX - centerX
+
+      // Determine the magnet effect threshold (e.g., 100 pixels)
+      const magnetThreshold = 300
+
+      let xPosition
+      if (Math.abs(distanceX) < magnetThreshold) {
+        // Apply a magnet effect: the closer to the center, the stronger the pull
+        xPosition = distanceX
+      } else {
+        // If the cursor is outside the magnet threshold, don't apply the magnet effect
+        xPosition = bounds.clientWidth
+      }
+
+      // Apply the animation with GSAP
+      gsap.to(movingContainerRef.current, {
+        x: xPosition,
+        y:
+          (e.clientY - bounds.top - movingContainerRef.current.clientHeight) /
+          2,
+        scale: 1.1,
+        duration: 1,
+        ease: 'expo.out',
+      })
+    },
+    [isTouchDevice],
+  )
+  const handleMouseExit = useCallback(() => {
+    gsap.to(movingContainerRef.current, {
+      x: 0,
+      y: 0,
+      scale: 1,
+      duration: 1,
+      ease: 'expo.out',
+    })
+  }, [])
 
   return (
-    <HeroWrapper ref={trigger}>
-      <div
-        className="content-wrap"
-        style={{ minHeight: height }}
-        ref={trigger2}
-      >
-        <Container>
+    <SectionWrapper>
+      <Container>
+        <ContentWrap>
           <CustomGridWrapper>
-            <LinkWrapper>
-              <div className="overflow">
-                <div className="reveal-hero-2">
-                  <CustomLink
-                    target="_blank"
-                    to="https://instagram.com/outerlabs"
-                  >
-                    Instagram
-                  </CustomLink>
-                </div>
-              </div>
-              <div className="overflow">
-                <div className="reveal-hero-2">
-                  <CustomLink
-                    target="_blank"
-                    to="https://www.linkedin.com/company/outerlabs"
-                  >
-                    LinkedIn
-                  </CustomLink>
-                </div>
-              </div>
-              <div className="overflow">
-                <div className="reveal-hero-2">
-                  <CustomLink
-                    target="_blank"
-                    to="https://www.dribbble.com/outerlabs"
-                  >
-                    Dribbble
-                  </CustomLink>
-                </div>
-              </div>
-              <div className="overflow">
-                <div className="reveal-hero-2">
-                  <CustomLink
-                    target="_blank"
-                    to="https://www.github.com/outerlabs-studio"
-                  >
-                    GitHub
-                  </CustomLink>
-                </div>
-              </div>
-            </LinkWrapper>
-            <DescriptionWrapper>
-              {text.split(' ').map((word, index) => (
-                <div key={index} className="overflow">
-                  <div className="reveal-hero-1">{word}&nbsp;</div>
-                </div>
-              ))}
-              <div className="link-wrapper">
-                <CustomButton href="/about" className="reveal-button">
-                  Learn more
-                </CustomButton>
-                <CustomButton
-                  href="/contact"
-                  className="reveal-button small"
-                  $reverse
-                >
-                  Get in touch
-                </CustomButton>
-              </div>
+            <DescriptionWrapper className="reveal-hero-2">
+              <NormalText>
+                We’re design and develop award-winning digital products;
+                specializing in websites, apps, and branding.
+              </NormalText>
+              <CustomButton $reverse href="/contact" className="reveal-hero-3">
+                Get in touch
+              </CustomButton>
             </DescriptionWrapper>
           </CustomGridWrapper>
-        </Container>
+          <TitleWrapper>
+            <div>
+              <LineOne>
+                {`Creative`.split('').map((letter, index) => (
+                  <div className="overflow" key={index}>
+                    <div className="reveal-hero-1">{letter}</div>
+                  </div>
+                ))}
+                {`design`.split('').map((letter, index) => (
+                  <div className="overflow" key={index}>
+                    <div className="reveal-hero-1">
+                      {letter === 'd' ? '\u00A0d' : letter}
+                    </div>
+                  </div>
+                ))}
+              </LineOne>
+              <LineTwo>
+                <div>
+                  {`and`.split('').map((letter, index) => (
+                    <div className="overflow" key={index}>
+                      <div className="reveal-hero-1 and">{letter}</div>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  {`development`.split('').map((letter, index) => (
+                    <div className="overflow" key={index}>
+                      <div className="reveal-hero-1">{letter}</div>
+                    </div>
+                  ))}
+                </div>
+              </LineTwo>
+            </div>
+          </TitleWrapper>
+        </ContentWrap>
 
-        <ButtonWrapper>
-          <Parallax speed={1} trigger={trigger}>
-            <CustomButton className="reveal-button" href="/contact">
-              Get in touch
-            </CustomButton>
-          </Parallax>
-        </ButtonWrapper>
-
-        <TitleWrapper>
-          <div className="overflow">
-            <div className="reveal-hero-3">O</div>
-          </div>
-          <Parallax speed={-2} trigger={trigger2} $toggleMobile>
-            <div className="overflow">
-              <div className="reveal-hero-3">u</div>
-            </div>
-          </Parallax>
-          <div className="overflow">
-            <div className="reveal-hero-3">t</div>
-          </div>
-          <Parallax speed={-1} trigger={trigger2} $toggleMobile>
-            <div className="overflow">
-              <div className="reveal-hero-3">e</div>
-            </div>
-          </Parallax>
-          <div className="overflow">
-            <div className="reveal-hero-3">r&nbsp;</div>
-          </div>
-          <Parallax speed={-1.5} trigger={trigger2} $toggleMobile>
-            <div className="overflow">
-              <div className="reveal-hero-3">L</div>
-            </div>
-          </Parallax>
-          <div className="overflow">
-            <div className="reveal-hero-3">a</div>
-          </div>
-          <Parallax speed={-0.5} trigger={trigger2} $toggleMobile>
-            <div className="overflow">
-              <div className="reveal-hero-3">b</div>
-            </div>
-          </Parallax>
-          <Parallax speed={-3} trigger={trigger2} $toggleMobile>
-            <div className="overflow">
-              <div className="reveal-hero-3">s</div>
-            </div>
-          </Parallax>
-        </TitleWrapper>
-      </div>
-    </HeroWrapper>
+        <ImageWrapper
+          href="/about"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseExit}
+          onClick={(e) => {
+            e.preventDefault()
+            animatePageOut('/about', router, pathname)
+          }}
+        >
+          <AboutButtonWrapper>
+            <AboutButton ref={movingContainerRef}>
+              Explore our process
+            </AboutButton>
+          </AboutButtonWrapper>
+          <OverlayWrapper />
+          <CustomImage
+            src={'/hero.webp'}
+            alt={'Outer Labs Studio'}
+            speed={1}
+            blur={`LJGazlRP~WM{WVxZe.s.-Tt6I;WB`}
+            priority={true}
+          />
+        </ImageWrapper>
+      </Container>
+    </SectionWrapper>
   )
 }
 

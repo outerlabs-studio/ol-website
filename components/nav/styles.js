@@ -11,18 +11,11 @@ export const HeaderWrapper = styled.header`
   z-index: 9996;
   /* background-color: ${({ theme }) => `rgb(${theme.accent1})`}; */
   color: ${({ theme }) => `rgb(${theme.accent1})`};
-  transition: transform 0.3s ease-in-out;
   mix-blend-mode: difference;
 
   a {
     mix-blend-mode: difference;
   }
-
-  ${(props) =>
-    props.$hide &&
-    `
-    transform: translateY(-100%);
-  `}
 `
 export const NavWrapper = styled.nav`
   display: flex;
