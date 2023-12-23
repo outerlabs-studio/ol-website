@@ -89,7 +89,7 @@ const Hero = () => {
         const y = centerY + Math.sin(angle) * radius
 
         // for the second animation
-        const extendedRadius = radius + 100
+        const extendedRadius = radius + 20
         const endX = centerX + Math.cos(angle) * extendedRadius
         const endY = centerY + Math.sin(angle) * extendedRadius
 
@@ -111,7 +111,7 @@ const Hero = () => {
               duration: 40,
               x: endX - width / 2,
               y: endY - window.outerHeight / 2,
-              rotation: -30 + Math.random() * 100,
+              rotate: -5 + Math.random() * 5,
               onComplete: () => {
                 tl.timeScale(70)
                 tl.tweenTo('explosion').then(() => {
