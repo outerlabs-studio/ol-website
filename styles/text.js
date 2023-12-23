@@ -45,7 +45,6 @@ export const Huge = css`
   ${media.desktop`font-size: 4vw;`}
   ${media.thone`
     font-size: 8vw;
-    line-height: 150%;
   `}
 `
 export const HugeText = styled.p`

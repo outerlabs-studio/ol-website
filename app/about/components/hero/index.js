@@ -78,7 +78,7 @@ const Hero = () => {
         0,
       ).addLabel('loaded', 1.5)
 
-      const radius = Math.min(width, window.outerHeight) / 3.5
+      const radius = Math.min(width, window.outerHeight) / 4.5
       const centerX = width / 2
       const centerY = window.outerHeight / 2
 
