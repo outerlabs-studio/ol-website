@@ -17,12 +17,10 @@ export const TextWrapper = styled.div`
 
   &.max-width {
     max-width: 85%;
+    ${media.thone`max-width: 100%; `};
   }
 
-  ${media.thone`
-    grid-column: 1 / 4;
-    max-width: 100%; 
-  `};
+  ${media.thone`grid-column: 1 / 4;`};
 
   .reveal-about-1 {
     ${Huge}
