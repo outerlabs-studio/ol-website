@@ -14,7 +14,10 @@ export const AboutWrapper = styled.section`
 `
 export const TextWrapper = styled.div`
   grid-column: 2 / span 2;
-  max-width: 85%;
+
+  &.max-width {
+    max-width: 85%;
+  }
 
   ${media.thone`
     grid-column: 1 / 4;

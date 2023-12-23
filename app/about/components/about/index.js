@@ -9,8 +9,9 @@ import gsap from 'gsap'
 
 const About = () => {
   const sectionTarget = useRef()
-  const text = `We go beyond the mainstream because we understand that our work is more than a task list; it's a dedication to brilliance. Your projects are not just assignments; they're canvases for us to paint excellence. Every line of code and every pixel is meticulously crafted to surpass expectations.`
-  const text2 = `We excel in translating the essence of your brand into dynamic digital solutions, whether it's through cutting-edge crypto apps, engaging e-commerce platforms, or compelling entertainment experiences. Our rapid rise in the digital design realm is a testament to our commitment to innovation and brand-centric strategy. Outer Labs is where brands find their digital voice and shape their future in an ever-evolving digital landscape. Here, every project is an opportunity to explore new horizons and redefine what's possible. Join us in this exciting journey where your brand's potential knows no bounds.`
+  const text = `We are a boutique studio with a team of four dedicated leads. Our size is our strength - it fosters a close-knit environment where collaboration and creativity thrive. The passion for what we do isn't just about achieving results; it's about relishing the process that leads us there.`
+  const text2 = `Our team structure is intentionally lean, allowing us to maintain a streamlined and efficient workflow. Having a small team eliminates the complexities often found in larger groups. This simplicity in our structure enables us to rapidly exchange ideas, leading to a development process that is not only faster but also more refined. Our intimate setting encourages open dialogue and a seamless exchange of creative thoughts, ensuring that every project benefits from the collective wisdom and expertise of our entire team.`
+  const text3 = `We understand that great design and smart development are key to creating user experiences that not only engage but also drive our clients' goals forward. In a world where digital is the norm, we ensure that our clients stand out with websites and apps that are not only visually striking but also highly functional and user-friendly. In short, at Outer Labs Studio, we combine our small team's agility with our big passion for digital excellence. The result? Tailored digital solutions that deliver results and drive profitability.`
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -83,8 +84,15 @@ const About = () => {
               </div>
             ))}
           </TextWrapper>
-          <TextWrapper>
+          <TextWrapper className="max-width">
             {text2.split(' ').map((element, index) => (
+              <div key={index} className="overflow">
+                <div className="reveal-about-4">{element}&nbsp;</div>
+              </div>
+            ))}
+          </TextWrapper>
+          <TextWrapper className="max-width">
+            {text3.split(' ').map((element, index) => (
               <div key={index} className="overflow">
                 <div className="reveal-about-4">{element}&nbsp;</div>
               </div>
