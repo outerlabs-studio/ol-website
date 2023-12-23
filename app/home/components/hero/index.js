@@ -64,17 +64,8 @@ const Hero = () => {
       const centerX = bounds.left + bounds.width / 2
       const distanceX = e.clientX - centerX
 
-      // Determine the magnet effect threshold (e.g., 100 pixels)
-      const magnetThreshold = 300
-
       let xPosition
-      if (Math.abs(distanceX) < magnetThreshold) {
-        // Apply a magnet effect: the closer to the center, the stronger the pull
-        xPosition = distanceX
-      } else {
-        // If the cursor is outside the magnet threshold, don't apply the magnet effect
-        xPosition = bounds.clientWidth
-      }
+      xPosition = distanceX
 
       // Apply the animation with GSAP
       gsap.to(movingContainerRef.current, {
