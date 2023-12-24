@@ -32,7 +32,7 @@ export const TopImageWrapper = styled.div`
   width: 100%;
   max-width: 24.5vw;
   height: 90vh;
-  border-radius: 30px 30px 0 0;
+  border-radius: 2vw 2vw 0 0;
   z-index: 2;
   top: -15vh;
 
@@ -60,7 +60,7 @@ export const BottomImageWrapper = styled.div`
   width: 100%;
   max-width: 24.5vw;
   height: 90vh;
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 2vw 2vw;
   z-index: 2;
 
   ${media.desktop`
