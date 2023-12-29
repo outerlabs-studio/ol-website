@@ -14,8 +14,9 @@ export const TitleWrapper = styled.div`
   min-height: 40vw;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 8vw;
+  padding-bottom: 2vw;
 
+  ${media.desktop`padding-bottom: 2rem;`}
   ${media.thone`height: 60svh;`}
 
   .reveal-hero-1 {
