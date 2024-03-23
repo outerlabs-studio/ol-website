@@ -18,7 +18,7 @@ const About = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionTarget.current,
-          start: 'top bottom-=10',
+          start: 'top bottom',
           toggleActions: 'play none none reset',
         },
       })
@@ -117,10 +117,10 @@ const About = () => {
             </div>
             <div className="col col-3">
               <div className="overflow">
-                <div className="reveal-about-2">Size</div>
+                <div className="reveal-about-2">Awards</div>
               </div>
               <div className="overflow">
-                <div className="reveal-about-3">4 members</div>
+                <div className="reveal-about-3">9 awards</div>
               </div>
             </div>
           </InfoWrapper>

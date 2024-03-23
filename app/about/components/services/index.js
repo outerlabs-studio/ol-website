@@ -15,7 +15,7 @@ const Services = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionTarget.current,
-          start: 'top bottom-=10',
+          start: 'top-=20% bottom',
           toggleActions: 'play none none reset',
         },
       })

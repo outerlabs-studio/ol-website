@@ -5,7 +5,7 @@ import { Medium, Normal, Z_INDEX, media } from 'styles'
 
 export const ServicesWrapper = styled.section`
   position: relative;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 10vw 0;
   z-index: ${Z_INDEX.projects};

@@ -8,7 +8,7 @@ export const TeamSection = styled.section`
   width: 100%;
   padding: 5vw 0 10vw 0;
   z-index: ${Z_INDEX.about};
-  background-color: ${({ theme }) => `rgb(${theme.body})`};
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   overflow-x: hidden;
 `
 export const CustomGridWrapper = styled(GridWrapper)`
