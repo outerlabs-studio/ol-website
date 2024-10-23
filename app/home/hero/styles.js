@@ -4,7 +4,6 @@ import { styled } from 'styled-components'
 import { Display, GridWrapper, Medium, Normal, Z_INDEX, media } from 'styles'
 
 export const SectionWrapper = styled.section`
-  position: relative;
   width: 100%;
   background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   padding-bottom: 6vw;

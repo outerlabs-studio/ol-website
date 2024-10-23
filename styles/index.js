@@ -17,3 +17,4 @@ export {
   DisplayText,
 } from './text'
 export { default as Z_INDEX } from './z'
+export { default as SectionWrapper } from './section'

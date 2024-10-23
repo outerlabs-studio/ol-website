@@ -1,5 +1,5 @@
 import { fetchAPI } from 'lib/api'
-import { Hero } from './home'
+import { About, Hero, Studio } from './home'
 
 async function Home() {
   const data = await fetchAPI('/homepage', {
@@ -18,6 +18,10 @@ async function Home() {
   return (
     <>
       <Hero data={doc.hero} />
+      <div>
+        <About data={doc.about} />
+        <Studio data={doc.studio} />
+      </div>
     </>
   )
 }

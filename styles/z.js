@@ -1,8 +1,8 @@
 const Z_INDEX = {
   hero: 1,
-  transition: 2,
+  about: 2,
   projects: 3,
-  about: 4,
+  studio: 4,
   scrollbar: 9999,
   footer: {
     background: 0,

@@ -18,67 +18,55 @@ import {
   OverlayWrapper,
 } from './styles'
 import gsap from 'gsap'
+import { animatePageOut } from 'lib'
 import { usePathname, useRouter } from 'next/navigation'
 import { useGSAP } from '@gsap/react'
-import { animatePageOut } from 'lib'
 
 const Hero = ({ data }) => {
   const isTouchDevice = useIsTouchDevice()
   const contextContainer = useRef()
   const movingContainerRef = useRef()
-  const descriptionRef = useRef()
-  const titleLineOneRefs = useRef([])
-  const titleLineTwoAndRefs = useRef([])
-  const titleLineTwoDevRefs = useRef([])
   const router = useRouter()
   const pathname = usePathname()
 
   const { contextSafe } = useGSAP({ scope: contextContainer })
 
   useGSAP(() => {
-    let tl = gsap.timeline()
-
-    tl.from(
-      titleLineOneRefs.current,
-      {
+    gsap
+      .timeline()
+      .from('.reveal-hero-1', {
         yPercent: 100,
         duration: 1.5,
         stagger: 0.015,
         ease: 'power3.inOut',
-      },
-      0,
-    ).from(
-      descriptionRef.current,
-      {
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.inOut',
-      },
-      0.75,
-    )
+      })
+      .from(
+        '.reveal-hero-2',
+        {
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.inOut',
+        },
+        0.75,
+      )
   })
 
   const handleMouseMove = contextSafe((e) => {
     if (isTouchDevice) return
 
     const bounds = movingContainerRef.current.getBoundingClientRect()
-
-    // Calculate the distance from the cursor to the center of the element
     const centerX = bounds.left + bounds.width / 2
     const distanceX = e.clientX - centerX
 
-    let xPosition
-    xPosition = distanceX
-
-    // Apply the animation with GSAP
     gsap.to(movingContainerRef.current, {
-      x: xPosition,
+      x: distanceX,
       y: (e.clientY - bounds.top - movingContainerRef.current.clientHeight) / 2,
       scale: 1.1,
       duration: 1,
       ease: 'expo.out',
     })
   })
+
   const handleMouseExit = contextSafe(() => {
     gsap.to(movingContainerRef.current, {
       x: 0,
@@ -89,14 +77,23 @@ const Hero = ({ data }) => {
     })
   })
 
+  const renderTextWithReveal = (text, className = '') =>
+    text.split('').map((letter, index) => (
+      <div className="overflow" key={index}>
+        <div className={`reveal-hero-1 ${className}`}>
+          {letter === 'd' ? '\u00A0d' : letter}
+        </div>
+      </div>
+    ))
+
   return (
     <SectionWrapper ref={contextContainer}>
       <Container>
         <ContentWrap>
           <CustomGridWrapper>
-            <DescriptionWrapper ref={descriptionRef}>
+            <DescriptionWrapper className="reveal-hero-2">
               <NormalText>{data?.description}</NormalText>
-              <CustomButton $reverse href="/contact">
+              <CustomButton $reverse href="/contact" className="reveal-hero-3">
                 Get in touch
               </CustomButton>
             </DescriptionWrapper>
@@ -104,32 +101,12 @@ const Hero = ({ data }) => {
           <TitleWrapper>
             <div>
               <LineOne>
-                {`Creative`.split('').map((letter, index) => (
-                  <div className="overflow" key={index} ref={(el) => (titleLineOneRefs.current[index] = el)}>
-                    <div>{letter}</div>
-                  </div>
-                ))}
-                {`design`.split('').map((letter, index) => (
-                  <div className="overflow" key={index} ref={(el) => (titleLineOneRefs.current[index + 8] = el)}>
-                    <div>{letter === 'd' ? ' d' : letter}</div>
-                  </div>
-                ))}
+                {renderTextWithReveal('Creative')}
+                {renderTextWithReveal('design')}
               </LineOne>
               <LineTwo>
-                <div>
-                  {`and`.split('').map((letter, index) => (
-                    <div className="overflow" key={index} ref={(el) => (titleLineTwoAndRefs.current[index] = el)}>
-                      <div>{letter}</div>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  {`development`.split('').map((letter, index) => (
-                    <div className="overflow" key={index} ref={(el) => (titleLineTwoDevRefs.current[index] = el)}>
-                      <div>{letter}</div>
-                    </div>
-                  ))}
-                </div>
+                <div>{renderTextWithReveal('and', 'and')}</div>
+                <div>{renderTextWithReveal('development')}</div>
               </LineTwo>
             </div>
           </TitleWrapper>
@@ -145,15 +122,17 @@ const Hero = ({ data }) => {
           }}
         >
           <AboutButtonWrapper>
-            <AboutButton ref={movingContainerRef}>Explore our process</AboutButton>
+            <AboutButton ref={movingContainerRef}>
+              Explore our process
+            </AboutButton>
           </AboutButtonWrapper>
           <OverlayWrapper />
           <CustomImage
             src={data?.image.url}
             alt={data?.image.alternativeText}
             speed={1}
-            blur={`LJGazlRP~WM{WVxZe.s.-Tt6I;WB`}
-            priority={true}
+            blur="LJGazlRP~WM{WVxZe.s.-Tt6I;WB"
+            priority
           />
         </ImageWrapper>
       </Container>
