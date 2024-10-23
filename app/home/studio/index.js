@@ -137,7 +137,9 @@ const Studio = ({ data }) => {
               ))}
             </ParagraphWrapper>
             <div className="reveal-about-button">
-              <CustomButton href="/about">Meet the team</CustomButton>
+              <CustomButton $reverse href="/about">
+                Meet the team
+              </CustomButton>
             </div>
           </ContentWrapper>
         </CustomGridWrapper>
