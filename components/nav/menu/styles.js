@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import styled from 'styled-components'
-import { Large, media, Medium, Z_INDEX } from 'styles'
+import { Container, Display, Huge, Large, media, Medium, Z_INDEX } from 'styles'
 
 export const MenuWrapper = styled.menu`
   display: ${({ menuOpen }) => (menuOpen ? 'block' : 'none')};
@@ -11,12 +11,12 @@ export const MenuWrapper = styled.menu`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => `rgb(${theme.white})`};
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   margin: 0;
   padding: 0;
   z-index: ${Z_INDEX.menu};
 `
-export const CustomGrid = styled.div`
+export const CustomGrid = styled(Container)`
   display: grid;
   position: relative;
   grid-gap: 2vw;
@@ -30,11 +30,11 @@ export const MenuLinksWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2vw;
-  ${media.phablet`grid-column: 1 / -1;`}
+  ${media.thone`grid-column: 1 / -1;`}
 `
 export const MenuLink = styled(Link)`
-  ${Large}
-  color: ${({ theme }) => `rgb(${theme.black})`};
+  ${Display}
+  color: ${({ theme }) => `rgb(${theme.text})`};
   text-decoration: none;
 `
 export const ContactWrapper = styled.div`
@@ -42,11 +42,11 @@ export const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5vw;
-  ${media.phablet`grid-column: 1 / -1;`}
+  ${media.thone`grid-column: 1 / -1;`}
 
   a {
     ${Medium}
     text-decoration: underline;
-    color: ${({ theme }) => `rgb(${theme.black})`};
+    color: ${({ theme }) => `rgb(${theme.text})`};
   }
 `

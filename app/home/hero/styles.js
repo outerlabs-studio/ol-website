@@ -52,7 +52,7 @@ export const TitleWrapper = styled.div`
     ${Display};
   }
   .and {
-    color: ${({ theme }) => `rgb(${theme.body})`};
+    color: ${({ theme }) => `rgb(${theme.accent2})`};
   }
 `
 export const CustomGridWrapper = styled(GridWrapper)`

@@ -34,6 +34,7 @@ const Nav = () => {
   const lenis = useLenis()
 
   const container = useRef()
+  const mobileContainer = useRef()
   const innerMenuText = useRef()
   const navLinkList = useRef()
   const navLink = useRef([])
@@ -46,6 +47,14 @@ const Nav = () => {
 
   useGSAP(() => {
     let tl = gsap.timeline()
+
+    if (isSmallScreen) {
+      tl.set(mobileContainer.current, { autoAlpha: 1 }).from(
+        mobileContainer.current,
+        { scale: 0, duration: 0.5, ease: 'power3.inOut' },
+        0.5,
+      )
+    }
 
     tl.set(logoRef.current, { autoAlpha: 1 })
       .set(container.current, { autoAlpha: 1 })
@@ -151,6 +160,7 @@ const Nav = () => {
       <MobileNavRow
         touchDevice={touchDevice}
         onClick={() => setMenuOpen(!menuOpen)}
+        ref={mobileContainer}
       >
         <Button menuOpen={menuOpen}>
           <NormalText>Menu</NormalText>

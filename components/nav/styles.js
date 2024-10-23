@@ -30,6 +30,7 @@ export const NavButtonWrapper = styled.nav`
   align-items: center;
   opacity: 0;
   visibility: 0;
+  z-index: ${Z_INDEX.nav};
 
   ${media.tablet`
     top: 1rem;
@@ -45,7 +46,7 @@ export const MobileNavRow = styled(NavButtonWrapper)`
 export const Button = styled.div`
   position: relative;
   background-color: ${({ menuOpen, theme }) =>
-    menuOpen ? `rgb(${theme.body})` : `rgba(${theme.text}, 0.9)`};
+    menuOpen ? `rgb(${theme.accent2})` : `rgba(${theme.text}, 0.9)`};
   backdrop-filter: blur(10px) hue-rotate(120deg);
   border-radius: 35vw;
   display: flex;
