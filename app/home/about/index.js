@@ -28,7 +28,6 @@ const About = ({ data }) => {
           start: 'top bottom-=25%',
           end: 'bottom bottom',
           scrub: 1,
-          markers: true,
         },
       })
       .fromTo(
