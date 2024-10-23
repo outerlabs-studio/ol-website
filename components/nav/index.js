@@ -47,15 +47,23 @@ const Nav = () => {
   useGSAP(() => {
     let tl = gsap.timeline()
 
-    tl.set(logoRef.current, { autoAlpha: 1 }).from(
-      gsap.utils.toArray('.reveal-nav-1'),
-      {
-        yPercent: 100,
-        duration: 1.5,
-        stagger: 0.02,
-        ease: 'power3.inOut',
-      },
-    )
+    tl.set(logoRef.current, { autoAlpha: 1 })
+      .set(container.current, { autoAlpha: 1 })
+      .from(
+        gsap.utils.toArray('.reveal-nav-1'),
+        {
+          yPercent: 100,
+          duration: 1.5,
+          stagger: 0.02,
+          ease: 'power3.inOut',
+        },
+        0,
+      )
+      .from(
+        container.current,
+        { scale: 0, duration: 0.5, ease: 'power3.inOut' },
+        0.5,
+      )
   })
 
   const onNavLinkHover = contextSafe((index) => {

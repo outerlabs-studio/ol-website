@@ -28,6 +28,8 @@ export const FixedHeader = styled.header`
 export const NavButtonWrapper = styled.nav`
   display: ${({ touchDevice }) => (touchDevice ? 'none' : 'flex')};
   align-items: center;
+  opacity: 0;
+  visibility: 0;
 
   ${media.tablet`
     top: 1rem;
