@@ -51,7 +51,7 @@ const About = ({ data }) => {
               ))}
             </TextWrapper>
             <ButtonWrapper>
-              <CustomButton href="/about">
+              <CustomButton href="/about" $reverse>
                 Learn about our services
               </CustomButton>
             </ButtonWrapper>

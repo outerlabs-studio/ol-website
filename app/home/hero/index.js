@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { useIsTouchDevice } from 'hooks'
 import { CustomButton, CustomImage } from 'components'
-import { Container, NormalText } from 'styles'
+import { NormalText } from 'styles'
 import {
   ContentWrap,
   DescriptionWrapper,
@@ -16,6 +16,7 @@ import {
   AboutButton,
   AboutButtonWrapper,
   OverlayWrapper,
+  CustomContainer,
 } from './styles'
 import gsap from 'gsap'
 import { animatePageOut } from 'lib'
@@ -32,8 +33,9 @@ const Hero = ({ data }) => {
   const { contextSafe } = useGSAP({ scope: contextContainer })
 
   useGSAP(() => {
-    gsap
-      .timeline()
+    let tl = gsap.timeline()
+
+    tl.set(contextContainer.current.firstChild, { autoAlpha: 1 })
       .from('.reveal-hero-1', {
         yPercent: 100,
         duration: 1.5,
@@ -48,6 +50,15 @@ const Hero = ({ data }) => {
           ease: 'power3.inOut',
         },
         0.75,
+      )
+      .from(
+        '.hero-image',
+        {
+          yPercent: 20,
+          duration: 1,
+          ease: 'power3.out',
+        },
+        0.5,
       )
   })
 
@@ -88,7 +99,7 @@ const Hero = ({ data }) => {
 
   return (
     <SectionWrapper ref={contextContainer}>
-      <Container>
+      <CustomContainer>
         <ContentWrap>
           <CustomGridWrapper>
             <DescriptionWrapper className="reveal-hero-2">
@@ -99,7 +110,6 @@ const Hero = ({ data }) => {
             </DescriptionWrapper>
           </CustomGridWrapper>
           <TitleWrapper>
-            <div>
               <LineOne>
                 {renderTextWithReveal('Creative')}
                 {renderTextWithReveal('design')}
@@ -108,11 +118,11 @@ const Hero = ({ data }) => {
                 <div>{renderTextWithReveal('and', 'and')}</div>
                 <div>{renderTextWithReveal('development')}</div>
               </LineTwo>
-            </div>
           </TitleWrapper>
         </ContentWrap>
 
         <ImageWrapper
+          className="hero-image"
           href="/about"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseExit}
@@ -135,7 +145,7 @@ const Hero = ({ data }) => {
             priority
           />
         </ImageWrapper>
-      </Container>
+      </CustomContainer>
     </SectionWrapper>
   )
 }

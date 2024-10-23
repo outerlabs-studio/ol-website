@@ -1,7 +1,15 @@
 'use client'
 
 import { styled } from 'styled-components'
-import { Display, GridWrapper, Medium, Normal, Z_INDEX, media } from 'styles'
+import {
+  Container,
+  Display,
+  GridWrapper,
+  Medium,
+  Normal,
+  Z_INDEX,
+  media,
+} from 'styles'
 
 export const SectionWrapper = styled.section`
   width: 100%;
@@ -10,6 +18,10 @@ export const SectionWrapper = styled.section`
   z-index: ${Z_INDEX.hero};
 
   ${media.desktop`padding-bottom: 6rem;`}
+`
+export const CustomContainer = styled(Container)`
+  opacity: 0;
+  visibility: hidden;
 `
 export const ContentWrap = styled.div`
   display: flex;

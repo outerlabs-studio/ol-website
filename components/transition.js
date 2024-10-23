@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Z_INDEX } from 'styles'
 
 const TransitionElement = styled.div`
   top: 0;
@@ -6,7 +7,7 @@ const TransitionElement = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: black;
-  z-index: 9998;
+  z-index: ${Z_INDEX.transition};
   position: fixed;
   will-change: transform, border-bottom-left-radius, border-top-left-radius;
 `

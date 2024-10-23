@@ -7,14 +7,13 @@ export const AboutSection = styled(SectionWrapper)`
   position: sticky;
   top: 0;
   left: 0;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   z-index: ${Z_INDEX.about};
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
 
   ${media.thone`padding-top: 0;`}
 `
 export const InnerWrapper = styled.div`
-  background-color: ${({ theme }) => `rgb(${theme.text})`};
-  color: ${({ theme }) => `rgb(${theme.accent1})`};
+  color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 8vw 0;
   min-height: 100vh;
 

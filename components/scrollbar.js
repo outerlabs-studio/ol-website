@@ -9,14 +9,10 @@ import { Z_INDEX } from 'styles'
 
 const ScrollbarWrapper = styled.div`
   position: fixed;
-  right: 2vw;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 200px;
-  width: 10px;
+  right: 0;
+  bottom: 0;
+  top: 0;
   z-index: ${Z_INDEX.scrollbar};
-  background-color: ${({ theme }) => `rgb(${theme.white})`};
-  border-radius: 10px;
 
   .inner {
     height: 100%;
@@ -24,84 +20,72 @@ const ScrollbarWrapper = styled.div`
   }
 
   .thumb {
-    min-height: 50px;
-    width: 10px;
-    background-color: ${({ theme }) => `rgb(${theme.black})`};
+    min-height: 80px;
+    width: 8px;
+    background-color: ${({ theme }) => `rgb(${theme.accent2})`};
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
     border-radius: 10px;
     cursor: grab;
   }
 
-  @media (max-width: 768px) {
+  @include mobile {
     display: none;
   }
 `
 
 function Scrollbar() {
-  const thumbRef = useRef(null)
+  const thumbRef = useRef()
   const lenis = useLenis()
   const [innerMeasureRef, { height: innerHeight }] = useRect()
   const [thumbMeasureRef, { height: thumbHeight }] = useRect()
 
   useLenis(
     ({ scroll, limit }) => {
-      if (thumbRef.current) {
-        const progress = scroll / limit
-        thumbRef.current.style.transform = `translate3d(-50%, ${
-          progress * (innerHeight - thumbHeight)
-        }px, 0)`
-      }
+      const progress = scroll / limit
+
+      thumbRef.current.style.transform = `translate3d(0,${
+        progress * (innerHeight - thumbHeight)
+      }px,0)`
     },
     [innerHeight, thumbHeight],
   )
 
   useEffect(() => {
     let start = null
-    let startScroll = null
 
     function onPointerMove(e) {
-      if (start === null || startScroll === null) return
+      if (!start) return
       e.preventDefault()
 
-      const deltaY = e.clientY - start
-      const newScroll =
-        startScroll +
-        mapRange(0, innerHeight - thumbHeight, deltaY, 0, lenis.limit)
-      lenis.scrollTo(newScroll, { immediate: true })
+      const scroll = mapRange(
+        start,
+        innerHeight - (thumbHeight - start),
+        e.clientY,
+        0,
+        lenis.limit,
+      )
+      lenis.scrollTo(scroll, { immediate: true })
     }
 
     function onPointerDown(e) {
-      start = e.clientY
-      startScroll = lenis.scroll
-      window.addEventListener('pointermove', onPointerMove, false)
-      window.addEventListener('pointerup', onPointerUp, false)
+      start = e.offsetY
     }
 
     function onPointerUp() {
       start = null
-      startScroll = null
-      window.removeEventListener('pointermove', onPointerMove, false)
-      window.removeEventListener('pointerup', onPointerUp, false)
     }
 
-    if (thumbRef.current) {
-      thumbRef.current.addEventListener('pointerdown', onPointerDown, false)
-    }
+    thumbRef.current?.addEventListener('pointerdown', onPointerDown, false)
+    window.addEventListener('pointermove', onPointerMove, false)
+    window.addEventListener('pointerup', onPointerUp, false)
 
     return () => {
-      if (thumbRef.current) {
-        thumbRef.current.removeEventListener(
-          'pointerdown',
-          onPointerDown,
-          false,
-        )
-      }
+      thumbRef.current?.removeEventListener('pointerdown', onPointerDown, false)
       window.removeEventListener('pointermove', onPointerMove, false)
       window.removeEventListener('pointerup', onPointerUp, false)
     }
-  }, [lenis, innerHeight, thumbHeight])
+  }, [lenis, innerHeight])
 
   return (
     <ScrollbarWrapper>

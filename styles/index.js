@@ -1,8 +1,14 @@
 export { default as GlobalStyle } from './global'
 export { lightTheme } from './themes'
 export { default as wtskrappa } from './fonts'
-export { default as Container } from './container'
-export { media, sizes } from './media'
+export {
+  default as Container,
+  ContainerPaddingLeft,
+  ContainerPaddingRight,
+  ContainerPaddingTop,
+  ContainerPaddingBottom,
+} from './container'
+export { media, breakpoints } from './media'
 export { Grid, GridWrapper } from './grid'
 export {
   Small,

@@ -1,9 +1,12 @@
 const Z_INDEX = {
+  transition: 9999,
+  nav: 9998,
+  menu: 9997,
+  scrollbar: 9995,
   hero: 1,
   about: 2,
   projects: 3,
   studio: 4,
-  scrollbar: 9999,
   footer: {
     background: 0,
     section: 1,

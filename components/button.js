@@ -60,7 +60,7 @@ const StyledButton = styled.div`
  * CustomButton component.
  * @component
  * @param {object} props - Component props.
- * @param {React.ReactNode} props.reverse - Reverse the colors.
+ * @param {React.ReactNode} props.$reverse - Reverse the colors.
  * @param {string} [props.href] - The URL to navigate when the button is clicked.
  * @param {string} [props.to] - The URL to navigate when the button is clicked (for Next.js Link component).
  * @param {string} [props.target] - The target attribute for the anchor tag.
