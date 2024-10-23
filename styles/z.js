@@ -1,5 +1,4 @@
 const Z_INDEX = {
-  canvas: 0,
   transition: 9999,
   nav: 9998,
   menu: 9997,

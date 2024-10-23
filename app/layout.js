@@ -1,6 +1,4 @@
-import Cursor from 'components/cursor'
 import { StyledComponentsRegistry } from 'lib'
-import { Suspense } from 'react'
 
 const title = 'Outer Labs | Websites, apps, & branding studio'
 const description = `Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.`
@@ -121,9 +119,6 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>
           {children}
-          <Suspense fallback={null}>
-            <Cursor />
-          </Suspense>
         </StyledComponentsRegistry>
       </body>
     </html>

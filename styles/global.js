@@ -38,10 +38,6 @@ const GlobalStyle = createGlobalStyle`
     overscroll-behavior-y: none;
   }
 
-  main {
-    pointer-events: none;
-  }
-
   .overflow {
     overflow: hidden;
     height: fit-content;
@@ -55,22 +51,6 @@ const GlobalStyle = createGlobalStyle`
 
   &::-webkit-scrollbar {
     display: none;
-  }
-  .cursor {
-    position: fixed!important;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: all;
-    z-index: ${Z_INDEX.canvas}!important;
-    
-    canvas {
-      z-index: ${Z_INDEX.canvas}!important;
-    }
-  }
-  .enabled {
-    pointer-events: all!important;
   }
 
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {

@@ -16,7 +16,6 @@ export const HeroSection = styled(SectionWrapper)`
   width: 100%;
   padding-bottom: 6vw;
   z-index: ${Z_INDEX.hero};
-  background: transparent;
 
   ${media.desktop`padding-bottom: 6rem;`}
 `
