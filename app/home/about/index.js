@@ -42,10 +42,12 @@ const About = ({ data }) => {
       <InnerWrapper>
         <Container>
           <GridWrapper>
-            <Label className="label">About</Label>
+            <Label $reverse className="label enabled">
+              About
+            </Label>
             <TextWrapper>
               {data?.split(' ').map((element, index) => (
-                <HugeText key={index} className="words">
+                <HugeText key={index} className="words enabled">
                   {element + ' '}
                 </HugeText>
               ))}

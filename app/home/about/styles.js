@@ -8,7 +8,6 @@ export const AboutSection = styled(SectionWrapper)`
   top: 0;
   left: 0;
   z-index: ${Z_INDEX.about};
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
 
   ${media.thone`padding-top: 0;`}
 `

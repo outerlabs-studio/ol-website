@@ -15,8 +15,9 @@ const Cursor = () => {
     const simulation = new WebGLFluidEnhanced(canvasRef.current)
     simulation.setConfig({
       brightness: 0.3,
-      backgroundColor: '#FFFFFF',
-      colorPalette: ['#000521'],
+      backgroundColor: '#141714',
+      colorPalette: ['#212521'],
+      inverted: true,
       pressure: 0.2,
       sunrays: false,
       splatForce: 1500,
