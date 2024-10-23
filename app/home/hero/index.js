@@ -10,7 +10,7 @@ import {
   ImageWrapper,
   LineOne,
   LineTwo,
-  SectionWrapper,
+  HeroSection,
   TitleWrapper,
   CustomGridWrapper,
   AboutButton,
@@ -91,38 +91,38 @@ const Hero = ({ data }) => {
   const renderTextWithReveal = (text, className = '') =>
     text.split('').map((letter, index) => (
       <div className="overflow" key={index}>
-        <div className={`reveal-hero-1 ${className}`}>
-          {letter === 'd' ? '\u00A0d' : letter}
+        <div className={`reveal-hero-1 enabled ${className}`}>
+          {letter === 'd' && index === 0 ? '\u00A0d' : letter}
         </div>
       </div>
     ))
 
   return (
-    <SectionWrapper ref={contextContainer}>
+    <HeroSection ref={contextContainer}>
       <CustomContainer>
         <ContentWrap>
           <CustomGridWrapper>
             <DescriptionWrapper className="reveal-hero-2">
-              <NormalText>{data?.description}</NormalText>
+              <NormalText className="enabled">{data?.description}</NormalText>
               <CustomButton $reverse href="/contact" className="reveal-hero-3">
                 Get in touch
               </CustomButton>
             </DescriptionWrapper>
           </CustomGridWrapper>
           <TitleWrapper>
-              <LineOne>
-                {renderTextWithReveal('Creative')}
-                {renderTextWithReveal('design')}
-              </LineOne>
-              <LineTwo>
-                <div>{renderTextWithReveal('and', 'and')}</div>
-                <div>{renderTextWithReveal('development')}</div>
-              </LineTwo>
+            <LineOne>
+              {renderTextWithReveal('Creative')}
+              {renderTextWithReveal('design')}
+            </LineOne>
+            <LineTwo>
+              <div>{renderTextWithReveal('and', 'and')}</div>
+              <div>{renderTextWithReveal('development')}</div>
+            </LineTwo>
           </TitleWrapper>
         </ContentWrap>
 
         <ImageWrapper
-          className="hero-image"
+          className="hero-image enabled"
           href="/about"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseExit}
@@ -131,7 +131,7 @@ const Hero = ({ data }) => {
             animatePageOut('/about', router, pathname)
           }}
         >
-          <AboutButtonWrapper>
+          <AboutButtonWrapper className="enabled">
             <AboutButton ref={movingContainerRef}>
               Explore our process
             </AboutButton>
@@ -146,7 +146,7 @@ const Hero = ({ data }) => {
           />
         </ImageWrapper>
       </CustomContainer>
-    </SectionWrapper>
+    </HeroSection>
   )
 }
 

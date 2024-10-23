@@ -75,7 +75,7 @@ const CustomLink = (props) => {
 
   if (href) {
     return (
-      <div onClick={handleClick}>
+      <div onClick={handleClick} className="enabled">
         <StyledLink
           href={href}
           role="link"
@@ -96,6 +96,7 @@ const CustomLink = (props) => {
       href={to}
       target={target === '_blank' ? '_blank' : undefined}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+      className="enabled"
       {...linkAttributes}
     >
       <div ref={line1}>{children}</div>

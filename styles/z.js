@@ -1,4 +1,5 @@
 const Z_INDEX = {
+  canvas: 0,
   transition: 9999,
   nav: 9998,
   menu: 9997,
@@ -8,9 +9,9 @@ const Z_INDEX = {
   projects: 3,
   studio: 4,
   footer: {
-    background: 0,
-    section: 1,
-    foreground: 2,
+    background: 1,
+    section: 2,
+    foreground: 3,
   },
 }
 

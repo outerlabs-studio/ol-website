@@ -12,7 +12,7 @@ import {
 
 export const AboutSection = styled(SectionWrapper)`
   padding: 8vw 0;
-  background-color: ${({ theme }) => `rgb(${theme.body})`};
+  background: transparent;
   min-height: 200vh;
   overflow-x: hidden;
   z-index: ${Z_INDEX.about};

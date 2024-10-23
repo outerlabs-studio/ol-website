@@ -154,6 +154,7 @@ const CustomButton = (props) => {
           target={target === '_blank' ? '_blank' : undefined}
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           role="button"
+          className="enabled"
         >
           <StyledButton>
             <div ref={(el) => (line1 = el)}>{children}</div>

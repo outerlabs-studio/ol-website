@@ -7,15 +7,16 @@ import {
   GridWrapper,
   Medium,
   Normal,
+  SectionWrapper,
   Z_INDEX,
   media,
 } from 'styles'
 
-export const SectionWrapper = styled.section`
+export const HeroSection = styled(SectionWrapper)`
   width: 100%;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   padding-bottom: 6vw;
   z-index: ${Z_INDEX.hero};
+  background: transparent;
 
   ${media.desktop`padding-bottom: 6rem;`}
 `
