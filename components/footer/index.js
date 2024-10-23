@@ -92,7 +92,8 @@ const Footer = () => {
         0.25,
       )
 
-    let radius = width > breakpoints.thone ? (30 * width) / 100 : (55 * width) / 100
+    let radius =
+      width > breakpoints.thone ? (30 * width) / 100 : (55 * width) / 100
 
     const itemTarget = gsap.utils.toArray('.ferris-item')
     itemTarget.forEach((item, i, arr) => {
@@ -137,7 +138,7 @@ const Footer = () => {
   }, [width])
 
   return (
-    <FooterWrapper ref={footerTarget} id="contact">
+    <FooterWrapper ref={footerTarget} id="contact" className="enabled">
       <ContentWrapper>
         <div>
           <div className="overflow">

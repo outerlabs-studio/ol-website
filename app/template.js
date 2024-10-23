@@ -41,8 +41,8 @@ export default function Template({ children }) {
         <main>
           {isFirstLoad ? null : <TransitionElement id="transition-element" />}
           {children}
+          <Footer />
         </main>
-        <Footer />
       </LenisWrapper>
     </ThemeProvider>
   )

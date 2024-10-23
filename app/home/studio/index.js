@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { Container, DisplayText, GridWrapper } from 'styles'
 import {
-  AboutSection,
+  StudioSection,
   ContentWrapper,
   CustomGridWrapper,
   TopImageWrapper,
@@ -84,7 +84,7 @@ const Studio = ({ data }) => {
   }, [width])
 
   return (
-    <AboutSection ref={sectionTarget}>
+    <StudioSection ref={sectionTarget}>
       <Marquee repeat={3}>
         <div className="overflow">
           <div className="reveal-about-3">
@@ -103,7 +103,7 @@ const Studio = ({ data }) => {
             />
           </TopImageWrapper>
         </Parallax>
-        <Parallax speed={-2} trigger={sectionTarget} $toggleMobile>
+        <Parallax speed={-2} ref={sectionTarget} $toggleMobile>
           <BottomImageWrapper>
             <CustomImage
               src={data?.bottom_image.url}
@@ -142,7 +142,7 @@ const Studio = ({ data }) => {
           </ContentWrapper>
         </CustomGridWrapper>
       </Container>
-    </AboutSection>
+    </StudioSection>
   )
 }
 

@@ -10,12 +10,12 @@ import {
   media,
 } from 'styles'
 
-export const AboutSection = styled(SectionWrapper)`
+export const StudioSection = styled(SectionWrapper)`
   padding: 8vw 0;
-  background: transparent;
+  background: ${({ theme }) => `rgb(${theme.accent1})`};
   min-height: 200vh;
   overflow-x: hidden;
-  z-index: ${Z_INDEX.about};
+  z-index: ${Z_INDEX.studio};
 
   .resize {
     ${media.thone`

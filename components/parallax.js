@@ -1,6 +1,6 @@
 'use client'
 // https://github.com/studio-freight/compono/blob/main/src/parallax/index.js
-import { useEffect, useRef, cloneElement } from 'react'
+import { useEffect, useRef, cloneElement, forwardRef } from 'react'
 import { gsap } from 'gsap'
 import { useWindowSize } from 'react-use'
 
@@ -15,15 +15,18 @@ import { useWindowSize } from 'react-use'
  * @param {React.RefObject} [props.trigger] - The trigger element for the parallax effect
  * @returns {React.ReactNode} - Rendered component
  */
-export default function Parallax({
-  children,
-  speed = 1,
-  id = 'parallax',
-  position,
-  direction = 'vertical',
-  trigger = useRef(),
-  $toggleMobile,
-}) {
+const Parallax = forwardRef(function Parallax(
+  {
+    children,
+    speed = 1,
+    id = 'parallax',
+    position,
+    direction = 'vertical',
+    trigger = useRef(),
+    $toggleMobile,
+  },
+  ref,
+) {
   const target = useRef()
   const timeline = useRef()
   const { width: windowWidth } = useWindowSize()
@@ -37,7 +40,10 @@ export default function Parallax({
       .timeline({
         scrollTrigger: {
           id,
-          trigger: position === 'top' ? document.body : trigger.current,
+          trigger:
+            position === 'top'
+              ? document.body
+              : ref?.current || trigger.current,
           scrub: true,
           start: position === 'top' ? 'top top' : 'top bottom',
           end: position === 'top' ? '+=100%' : 'bottom top',
@@ -77,4 +83,6 @@ export default function Parallax({
   }
 
   return <>{cloneElement(children, { ref: target })}</>
-}
+})
+
+export default Parallax
