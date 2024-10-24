@@ -1,10 +1,9 @@
 'use client'
 
 import styled from 'styled-components'
-import { Z_INDEX, Huge, media, Medium, Normal } from 'styles'
+import { Z_INDEX, Huge, media, Medium, Normal, SectionWrapper } from 'styles'
 
-export const HeroWrapper = styled.section`
-  position: relative;
+export const HeroWrapper = styled(SectionWrapper)`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -14,8 +13,8 @@ export const HeroWrapper = styled.section`
 export const AnimWrapper = styled.div`
   width: 100%;
   height: 100%;
-  overflow: hidden;
   clip-path: inset(0% 0% 0% 0%);
+  overflow: hidden;
 `
 export const DVDScreenWrap = styled.div`
   position: absolute;
@@ -24,6 +23,7 @@ export const DVDScreenWrap = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${({ theme }) => `rgb(${theme.body})`};
+  border-radius: inherit;
 
   .wrapper {
     position: absolute;

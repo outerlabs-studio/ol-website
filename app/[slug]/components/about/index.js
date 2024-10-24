@@ -54,24 +54,39 @@ const About = ({ data }) => {
     <AboutWrapper ref={sectionTarget}>
       <LeftCol>
         <Item>
-          <NormalText className="title">Client</NormalText>
-          <NormalText>{data?.content?.client}</NormalText>
+          <div className="overflow">
+            <NormalText className="title reveal-about-1">Client</NormalText>
+          </div>
+
+          <div className="overflow">
+            <NormalText>{data?.content?.client}</NormalText>
+          </div>
         </Item>
         <Item>
-          <NormalText className="title">Date</NormalText>
-          <NormalText>Astro Studios</NormalText>
+          <div className="overflow">
+            <NormalText className="title reveal-about-1">Date</NormalText>
+          </div>
+
+          <div className="overflow">
+            <NormalText>Astro Studios</NormalText>
+          </div>
         </Item>
         <Item>
-          <NormalText className="title">Focus</NormalText>
+          <div className="overflow">
+            <NormalText className="title reveal-about-1">Focus</NormalText>
+          </div>
+
           {data?.content?.focus?.map((focus, index) => (
-            <NormalText key={index}>{focus.text}</NormalText>
+            <div className="overflow">
+              <NormalText key={index}>{focus.text}</NormalText>
+            </div>
           ))}
         </Item>
       </LeftCol>
       <RightCol>
         <NormalText
           dangerouslySetInnerHTML={{
-            __html: data.content.description.replace(/\n/g, '<br />'),
+            __html: data?.content?.description?.replace(/\n/g, '<br />'),
           }}
         />
       </RightCol>

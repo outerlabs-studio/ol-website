@@ -12,14 +12,6 @@ export const AboutWrapper = styled(SectionWrapper)`
   z-index: ${Z_INDEX.about};
 
   ${media.thone`padding: 4rem 0;`}
-
-  .reveal-about-1 {
-    ${Huge};
-  }
-
-  .reveal-about-2 {
-    ${Normal};
-  }
 `
 export const RightCol = styled.div`
   max-width: 50%;

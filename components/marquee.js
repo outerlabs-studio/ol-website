@@ -15,6 +15,7 @@ const StyledMarquee = styled.div`
 
   .inner {
     display: flex;
+    align-items: center;
     white-space: nowrap;
     animation: marquee var(--duration) linear infinite;
     animation-play-state: var(--animation-status);

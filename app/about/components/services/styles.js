@@ -1,10 +1,9 @@
 'use client'
 
 import styled from 'styled-components'
-import { Medium, Normal, Z_INDEX, media } from 'styles'
+import { Medium, Normal, SectionWrapper, Z_INDEX, media } from 'styles'
 
-export const ServicesWrapper = styled.section`
-  position: relative;
+export const ServicesWrapper = styled(SectionWrapper)`
   background-color: ${({ theme }) => `rgb(${theme.body})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 10vw 0;

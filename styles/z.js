@@ -7,6 +7,7 @@ const Z_INDEX = {
   about: 2,
   projects: 3,
   studio: 4,
+  team: 4,
   footer: {
     background: 1,
     section: 2,

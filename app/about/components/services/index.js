@@ -6,8 +6,11 @@ import { ServicesCol, ServicesWrapper, TextWrapper } from './styles'
 import { CustomButton, Label } from 'components'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
-const Services = () => {
+gsap.registerPlugin(ScrollTrigger)
+
+const Services = ({ data }) => {
   const sectionTarget = useRef()
 
   useGSAP(() => {
@@ -60,7 +63,6 @@ const Services = () => {
       )
   })
 
-  const text = `We specialize in crafting seamless and engaging user experiences, ensuring each element, whether it's web design or e-commerce platforms, functions in harmony within a robust and strategically driven framework.`
   return (
     <ServicesWrapper ref={sectionTarget}>
       <Container>
@@ -71,7 +73,7 @@ const Services = () => {
             </div>
           </div>
           <TextWrapper>
-            {text.split(' ').map((element, index) => (
+            {data?.services?.text?.split(' ').map((element, index) => (
               <div className="overflow" key={index}>
                 <div className="reveal-services-2">{element}&nbsp;</div>
               </div>
