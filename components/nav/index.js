@@ -207,7 +207,7 @@ const Nav = () => {
         </Button>
       </NavButtonWrapper>
 
-      <Menu menuOpen={menuOpen} links={LINKS} />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} links={LINKS} />
     </FixedHeader>
   )
 }
