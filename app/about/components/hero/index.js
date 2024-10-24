@@ -28,10 +28,9 @@ const Hero = () => {
         start: 'top top',
         end: 'bottom top',
         scrub: 1,
-        markers: true,
         pin: true,
       },
-      scale: 0.95,
+      clipPath: 'inset(3% 3% 3% 3%)',
     })
   })
 

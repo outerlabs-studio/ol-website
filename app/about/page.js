@@ -1,4 +1,4 @@
-import { Hero, About } from './components'
+import { Hero, About, Services } from './components'
 
 export const metadata = {
   title: 'About',
@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Services />
       <h1>hello</h1>
       <h1>hello</h1>
       <h1>hello</h1>
