@@ -1,11 +1,13 @@
 'use client'
 
 import { useRef } from 'react'
-import { Container, GridWrapper, NormalText } from 'styles'
+import {  NormalText } from 'styles'
 import { Item, LeftCol, RightCol, AboutWrapper } from './styles'
-import { CustomButton } from 'components'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const About = ({ data }) => {
   const sectionTarget = useRef()
@@ -14,7 +16,7 @@ const About = ({ data }) => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionTarget.current,
-        start: 'top-=10% bottom',
+        start: 'top bottom',
         toggleActions: 'play none none reset',
       },
     })
@@ -28,26 +30,16 @@ const About = ({ data }) => {
         ease: 'power3.inOut',
       },
       0,
+    ).from(
+      gsap.utils.toArray('.reveal-about-2'),
+      {
+        yPercent: 100,
+        duration: 1,
+        stagger: 0.001,
+        ease: 'power3.inOut',
+      },
+      '-=1',
     )
-      .from(
-        gsap.utils.toArray('.reveal-about-2'),
-        {
-          yPercent: 100,
-          duration: 1,
-          stagger: 0.005,
-          ease: 'power3.inOut',
-        },
-        '-=1',
-      )
-      .from(
-        '.reveal-about-3',
-        {
-          scale: 0,
-          duration: 0.5,
-          ease: 'power3.inOut',
-        },
-        1,
-      )
   }, [])
 
   return (
@@ -59,7 +51,9 @@ const About = ({ data }) => {
           </div>
 
           <div className="overflow">
-            <NormalText>{data?.content?.client}</NormalText>
+            <NormalText className="reveal-about-1">
+              {data?.content?.client}
+            </NormalText>
           </div>
         </Item>
         <Item>
@@ -68,7 +62,7 @@ const About = ({ data }) => {
           </div>
 
           <div className="overflow">
-            <NormalText>Astro Studios</NormalText>
+            <NormalText className="reveal-about-1">Astro Studios</NormalText>
           </div>
         </Item>
         <Item>
@@ -78,17 +72,25 @@ const About = ({ data }) => {
 
           {data?.content?.focus?.map((focus, index) => (
             <div className="overflow">
-              <NormalText key={index}>{focus.text}</NormalText>
+              <NormalText className="reveal-about-1" key={index}>
+                {focus.text}
+              </NormalText>
             </div>
           ))}
         </Item>
       </LeftCol>
       <RightCol>
-        <NormalText
-          dangerouslySetInnerHTML={{
-            __html: data?.content?.description?.replace(/\n/g, '<br />'),
-          }}
-        />
+        {data?.content?.description?.split('\n').map((paragraph, index) => (
+          <div>
+            {paragraph.split(' ').map((element, index) => (
+              <div key={index} className="overflow">
+                <NormalText className="reveal-about-2">
+                  {element}&nbsp;
+                </NormalText>
+              </div>
+            ))}
+          </div>
+        ))}
       </RightCol>
     </AboutWrapper>
   )

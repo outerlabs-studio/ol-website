@@ -81,7 +81,7 @@ const About = ({ data }) => {
             ))}
           </TextWrapper>
           {data?.short_description?.split('\n').map((paragraph, index) => (
-            <TextWrapper className="max-width">
+            <TextWrapper key={index} className="max-width">
               {paragraph.split(' ').map((element, index) => (
                 <div key={index} className="overflow">
                   <div className="reveal-about-4">{element}&nbsp;</div>
