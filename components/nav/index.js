@@ -24,8 +24,8 @@ const LOGO_NAME = 'Outer Labs'
 const LINKS = [
   { text: 'Work', href: '/#projects' },
   { text: 'Studio', href: '/about' },
-  { text: 'Blog', href: '/' },
-  { text: 'Contact', href: '/' },
+  { text: 'Blog', href: '/blog' },
+  { text: 'Contact', href: '/contact' },
 ]
 
 const Nav = () => {
@@ -142,8 +142,10 @@ const Nav = () => {
         ref={logoRef}
         onClick={(e) => {
           e.preventDefault()
-          if (path === '/') lenis.scrollTo(0)
-          else if (path === '/techcodes' || path === '/astro-studios') {
+          if (path === '/') {
+            lenis.scrollTo(0)
+            router.push('/')
+          } else if (path === '/techcodes' || path === '/astro-studios') {
             animatePageOut('/#projects', router, path)
           } else animatePageOut('/', router, path)
         }}
@@ -184,7 +186,13 @@ const Nav = () => {
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault()
-                      animatePageOut(item.href, router, path)
+                      if (item.href === '/#projects') {
+                        if (path === '/')
+                          lenis.scrollTo('#projects', { offset: 70 })
+                        else animatePageOut('/#projects', router, path)
+                      } else {
+                        animatePageOut(item.href, router, path)
+                      }
                     }}
                   >
                     {item.text}
