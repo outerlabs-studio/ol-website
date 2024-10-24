@@ -6,7 +6,6 @@ import { DVDScreenWrap } from './styles'
 import Elastica, {
   AxisAlignedBoundaryBox,
   initalConditionsPresets,
-  updatePresets,
   useElastica,
 } from '@darkroom.engineering/elastica/react'
 import gsap from 'gsap'

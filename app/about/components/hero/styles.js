@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { MediumText, Z_INDEX, Huge, media, Medium, Normal } from 'styles'
+import {  Z_INDEX, Huge, media, Medium, Normal } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
@@ -9,6 +9,12 @@ export const HeroWrapper = styled.section`
   height: 100vh;
   overflow: hidden;
   z-index: ${Z_INDEX.hero};
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+`
+export const AnimWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 `
 export const DVDScreenWrap = styled.div`
   position: absolute;
@@ -16,6 +22,7 @@ export const DVDScreenWrap = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
 
   .wrapper {
     position: absolute;
@@ -52,21 +59,4 @@ export const TextWrapper = styled.div`
 
     ${media.thone`${Medium}`}
   }
-`
-export const BlobWrapper = styled.div`
-  display: grid;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  transform: translate(-50%, -50%);
-  width: max-content;
-  margin: 0 auto;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(4, auto);
-
-  ${media.phablet`
-    left: 59%;
-    transform: translate(-50%, -59%);
-  `}
 `
