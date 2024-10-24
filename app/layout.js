@@ -70,7 +70,7 @@ export const metadata = {
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000'
           : 'https://www.outerlabs.studio'
-      }/og-image.jpg`,
+      }/images/og-image.jpg`,
     ],
   },
 }
@@ -117,9 +117,7 @@ export default function RootLayout({ children }) {
         {/* END FAVICON */}
       </head>
       <body suppressHydrationWarning>
-        <StyledComponentsRegistry>
-          {children}
-        </StyledComponentsRegistry>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   )
