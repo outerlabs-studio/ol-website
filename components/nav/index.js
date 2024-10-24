@@ -22,9 +22,9 @@ import { useLenis } from 'lenis/react'
 
 const LOGO_NAME = 'Outer Labs'
 const LINKS = [
-  { text: 'Work', href: '/' },
-  { text: 'Studio', href: '/' },
-  { text: 'Services', href: '/' },
+  { text: 'Work', href: '/#projects' },
+  { text: 'Studio', href: '/about' },
+  { text: 'Blog', href: '/' },
   { text: 'Contact', href: '/' },
 ]
 
@@ -182,6 +182,10 @@ const Nav = () => {
                     onMouseEnter={() => onNavLinkHover(index)}
                     onMouseLeave={onNavLinkHoverOut}
                     href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      animatePageOut(item.href, router, path)
+                    }}
                   >
                     {item.text}
                   </NormalLink>
