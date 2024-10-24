@@ -29,6 +29,7 @@ const Projects = ({ data }) => {
         <ProjectList>
           {data?.map((project, index) => (
             <Project
+              key={index}
               href={`/${project.slug}`}
               onClick={(e) => {
                 e.preventDefault()
