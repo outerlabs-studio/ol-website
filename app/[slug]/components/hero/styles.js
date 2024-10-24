@@ -1,9 +1,9 @@
 'use client'
 
 import { styled } from 'styled-components'
-import { Display, Z_INDEX, media } from 'styles'
+import { Display, SectionWrapper, Z_INDEX, media } from 'styles'
 
-export const SectionWrapper = styled.section`
+export const HeroWrapper = styled(SectionWrapper)`
   position: relative;
   width: 100%;
   background-color: ${({ theme }) => `rgb(${theme.accent1})`};

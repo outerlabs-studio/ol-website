@@ -2,7 +2,7 @@
 
 import { CustomImage } from 'components'
 import { Container } from 'styles'
-import { ImageWrapper, SectionWrapper, TitleWrapper } from './styles'
+import { ImageWrapper, HeroWrapper, TitleWrapper } from './styles'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
@@ -20,7 +20,7 @@ const Hero = ({ data }) => {
   })
 
   return (
-    <SectionWrapper>
+    <HeroWrapper>
       <Container>
         <TitleWrapper>
           {data?.name?.split('').map((letter, index) => (
@@ -37,7 +37,7 @@ const Hero = ({ data }) => {
           />
         </ImageWrapper>
       </Container>
-    </SectionWrapper>
+    </HeroWrapper>
   )
 }
 

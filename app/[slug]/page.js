@@ -1,5 +1,5 @@
 import { fetchAPI } from 'lib'
-import { Hero } from './components'
+import { Hero, About, Images } from './components'
 
 async function Project({ params: { slug } }) {
   const projectsData = await fetchAPI('/projects', {
@@ -26,8 +26,8 @@ async function Project({ params: { slug } }) {
   return (
     <>
       <Hero data={projectsDoc} />
-      {/* <About subtitle={subtitle} paragraphs={paragraphs} live={live} /> */}
-      {/* {images && <Images images={images} />} */}
+      <About data={projectsDoc} />
+      <Images data={projectsDoc} />
       {/* {services && <Services services={services} />} */}
     </>
   )
