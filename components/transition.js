@@ -10,6 +10,11 @@ const TransitionElement = styled.div`
   z-index: ${Z_INDEX.transition};
   position: fixed;
   will-change: transform, border-bottom-left-radius, border-top-left-radius;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
 `
 
 export default TransitionElement
