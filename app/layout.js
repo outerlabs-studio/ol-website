@@ -1,4 +1,5 @@
 import { StyledComponentsRegistry } from 'lib'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const title = 'Outer Labs | Websites, apps, & branding studio'
 const description = `Outer Labs is a design and development consultancy specializing in creating uniquely aesthetic and highly functional websites, apps, brands, designs, and experiences. We offer a wide range of creative and strategic services for remarkable brands, companies and organizations.`
@@ -55,7 +56,7 @@ export const metadata = {
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000'
           : 'https://www.outerlabs.studio'
-      }/og-image.jpg`,
+      }/images/og-image.jpg`,
       width: 1200,
       height: 630,
     },
@@ -117,6 +118,7 @@ export default function RootLayout({ children }) {
         {/* END FAVICON */}
       </head>
       <body suppressHydrationWarning>
+        <GoogleTagManager gtmId="G-RXRLS2G97N" />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
