@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import styled from 'styled-components'
-import { NormalText, SmallText, Z_INDEX, media } from 'styles'
+import { NormalText, Z_INDEX, media } from 'styles'
 
 export const ProjectWrapper = styled.section`
   position: relative;
@@ -10,7 +10,6 @@ export const ProjectWrapper = styled.section`
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 8vw 0;
   z-index: ${Z_INDEX.projects};
-  /* border-radius: 3vw 3vw 0 0; */
 
   ${media.thone`padding: 4rem 0;`}
 `
@@ -22,19 +21,15 @@ export const TopbarWrapper = styled.div`
 
   ${media.thone`padding-bottom: 4rem;`}
 `
-export const ProjectList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 3vw;
-  column-gap: 1.5vw;
-
-  ${media.thone`
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  `}
-`
+export const ProjectList = styled.div``
 export const Project = styled(Link)`
+  display: block;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
   text-decoration: none;
+  color: ${({ theme }) => `rgb(${theme.accent1})`};
 
   &:hover {
     img {
@@ -42,27 +37,37 @@ export const Project = styled(Link)`
     }
   }
 `
+export const InnerProjectContent = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 100vh;
+  width: 100vw;
+  background-color: ${({ theme }) => `rgba(${theme.text}, 0.5)`};
+  z-index: ${Z_INDEX.projects + 1};
+`
 export const CustomTitle = styled(NormalText)`
   font-weight: 600;
   margin-top: 0.5rem;
   margin-left: 2vw;
   color: ${({ theme }) => `rgb(${theme.text})`};
 `
-export const CustomDescription = styled(SmallText)`
+export const CustomDescription = styled(NormalText)`
   color: ${({ theme }) => `rgb(${theme.accent2})`};
   margin-left: 2vw;
 `
 export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 30vw;
-  border-radius: 2vw;
+  height: 100%;
   overflow: hidden;
 
-  ${media.thone`height: 80vw;`}
-
   img {
-    border-radius: inherit;
     object-fit: cover;
     transition: scale 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
   }

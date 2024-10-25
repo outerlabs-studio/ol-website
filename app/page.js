@@ -28,10 +28,8 @@ async function Home() {
   return (
     <>
       <Hero data={doc.hero} />
-      <div>
-        <About data={doc.about} />
-        <Projects data={projectsDoc} />
-      </div>
+      <About data={doc.about} />
+      <Projects data={projectsDoc} />
       <Studio data={doc.studio} />
     </>
   )
