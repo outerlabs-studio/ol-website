@@ -1,11 +1,12 @@
 'use client'
 
 import { useRef } from 'react'
-import {  NormalText } from 'styles'
+import { NormalText } from 'styles'
 import { Item, LeftCol, RightCol, AboutWrapper } from './styles'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import { formatDate } from 'lib'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -62,7 +63,9 @@ const About = ({ data }) => {
           </div>
 
           <div className="overflow">
-            <NormalText className="reveal-about-1">Astro Studios</NormalText>
+            <NormalText className="reveal-about-1">
+              {formatDate(data?.content?.date)}
+            </NormalText>
           </div>
         </Item>
         <Item>
