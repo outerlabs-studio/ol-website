@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { Huge, SectionWrapper } from 'styles'
+import { Huge, media, SectionWrapper } from 'styles'
 
 export const HeroWrapper = styled(SectionWrapper)`
   display: flex;
@@ -12,6 +12,8 @@ export const HeroWrapper = styled(SectionWrapper)`
   z-index: 3;
   will-change: transform;
   padding: 5vw 0;
+
+  ${media.thone`padding: 10rem 0 5rem;`}
 
   &:last-child {
     height: 100vh;

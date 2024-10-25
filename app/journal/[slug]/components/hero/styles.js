@@ -16,6 +16,12 @@ export const ContentWrapper = styled.div`
   text-align: center;
   gap: 5rem;
 
+  ${media.thone`
+    text-align: left;
+    gap: 3rem;
+    align-items: flex-start;
+  `}
+
   span {
     color: ${({ theme }) => `rgb(${theme.accent2})`};
   }
@@ -29,7 +35,14 @@ export const SmallInfoWrapper = styled.div`
   display: flex;
   gap: 2rem;
 
-  ${media.thone`flex-direction: column;`}
+  p:nth-child(even) {
+    ${media.thone`display: none;`}
+  }
+
+  ${media.thone`
+    flex-direction: column;
+    gap: 0;
+  `}
 `
 export const ImageWrapper = styled.div`
   position: relative;

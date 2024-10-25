@@ -91,9 +91,7 @@ const Hero = ({ data }) => {
   const renderTextWithReveal = (text, className = '') =>
     text.split('').map((letter, index) => (
       <div className="overflow" key={index}>
-        <div className={`reveal-hero-1 enabled ${className}`}>
-          {letter === 'd' && index === 0 ? '\u00A0d' : letter}
-        </div>
+        <div className={`reveal-hero-1 enabled ${className}`}>{letter}</div>
       </div>
     ))
 
@@ -112,7 +110,7 @@ const Hero = ({ data }) => {
           <TitleWrapper>
             <LineOne>
               {renderTextWithReveal('Creative')}
-              {renderTextWithReveal('design')}
+              {renderTextWithReveal('\u00A0design')}
             </LineOne>
             <LineTwo>
               <div>{renderTextWithReveal('and', 'and')}</div>
