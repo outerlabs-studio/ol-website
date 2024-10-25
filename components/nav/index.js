@@ -24,7 +24,7 @@ const LOGO_NAME = 'Outer Labs'
 const LINKS = [
   { text: 'Work', href: '/#projects' },
   { text: 'Studio', href: '/about' },
-  { text: 'Blog', href: '/blog' },
+  { text: 'Journal', href: '/journal' },
   { text: 'Contact', href: '/contact' },
 ]
 
