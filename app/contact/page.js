@@ -1,3 +1,4 @@
+import { lightTheme } from 'styles'
 import { Hero } from './components'
 
 export const metadata = {
@@ -6,9 +7,10 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <>
+    <div style={{ backgroundColor: `rgb(${lightTheme.text})` }}>
       <Hero />
       <Hero />
-    </>
+      <Hero />
+    </div>
   )
 }

@@ -137,6 +137,7 @@ const Nav = () => {
   return (
     <FixedHeader>
       <Logo
+        $reverse={path === '/contact'}
         href="/"
         role="link"
         ref={logoRef}
@@ -164,7 +165,7 @@ const Nav = () => {
         onClick={() => setMenuOpen(!menuOpen)}
         ref={mobileContainer}
       >
-        <Button menuOpen={menuOpen}>
+        <Button $reverse={path === '/contact'} menuOpen={menuOpen}>
           <NormalText>Menu</NormalText>
         </Button>
       </MobileNavRow>
@@ -175,12 +176,13 @@ const Nav = () => {
         onMouseEnter={() => onHoverNav()}
         onMouseLeave={() => onLeaveNav()}
       >
-        <Button>
+        <Button $reverse={path === '/contact'}>
           <NavLinkWrapper ref={navLinkList}>
             {LINKS.map((item, index) => (
               <span key={index}>
                 <div ref={(el) => (navLink.current[index] = el)}>
                   <NormalLink
+                    $reverse={path === '/contact'}
                     onMouseEnter={() => onNavLinkHover(index)}
                     onMouseLeave={onNavLinkHoverOut}
                     href={item.href}

@@ -45,8 +45,12 @@ export const MobileNavRow = styled(NavButtonWrapper)`
 `
 export const Button = styled.div`
   position: relative;
-  background-color: ${({ menuOpen, theme }) =>
-    menuOpen ? `rgb(${theme.accent2})` : `rgba(${theme.text}, 0.9)`};
+  background-color: ${({ menuOpen, theme, $reverse }) =>
+    menuOpen
+      ? `rgb(${theme.accent2})`
+      : $reverse
+        ? `rgba(${theme.accent1}, 0.9)`
+        : `rgba(${theme.text}, 0.9)`};
   backdrop-filter: blur(10px) hue-rotate(120deg);
   border-radius: 5px;
   display: flex;
@@ -58,7 +62,8 @@ export const Button = styled.div`
   cursor: pointer;
 
   p {
-    color: ${({ theme }) => `rgb(${theme.accent1})`};
+    color: ${({ theme, $reverse }) =>
+      $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
   }
 
   ${media.desktop`
@@ -82,7 +87,8 @@ export const NavLinkWrapper = styled.div`
   gap: 1.5vw;
 `
 export const NormalLink = styled(Link)`
-  color: ${({ theme }) => `rgb(${theme.accent1})`};
+  color: ${({ theme, $reverse }) =>
+    $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
   ${Normal}
   text-decoration: none;
 `
@@ -96,7 +102,8 @@ export const Logo = styled.a`
     ${Huge}
     font-weight: normal;
     text-decoration: none;
-    color: ${({ theme }) => `rgb(${theme.text})`};
+    color: ${({ theme, $reverse }) =>
+      $reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
     font-family: ${wtskrappa.style.fontFamily};
     -webkit-font-smoothing: antialiased;
 
