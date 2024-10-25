@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef } from 'react'
-import { useIsTouchDevice } from 'hooks'
 import { NormalText } from 'styles'
 import {
   ContentWrap,
@@ -14,18 +13,10 @@ import {
   CustomContainer,
 } from './styles'
 import gsap from 'gsap'
-import { animatePageOut } from 'lib'
-import { usePathname, useRouter } from 'next/navigation'
 import { useGSAP } from '@gsap/react'
 
 const Hero = ({ data }) => {
-  const isTouchDevice = useIsTouchDevice()
   const contextContainer = useRef()
-  const movingContainerRef = useRef()
-  const router = useRouter()
-  const pathname = usePathname()
-
-  const { contextSafe } = useGSAP({ scope: contextContainer })
 
   useGSAP(() => {
     let tl = gsap.timeline()
@@ -57,32 +48,6 @@ const Hero = ({ data }) => {
       )
   })
 
-  const handleMouseMove = contextSafe((e) => {
-    if (isTouchDevice) return
-
-    const bounds = movingContainerRef.current.getBoundingClientRect()
-    const centerX = bounds.left + bounds.width / 2
-    const distanceX = e.clientX - centerX
-
-    gsap.to(movingContainerRef.current, {
-      x: distanceX,
-      y: (e.clientY - bounds.top - movingContainerRef.current.clientHeight) / 2,
-      scale: 1.1,
-      duration: 1,
-      ease: 'expo.out',
-    })
-  })
-
-  const handleMouseExit = contextSafe(() => {
-    gsap.to(movingContainerRef.current, {
-      x: 0,
-      y: 0,
-      scale: 1,
-      duration: 1,
-      ease: 'expo.out',
-    })
-  })
-
   const renderTextWithReveal = (text, className = '') =>
     text.split('').map((letter, index) => (
       <div className="overflow" key={index}>
@@ -99,8 +64,8 @@ const Hero = ({ data }) => {
           <CustomGridWrapper>
             <DescriptionWrapper className="reveal-hero-2">
               <NormalText className="enabled">
-                We’re design and develop award-winning digital products;
-                specializing in websites, apps, and branding.
+                The space where we share our opinons and research about design,
+                code, and creative culture.
               </NormalText>
             </DescriptionWrapper>
           </CustomGridWrapper>

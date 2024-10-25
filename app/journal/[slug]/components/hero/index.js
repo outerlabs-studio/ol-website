@@ -33,7 +33,10 @@ const Hero = ({ data }) => {
             <NormalText>{data?.read_time} min read</NormalText>
           </SmallInfoWrapper>
           <ImageWrapper>
-            <CustomImage src={data?.hero_image?.url} />
+            <CustomImage
+              src={data?.hero_image?.url}
+              alt={data?.hero_image?.alternativeText}
+            />
           </ImageWrapper>
         </ContentWrapper>
       </Container>
