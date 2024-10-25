@@ -26,7 +26,7 @@ export const FixedHeader = styled.header`
   padding-bottom: 1rem;
 `
 export const NavButtonWrapper = styled.nav`
-  display: ${({ touchDevice }) => (touchDevice ? 'none' : 'flex')};
+  display: flex;
   align-items: center;
   opacity: 0;
   visibility: 0;
@@ -39,7 +39,7 @@ export const NavButtonWrapper = styled.nav`
   `}
 `
 export const MobileNavRow = styled(NavButtonWrapper)`
-  display: ${({ touchDevice }) => (touchDevice ? 'flex' : 'none')};
+  display: none;
 
   ${media.tablet`display: flex;`}
 `

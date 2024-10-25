@@ -5,7 +5,6 @@ import {
   Container,
   Display,
   GridWrapper,
-  Medium,
   Normal,
   SectionWrapper,
   Z_INDEX,
@@ -19,6 +18,7 @@ export const HeroSection = styled(SectionWrapper)`
   background-color: ${({ theme }) => `rgb(${theme.body})`};
 
   ${media.desktop`padding-bottom: 6rem;`}
+  ${media.thone`padding-bottom: 0;`}
 `
 export const CustomContainer = styled(Container)`
   opacity: 0;

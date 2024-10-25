@@ -34,8 +34,12 @@ const Menu = ({ links, menuOpen, setMenuOpen }) => {
             <MenuLink
               key={index}
               href={item.href}
+              current={path === item.href}
               onClick={(e) => {
                 e.preventDefault()
+                if (item.href === path) {
+                  setMenuOpen(false)
+                }
                 if (item.href === '/#projects') {
                   if (path === '/') {
                     lenis.start()
@@ -53,7 +57,7 @@ const Menu = ({ links, menuOpen, setMenuOpen }) => {
         </MenuLinksWrapper>
         <ContactWrapper>
           <NormalText>Get in touch</NormalText>
-          <a href="mailto:hello@bust.studio">hello@bust.studio</a>
+          <a href="mailto:hello@outerlabs.studio">hello@outerlabs.studio</a>
         </ContactWrapper>
       </CustomGrid>
     </MenuWrapper>

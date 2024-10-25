@@ -34,7 +34,8 @@ export const MenuLinksWrapper = styled.div`
 `
 export const MenuLink = styled(Link)`
   ${Display}
-  color: ${({ theme }) => `rgb(${theme.text})`};
+  color: ${({ theme, current }) =>
+    current ? `rgb(${theme.accent2})` : `rgb(${theme.text})`};
   text-decoration: none;
 `
 export const ContactWrapper = styled.div`

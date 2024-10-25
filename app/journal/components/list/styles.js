@@ -9,6 +9,7 @@ export const ListSectionWrapper = styled(SectionWrapper)`
   background-color: ${({ theme }) => `rgb(${theme.body})`};
 
   ${media.tablet`padding: 5rem 0;`}
+  ${media.thone`padding-top: 0;`}
 `
 export const ListWrapper = styled.div`
   display: grid;

@@ -13,7 +13,6 @@ import {
 import { breakpoints, NormalText } from 'styles'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { useIsTouchDevice } from 'hooks'
 import { useWindowSize } from 'react-use'
 import Menu from './menu'
 import { animatePageOut } from 'lib'
@@ -40,7 +39,6 @@ const Nav = () => {
   const navLink = useRef([])
   const logoRef = useRef()
   const { contextSafe } = useGSAP({ scope: container })
-  const touchDevice = useIsTouchDevice()
   const { width } = useWindowSize()
   const [menuOpen, setMenuOpen] = useState(false)
   const isSmallScreen = width < breakpoints.tablet
@@ -76,19 +74,19 @@ const Nav = () => {
   })
 
   const onNavLinkHover = contextSafe((index) => {
-    if (touchDevice || isSmallScreen) return
+    if (isSmallScreen) return
     navLink.current.forEach((link, i) => {
       gsap.to(link, { opacity: i === index ? 1 : 0.2, duration: 0.3 })
     })
   })
 
   const onNavLinkHoverOut = contextSafe(() => {
-    if (touchDevice || isSmallScreen) return
+    if (isSmallScreen) return
     gsap.to(navLink.current, { opacity: 1, duration: 0.3 })
   })
 
   const onHoverNav = contextSafe(() => {
-    if (touchDevice || isSmallScreen) return
+    if (isSmallScreen) return
     const tl = gsap.timeline()
 
     tl.set(navLink.current, { yPercent: -100 })
@@ -161,7 +159,6 @@ const Nav = () => {
       </Logo>
 
       <MobileNavRow
-        touchDevice={touchDevice}
         onClick={() => setMenuOpen(!menuOpen)}
         ref={mobileContainer}
       >
@@ -171,7 +168,6 @@ const Nav = () => {
       </MobileNavRow>
 
       <NavButtonWrapper
-        touchDevice={touchDevice}
         ref={container}
         onMouseEnter={() => onHoverNav()}
         onMouseLeave={() => onLeaveNav()}

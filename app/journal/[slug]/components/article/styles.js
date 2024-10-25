@@ -15,7 +15,7 @@ export const ArticleTextWrapper = styled(SectionWrapper)`
     flex-direction: column;
     gap: 2vw;
 
-    ${media.thone`gap: 3rem;`}
+    ${media.thone`gap: 2rem;`}
   }
 `
 export const TextContainer = styled(Container)`
