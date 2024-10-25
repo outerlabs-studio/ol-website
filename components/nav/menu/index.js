@@ -38,6 +38,7 @@ const Menu = ({ links, menuOpen, setMenuOpen }) => {
                 e.preventDefault()
                 if (item.href === '/#projects') {
                   if (path === '/') {
+                    lenis.start()
                     lenis.scrollTo('#projects', { offset: 70 })
                     setMenuOpen(false)
                   } else animatePageOut('/#projects', router, path)
