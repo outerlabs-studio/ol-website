@@ -1,10 +1,13 @@
 'use client'
 
 import styled from 'styled-components'
-import { SectionWrapper } from 'styles'
+import { media, SectionWrapper } from 'styles'
 
 export const HeroWrapper = styled(SectionWrapper)`
   padding: 16vw 0 5vw;
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+
+  ${media.thone`padding: 15rem 0 5rem;`}
 `
 export const ContentWrapper = styled.div`
   display: flex;
@@ -19,10 +22,14 @@ export const ContentWrapper = styled.div`
 `
 export const TitleWrapper = styled.div`
   width: 50%;
+
+  ${media.thone`width: 100%;`}
 `
 export const SmallInfoWrapper = styled.div`
   display: flex;
   gap: 2rem;
+
+  ${media.thone`flex-direction: column;`}
 `
 export const ImageWrapper = styled.div`
   position: relative;
