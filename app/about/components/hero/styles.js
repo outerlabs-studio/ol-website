@@ -39,7 +39,7 @@ export const DVDScreenWrap = styled.div`
     padding: 0.75vw 1.5vw;
     background-color: ${({ theme }) => `rgb(${theme.accent1})`};
     color: ${({ theme }) => `rgb(${theme.text})`};
-    border-radius: 60px;
+    border-radius: 5px;
     ${Normal}
 
     &.grabbed {

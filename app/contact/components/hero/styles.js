@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { Display, Huge, media } from 'styles'
+import { Display, Huge } from 'styles'
 
 export const HeroWrapper = styled.section`
   position: relative;
@@ -36,9 +36,7 @@ export const ButtonWrapper = styled.div`
 
   a {
     padding: 0.75vw 5vw;
-    border-radius: 80vw;
-
-    ${media.desktop`border-radius: 80px;`}
+    border-radius: 10px;
 
     div {
       ${Huge}
