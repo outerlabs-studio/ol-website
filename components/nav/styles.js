@@ -48,7 +48,7 @@ export const Button = styled.div`
   background-color: ${({ menuOpen, theme }) =>
     menuOpen ? `rgb(${theme.accent2})` : `rgba(${theme.text}, 0.9)`};
   backdrop-filter: blur(10px) hue-rotate(120deg);
-  border-radius: 35vw;
+  border-radius: 5px;
   display: flex;
   overflow: hidden;
   align-items: center;

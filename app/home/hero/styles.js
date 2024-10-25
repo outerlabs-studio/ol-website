@@ -125,11 +125,10 @@ export const AboutButton = styled.div`
   padding: 0.75vw 3vw;
   background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
-  border-radius: 35vw;
+  border-radius: 10px;
   white-space: nowrap;
 
   ${media.desktop`
     padding: 0.75rem 3rem;
-    border-radius: 35px;
   `}
 `

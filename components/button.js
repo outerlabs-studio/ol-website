@@ -19,7 +19,7 @@ const ButtonWrapper = styled.a`
   padding: 0.5vw 2.5vw;
   background-color: ${({ $reverse, theme }) =>
     $reverse ? `rgb(${theme.text})` : `rgb(${theme.accent1})`};
-  border-radius: 35vw;
+  border-radius: 5px;
   color: ${({ $reverse, theme }) =>
     $reverse ? `rgb(${theme.accent1})` : `rgb(${theme.text})`};
   text-decoration: none;

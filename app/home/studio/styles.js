@@ -38,7 +38,7 @@ export const TopImageWrapper = styled.div`
   width: 100%;
   max-width: 24.5vw;
   height: 90vh;
-  border-radius: 2vw 2vw 0 0;
+  border-radius: 10px 10px 0 0;
   z-index: 2;
   top: -15vh;
 
@@ -66,7 +66,7 @@ export const BottomImageWrapper = styled.div`
   width: 100%;
   max-width: 24.5vw;
   height: 90vh;
-  border-radius: 0 0 2vw 2vw;
+  border-radius: 0 0 10px 10px;
   z-index: 2;
 
   ${media.desktop`
@@ -89,7 +89,7 @@ export const BottomImageWrapper = styled.div`
 export const CustomGridWrapper = styled(GridWrapper)`
   /* margin-top: 55vh; */
   position: absolute;
-  top: 25%;
+  top: 20%;
   width: 100%;
 
   ${media.thone`

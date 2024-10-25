@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { Container, DisplayText, GridWrapper } from 'styles'
+import { breakpoints, Container, DisplayText, GridWrapper } from 'styles'
 import {
   StudioSection,
   ContentWrapper,
@@ -11,7 +11,6 @@ import {
   ParagraphWrapper,
 } from './styles'
 import { CustomButton, CustomImage, Label, Marquee, Parallax } from 'components'
-import { useWindowSize } from 'react-use'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
@@ -20,68 +19,74 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Studio = ({ data }) => {
   const sectionTarget = useRef()
-  const { width } = useWindowSize()
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionTarget.current,
-        start: 'top bottom',
-        toggleActions: 'play none none reset',
-      },
-    })
+    let mm = gsap.matchMedia()
 
-    tl.from('.reveal-about-1', {
-      yPercent: 100,
-      duration: 2,
-      stagger: 0.2,
-      ease: 'power3.inOut',
-    })
-      .from(
-        '.reveal-about-2',
+    mm.add(`(min-width: ${breakpoints.thone}px)`, () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionTarget.current,
+          start: 'top bottom',
+          end: 'center bottom',
+          scrub: true,
+        },
+      })
+
+      tl.from(
+        '.reveal-about-1',
         {
           yPercent: 100,
           duration: 1,
-          stagger: 0.02,
-          ease: 'power3.inOut',
-        },
-        0.75,
-      )
-      .from(
-        '.reveal-about-3',
-        {
-          yPercent: 100,
-          duration: 2,
           stagger: 0.2,
           ease: 'power3.inOut',
         },
         0,
       )
-      .fromTo(
-        '.reveal-about-button',
-        {
-          scale: 0,
-          transformOrigin: 'left center',
-        },
-        {
-          scale: 1,
-          duration: 1,
-          ease: 'power3.inOut',
-        },
-        0.5,
-      )
+        .from(
+          '.reveal-about-2',
+          {
+            yPercent: 100,
+            duration: 1,
+            stagger: 0.02,
+            ease: 'power3.inOut',
+          },
+          0,
+        )
+        .from(
+          '.reveal-about-3',
+          {
+            yPercent: 100,
+            duration: 2,
+            ease: 'power3.inOut',
+          },
+          0,
+        )
+        .fromTo(
+          '.reveal-about-button',
+          {
+            scale: 0,
+            transformOrigin: 'left center',
+          },
+          {
+            scale: 1,
+            duration: 1,
+            ease: 'power3.inOut',
+          },
+          0,
+        )
 
-    if (width > 600) {
       gsap.to('.parallax-content', {
         top: '74%',
         scrollTrigger: {
-          trigger: sectionTarget.current,
-          start: 'top center',
-          scrub: true,
+          trigger: '.parallax-content',
+          start: 'center center',
+          end: 'bottom+=350% top',
+          scrub: 1,
         },
       })
-    }
-  }, [width])
+    })
+  })
 
   return (
     <StudioSection ref={sectionTarget}>
