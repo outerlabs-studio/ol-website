@@ -5,7 +5,7 @@ import media from './media'
 
 const PADDING_VALUES = {
   desktop: '1.5vw',
-  mobile: '1rem',
+  mobile: '1.5rem',
 }
 
 export const ContainerPaddingRight = css`
