@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from 'react'
 import { ReactLenis } from 'lenis/react'
+import { usePathname } from 'next/navigation'
 import gsap from 'gsap'
 
 import 'lenis/dist/lenis.css'
 
 function LenisWrapper({ children }) {
   const lenisRef = useRef()
+  const pathname = usePathname()
 
   useEffect(() => {
     function update(time) {
@@ -22,7 +24,14 @@ function LenisWrapper({ children }) {
   })
 
   return (
-    <ReactLenis root ref={lenisRef} autoRaf={false}>
+    <ReactLenis
+      root
+      ref={lenisRef}
+      autoRaf={false}
+      options={{
+        infinite: pathname === '/contact' ? true : false,
+      }}
+    >
       {children}
     </ReactLenis>
   )

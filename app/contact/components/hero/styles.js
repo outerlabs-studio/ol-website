@@ -1,43 +1,58 @@
 'use client'
 
 import styled from 'styled-components'
-import { Display, Huge } from 'styles'
+import { Huge, SectionWrapper } from 'styles'
 
-export const HeroWrapper = styled.section`
-  position: relative;
+export const HeroWrapper = styled(SectionWrapper)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100vw;
-  min-height: 100vh;
-  padding: 4rem 0;
   background-color: ${({ theme }) => `rgb(${theme.text})`};
   color: ${({ theme }) => `rgb(${theme.body})`};
   z-index: 3;
   will-change: transform;
+  padding: 5vw 0;
+
+  &:last-child {
+    height: 100vh;
+    overflow: hidden;
+  }
 `
-export const MarqueeWrapper = styled.div`
-  position: relative;
+export const TitleWrapper = styled.div`
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top: 2vw;
 
-  .first {
-    margin-left: 6vw;
+  h1 {
+    margin-top: -2vw;
   }
+`
+export const MarqueeWrapper = styled.a`
+  margin: 10vw 0;
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+  color: ${({ theme }) => `rgb(${theme.text})`};
+  transition: all 0.3s ease-out;
+  text-decoration: none;
 
-  .reveal-text-1 {
-    ${Display}
+  &:hover {
+    background-color: ${({ theme }) => `rgb(${theme.accent2})`};
   }
+`
+export const SocialsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  align-self: center;
+  gap: 2rem;
+`
+export const ButtonsRow = styled.div`
+  display: flex;
+  gap: 3rem;
 `
 export const ButtonWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-
   a {
-    padding: 0.75vw 5vw;
-    border-radius: 10px;
-
     div {
       ${Huge}
     }

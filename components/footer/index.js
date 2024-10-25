@@ -16,12 +16,16 @@ import {
 } from './styles'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
   const footerTarget = useRef(null)
   const ferrisWheelRef = useRef(null)
   const { width } = useWindowSize()
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+
+  if (pathname === '/contact') return null
 
   useGSAP(() => {
     let revealTl = gsap.timeline({

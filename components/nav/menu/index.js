@@ -24,7 +24,7 @@ const Menu = ({ links, menuOpen, setMenuOpen }) => {
     } else {
       lenis?.start()
     }
-  }, [menuOpen])
+  }, [menuOpen, lenis])
 
   return (
     <MenuWrapper menuOpen={menuOpen}>
