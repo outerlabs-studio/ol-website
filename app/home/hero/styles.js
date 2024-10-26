@@ -91,8 +91,9 @@ export const ImageWrapper = styled.a`
   width: 100%;
   height: 100svh;
   min-height: 50vw;
-  border-radius: 2vw;
+  border-radius: 10px;
   text-decoration: none;
+  overflow: hidden;
 
   img {
     background-color: ${({ theme }) => `rgba(${theme.text}, 0.75)`};
@@ -131,4 +132,19 @@ export const AboutButton = styled.div`
   ${media.desktop`
     padding: 0.75rem 3rem;
   `}
+`
+export const CustomVideo = styled.video`
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `

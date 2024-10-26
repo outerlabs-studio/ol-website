@@ -17,6 +17,7 @@ import {
   AboutButtonWrapper,
   OverlayWrapper,
   CustomContainer,
+  CustomVideo,
 } from './styles'
 import gsap from 'gsap'
 import { animatePageOut } from 'lib'
@@ -95,6 +96,8 @@ const Hero = ({ data }) => {
       </div>
     ))
 
+  console.log(data.image)
+
   return (
     <HeroSection ref={contextContainer}>
       <CustomContainer>
@@ -135,13 +138,21 @@ const Hero = ({ data }) => {
             </AboutButton>
           </AboutButtonWrapper>
           <OverlayWrapper />
-          <CustomImage
-            src={data?.image.url}
-            alt={data?.image.alternativeText}
-            speed={1}
-            blur="LJGazlRP~WM{WVxZe.s.-Tt6I;WB"
-            priority
-          />
+          {data?.image.mime === 'video/mp4' ||
+          data?.image.mime === 'video/mpeg' ||
+          data?.image.mime === 'video/webm' ? (
+            <CustomVideo playsInline autoPlay muted loop>
+              <source src={data?.image.url} />
+            </CustomVideo>
+          ) : (
+            <CustomImage
+              src={data?.image.url}
+              alt={data?.image.alternativeText}
+              speed={1}
+              blur="LJGazlRP~WM{WVxZe.s.-Tt6I;WB"
+              priority
+            />
+          )}
         </ImageWrapper>
       </CustomContainer>
     </HeroSection>
