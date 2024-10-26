@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { SectionWrapper, Z_INDEX, media } from 'styles'
 
 export const AboutSection = styled(SectionWrapper)`
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   z-index: ${Z_INDEX.about};
 
   ${media.thone`padding-top: 0;`}

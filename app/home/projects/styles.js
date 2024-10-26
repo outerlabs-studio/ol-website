@@ -8,7 +8,6 @@ export const ProjectWrapper = styled.section`
   position: relative;
   background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
-  padding: 8vw 0;
   z-index: ${Z_INDEX.projects};
 
   ${media.thone`padding: 4rem 0;`}
