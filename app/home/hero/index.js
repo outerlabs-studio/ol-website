@@ -96,8 +96,6 @@ const Hero = ({ data }) => {
       </div>
     ))
 
-  console.log(data.image)
-
   return (
     <HeroSection ref={contextContainer}>
       <CustomContainer>
