@@ -136,8 +136,8 @@ export const AboutButton = styled.div`
 `
 export const CustomVideo = styled.video`
   /* Make video to at least 100% wide and tall */
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 101%;
+  min-height: 101%;
 
   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
   width: auto;
