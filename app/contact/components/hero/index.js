@@ -69,6 +69,22 @@ const Hero = () => {
               IN
             </CustomButton>
           </ButtonWrapper>
+          <ButtonWrapper>
+            <CustomButton
+              to="https://www.dribbble.com/outerlabs"
+              target="_blank"
+            >
+              DB
+            </CustomButton>
+          </ButtonWrapper>
+          <ButtonWrapper>
+            <CustomButton
+              to="https://www.github.com/outerlabs-studio"
+              target="_blank"
+            >
+              GH
+            </CustomButton>
+          </ButtonWrapper>
         </ButtonsRow>
       </SocialsContainer>
     </HeroWrapper>
