@@ -8,7 +8,7 @@ export const HeroWrapper = styled(SectionWrapper)`
   height: 100vh;
   overflow: hidden;
   z-index: ${Z_INDEX.hero};
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
 `
 export const AnimWrapper = styled.div`
   width: 100%;
@@ -22,7 +22,7 @@ export const DVDScreenWrap = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => `rgb(${theme.body})`};
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   border-radius: inherit;
 
   .wrapper {
@@ -37,14 +37,14 @@ export const DVDScreenWrap = styled.div`
 
   .item {
     padding: 0.75vw 1.5vw;
-    background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+    background-color: ${({ theme }) => `rgb(${theme.body})`};
     color: ${({ theme }) => `rgb(${theme.text})`};
     border-radius: 5px;
     ${Normal}
 
     &.grabbed {
       background-color: ${({ theme }) => `rgb(${theme.text})`};
-      color: ${({ theme }) => `rgb(${theme.accent1})`};
+      color: ${({ theme }) => `rgb(${theme.body})`};
     }
   }
 `

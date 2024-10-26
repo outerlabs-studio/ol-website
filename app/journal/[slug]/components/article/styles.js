@@ -6,7 +6,6 @@ import { Container, media, SectionWrapper, Z_INDEX } from 'styles'
 export const ArticleTextWrapper = styled(SectionWrapper)`
   z-index: ${Z_INDEX.article};
   padding-bottom: 10vw;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
 
   ${media.thone`padding-bottom: 10rem;`}
 

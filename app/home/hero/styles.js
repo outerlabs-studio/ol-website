@@ -109,6 +109,7 @@ export const OverlayWrapper = styled.div`
   height: 100%;
   background-color: ${({ theme }) => `rgba(${theme.text}, 0.5)`};
   border-radius: inherit;
+  opacity: 0;
   z-index: ${Z_INDEX.hero + 1};
 `
 export const AboutButtonWrapper = styled.div`

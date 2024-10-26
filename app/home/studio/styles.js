@@ -12,7 +12,7 @@ import {
 
 export const StudioSection = styled(SectionWrapper)`
   padding: 8vw 0;
-  background: ${({ theme }) => `rgb(${theme.accent1})`};
+  background: ${({ theme }) => `rgb(${theme.body})`};
   min-height: 200vh;
   overflow-x: hidden;
   z-index: ${Z_INDEX.studio};

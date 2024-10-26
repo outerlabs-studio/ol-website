@@ -5,7 +5,7 @@ import { Huge, Medium, Normal, SectionWrapper, Z_INDEX, media } from 'styles'
 
 export const AboutWrapper = styled(SectionWrapper)`
   width: 100%;
-  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 10vw 0;
   z-index: ${Z_INDEX.about};

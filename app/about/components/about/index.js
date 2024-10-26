@@ -103,7 +103,7 @@ const About = ({ data }) => {
                 <div className="reveal-about-2">Client profit</div>
               </div>
               <div className="overflow">
-                <div className="reveal-about-3">6 figures</div>
+                <div className="reveal-about-3">+1M</div>
               </div>
             </div>
             <div className="col col-3">

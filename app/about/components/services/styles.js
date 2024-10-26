@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Medium, Normal, SectionWrapper, Z_INDEX, media } from 'styles'
 
 export const ServicesWrapper = styled(SectionWrapper)`
-  background-color: ${({ theme }) => `rgb(${theme.body})`};
+  background-color: ${({ theme }) => `rgb(${theme.accent1})`};
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 10vw 0;
   z-index: ${Z_INDEX.projects};

@@ -80,11 +80,32 @@ const Hero = ({ data }) => {
   })
 
   const handleMouseExit = contextSafe(() => {
+    gsap.to('.overlay', {
+      opacity: 0,
+      ease: 'expo.out',
+    })
+    gsap.to(movingContainerRef.current, {
+      opacity: 0,
+      ease: 'expo.out',
+    })
+
     gsap.to(movingContainerRef.current, {
       x: 0,
       y: 0,
       scale: 1,
       duration: 1,
+      ease: 'expo.out',
+    })
+  })
+
+  const handleMouseEnter = contextSafe(() => {
+    gsap.to(movingContainerRef.current, {
+      opacity: 1,
+      ease: 'expo.out',
+    })
+
+    gsap.to('.overlay', {
+      opacity: 1,
       ease: 'expo.out',
     })
   })
@@ -123,6 +144,7 @@ const Hero = ({ data }) => {
         <ImageWrapper
           className="hero-image enabled"
           href="/about"
+          onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseExit}
           onClick={(e) => {
@@ -135,7 +157,7 @@ const Hero = ({ data }) => {
               Explore our process
             </AboutButton>
           </AboutButtonWrapper>
-          <OverlayWrapper />
+          <OverlayWrapper className="overlay" />
           {data?.image.mime === 'video/mp4' ||
           data?.image.mime === 'video/mpeg' ||
           data?.image.mime === 'video/webm' ? (
