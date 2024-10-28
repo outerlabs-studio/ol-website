@@ -5,15 +5,13 @@ import { SectionWrapper, Z_INDEX, media } from 'styles'
 
 export const AboutSection = styled(SectionWrapper)`
   z-index: ${Z_INDEX.about};
-
-  ${media.thone`padding-top: 0;`}
 `
 export const InnerWrapper = styled.div`
   color: ${({ theme }) => `rgb(${theme.text})`};
   padding: 8vw 0;
   min-height: 100vh;
 
-  ${media.thone`padding: 8rem 0;`}
+  ${media.thone`padding: 0;`}
 
   .label {
     margin-top: 0.2vw;

@@ -68,7 +68,7 @@ const About = ({ data }) => {
     <AboutWrapper ref={sectionTarget}>
       <Container>
         <GridWrapper>
-          <div className="overflow">
+          <div className="overflow label">
             <div className="reveal-about-1">
               <Label $reverse>Our Brand</Label>
             </div>

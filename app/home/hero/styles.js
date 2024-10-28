@@ -64,7 +64,7 @@ export const DescriptionWrapper = styled.div`
   max-width: 30vw;
 
   ${media.tablet`max-width: 100%;`}
-  ${media.thone`grid-column: 1;`}
+  ${media.thone`grid-column: 1 / -1;`}
 
   .reveal-hero-2 {
     ${Normal}
@@ -100,6 +100,10 @@ export const ImageWrapper = styled.a`
   }
 
   ${media.thone`height: 60svh;`}
+  ${media.phablet`
+    height: unset;
+
+  `}
 `
 export const OverlayWrapper = styled.div`
   position: absolute;
@@ -148,4 +152,9 @@ export const CustomVideo = styled.video`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  ${media.phablet`
+    height: unset;
+    width: 100%;
+  `}
 `

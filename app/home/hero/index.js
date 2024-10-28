@@ -63,52 +63,52 @@ const Hero = ({ data }) => {
       )
   })
 
-  const handleMouseMove = contextSafe((e) => {
-    if (isTouchDevice) return
+  // const handleMouseMove = contextSafe((e) => {
+  //   if (isTouchDevice) return
 
-    const bounds = movingContainerRef.current.getBoundingClientRect()
-    const centerX = bounds.left + bounds.width / 2
-    const distanceX = e.clientX - centerX
+  //   const bounds = movingContainerRef.current.getBoundingClientRect()
+  //   const centerX = bounds.left + bounds.width / 2
+  //   const distanceX = e.clientX - centerX
 
-    gsap.to(movingContainerRef.current, {
-      x: distanceX,
-      y: (e.clientY - bounds.top - movingContainerRef.current.clientHeight) / 2,
-      scale: 1.1,
-      duration: 1,
-      ease: 'expo.out',
-    })
-  })
+  //   gsap.to(movingContainerRef.current, {
+  //     x: distanceX,
+  //     y: (e.clientY - bounds.top - movingContainerRef.current.clientHeight) / 2,
+  //     scale: 1.1,
+  //     duration: 1,
+  //     ease: 'expo.out',
+  //   })
+  // })
 
-  const handleMouseExit = contextSafe(() => {
-    gsap.to('.overlay', {
-      opacity: 0,
-      ease: 'expo.out',
-    })
-    gsap.to(movingContainerRef.current, {
-      opacity: 0,
-      ease: 'expo.out',
-    })
+  // const handleMouseExit = contextSafe(() => {
+  //   gsap.to('.overlay', {
+  //     opacity: 0,
+  //     ease: 'expo.out',
+  //   })
+  //   gsap.to(movingContainerRef.current, {
+  //     opacity: 0,
+  //     ease: 'expo.out',
+  //   })
 
-    gsap.to(movingContainerRef.current, {
-      x: 0,
-      y: 0,
-      scale: 1,
-      duration: 1,
-      ease: 'expo.out',
-    })
-  })
+  //   gsap.to(movingContainerRef.current, {
+  //     x: 0,
+  //     y: 0,
+  //     scale: 1,
+  //     duration: 1,
+  //     ease: 'expo.out',
+  //   })
+  // })
 
-  const handleMouseEnter = contextSafe(() => {
-    gsap.to(movingContainerRef.current, {
-      opacity: 1,
-      ease: 'expo.out',
-    })
+  // const handleMouseEnter = contextSafe(() => {
+  //   gsap.to(movingContainerRef.current, {
+  //     opacity: 1,
+  //     ease: 'expo.out',
+  //   })
 
-    gsap.to('.overlay', {
-      opacity: 1,
-      ease: 'expo.out',
-    })
-  })
+  //   gsap.to('.overlay', {
+  //     opacity: 1,
+  //     ease: 'expo.out',
+  //   })
+  // })
 
   const renderTextWithReveal = (text, className = '') =>
     text.split('').map((letter, index) => (
@@ -144,20 +144,20 @@ const Hero = ({ data }) => {
         <ImageWrapper
           className="hero-image enabled"
           href="/about"
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseExit}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseMove={handleMouseMove}
+          // onMouseLeave={handleMouseExit}
           onClick={(e) => {
             e.preventDefault()
             animatePageOut('/about', router, pathname)
           }}
         >
-          <AboutButtonWrapper className="enabled">
+          {/* <AboutButtonWrapper className="enabled">
             <AboutButton ref={movingContainerRef}>
               Explore our process
             </AboutButton>
           </AboutButtonWrapper>
-          <OverlayWrapper className="overlay" />
+          <OverlayWrapper className="overlay" /> */}
           {data?.image.mime === 'video/mp4' ||
           data?.image.mime === 'video/mpeg' ||
           data?.image.mime === 'video/webm' ? (

@@ -10,6 +10,10 @@ export const AboutWrapper = styled(SectionWrapper)`
   padding: 10vw 0;
   z-index: ${Z_INDEX.about};
 
+  .label {
+    ${media.thone`grid-column: 1 / -1;`}
+  }
+
   ${media.thone`padding: 4rem 0;`}
 `
 export const TextWrapper = styled.div`

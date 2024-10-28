@@ -52,6 +52,11 @@ export const SocialsContainer = styled.div`
 export const ButtonsRow = styled.div`
   display: flex;
   gap: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  ${media.thone`gap: 1rem;`}
 `
 export const ButtonWrapper = styled.div`
   a {
