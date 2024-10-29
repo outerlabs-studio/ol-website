@@ -35,14 +35,14 @@ const Member = ({ image, name, pos, num }) => {
       </Container>
       <MarqueeWrapper className="top">
         <div className={`marquee-top marquee-top-${num}`}>
-          <Marquee repeat={2} duration={4}>
+          <Marquee repeat={2} duration={7}>
             <DisplayText $m={'0 0 0 70vw'}>{name.split(' ')[1]}</DisplayText>
           </Marquee>
         </div>
       </MarqueeWrapper>
       <MarqueeWrapper className="bottom">
         <div className={`marquee-bottom marquee-bottom-${num}`}>
-          <Marquee $inverted repeat={2} duration={5}>
+          <Marquee $inverted repeat={2} duration={8}>
             <MediumText $m={'0 5vw 0 0'} className={`pos-${num}`}>
               {pos}
             </MediumText>
