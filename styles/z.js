@@ -3,16 +3,16 @@ const Z_INDEX = {
   nav: 9998,
   menu: 9997,
   scrollbar: 9995,
-  hero: 1,
-  about: 2,
+  hero: 3,
+  about: 3,
   projects: 3,
   studio: 4,
   team: 4,
   article: 5,
   footer: {
-    background: 1,
-    section: 2,
-    foreground: 3,
+    background: 0,
+    section: 1,
+    foreground: 2,
   },
 }
 

@@ -5,6 +5,7 @@ import { media, SectionWrapper } from 'styles'
 
 export const HeroWrapper = styled(SectionWrapper)`
   padding: 16vw 0 5vw;
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
 
   ${media.thone`padding: 15rem 0 5rem;`}
 `

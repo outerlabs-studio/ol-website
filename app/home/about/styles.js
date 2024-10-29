@@ -5,6 +5,7 @@ import { SectionWrapper, Z_INDEX, media } from 'styles'
 
 export const AboutSection = styled(SectionWrapper)`
   z-index: ${Z_INDEX.about};
+  background-color: ${({ theme }) => `rgb(${theme.body})`};
 `
 export const InnerWrapper = styled.div`
   color: ${({ theme }) => `rgb(${theme.text})`};

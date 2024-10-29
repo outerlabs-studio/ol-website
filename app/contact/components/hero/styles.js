@@ -12,6 +12,7 @@ export const HeroWrapper = styled(SectionWrapper)`
   z-index: 3;
   will-change: transform;
   padding: 5vw 0;
+  overflow: hidden;
 
   ${media.thone`padding: 10rem 0 5rem;`}
 

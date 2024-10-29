@@ -7,7 +7,8 @@ export const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => `rgb(${theme.text})`};
   color: ${({ theme }) => `rgb(${theme.accent1})`};
   z-index: ${Z_INDEX.footer.section};
-  position: relative;
+  position: sticky;
+  bottom: 0;
   padding: 4vh 0;
   min-height: 100vh;
   overflow: hidden;
