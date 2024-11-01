@@ -1,11 +1,12 @@
 'use client'
 
 import styled from 'styled-components'
-import { media, SectionWrapper } from 'styles'
+import { media, SectionWrapper, Z_INDEX } from 'styles'
 
 export const HeroWrapper = styled(SectionWrapper)`
   padding: 16vw 0 5vw;
   background-color: ${({ theme }) => `rgb(${theme.body})`};
+  z-index: ${Z_INDEX.hero};
 
   ${media.thone`padding: 15rem 0 5rem;`}
 `
