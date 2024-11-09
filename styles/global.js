@@ -11,6 +11,9 @@ const normalize = `
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   
+  :root {
+    overscroll-behavior: none;
+  }
   html {
     box-sizing: border-box;
     width: 100%;
