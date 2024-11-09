@@ -12,7 +12,7 @@ export const InnerWrapper = styled.div`
   padding: 8vw 0;
   min-height: 100vh;
 
-  ${media.thone`padding: 0 0 2rem 0;`}
+  ${media.thone`padding: 0 0 4rem 0;`}
 
   .label {
     margin-top: 0.2vw;
