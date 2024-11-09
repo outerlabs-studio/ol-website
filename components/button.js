@@ -30,7 +30,6 @@ const ButtonWrapper = styled.a`
 
   ${media.desktop`
     padding: 0.5rem 2rem;
-    border-radius: 35px;
   `}
 `
 

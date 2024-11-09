@@ -18,7 +18,7 @@ export const HeroSection = styled(SectionWrapper)`
   z-index: ${Z_INDEX.hero};
   background-color: ${({ theme }) => `rgb(${theme.body})`};
 
-  ${media.desktop`padding-bottom: 6rem;`}
+  ${media.desktop`padding-bottom: 4rem;`}
 `
 export const CustomContainer = styled(Container)`
   opacity: 0;
@@ -100,10 +100,9 @@ export const ImageWrapper = styled.a`
     background-color: ${({ theme }) => `rgba(${theme.text}, 0.75)`};
   }
 
-  ${media.thone`height: 60svh;`}
+  ${media.thone`height: 70svh;`}
   ${media.phablet`
-    height: unset;
-
+    height: 30rem;
   `}
 `
 export const OverlayWrapper = styled.div`

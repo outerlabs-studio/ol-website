@@ -68,7 +68,6 @@ export const Button = styled.div`
 
   ${media.desktop`
     padding: 0.5rem 2rem;
-    border-radius: 35px;
   `}
 
   span {
