@@ -17,7 +17,7 @@ export const ListWrapper = styled.div`
   gap: 3vw;
 
   ${media.tablet`
-    gap: 0.5rem;
+    gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   `}
   ${media.thone`grid-template-columns: 1fr;`}
