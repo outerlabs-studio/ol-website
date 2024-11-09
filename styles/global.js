@@ -1,7 +1,6 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
-import Z_INDEX from './z'
 
 // https://github.com/necolas/normalize.css
 const normalize = `

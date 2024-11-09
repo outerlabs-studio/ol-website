@@ -62,8 +62,8 @@ const CustomImage = ({
           const { reduceMotion } = context.conditions
 
           if (reduceMotion) {
-            timeline?.current?.from(target.current, { y: 0 })
-            timeline?.current?.kill()
+            tl?.current?.from(target.current, { y: 0 })
+            tl?.current?.kill()
           }
         },
       )
