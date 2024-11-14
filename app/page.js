@@ -1,5 +1,7 @@
 import { fetchAPI } from 'lib/api'
 import { About, Hero, Projects, Studio } from './home'
+import Head from 'next/head'
+import { jsonLdScriptProps } from 'react-schemaorg'
 
 async function Home() {
   const data = await fetchAPI('/homepage', {
@@ -25,8 +27,33 @@ async function Home() {
   })
   const projectsDoc = projectsData?.data
 
+  console.log(
+    jsonLdScriptProps({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: doc.hero.image.alternativeText,
+      description: doc.hero.description,
+      uploadDate: doc.hero.image.updatedAt,
+      contentUrl: 'https://www.outerlabs.studio',
+      embedUrl: doc.hero.image.url,
+    }),
+  )
+
   return (
     <>
+      <Head>
+        <script
+          {...jsonLdScriptProps({
+            '@context': 'https://schema.org',
+            '@type': 'VideoObject',
+            name: doc.hero.image.alternativeText,
+            description: doc.hero.description,
+            uploadDate: doc.hero.image.updatedAt,
+            contentUrl: 'https://www.outerlabs.studio',
+            embedUrl: doc.hero.image.url,
+          })}
+        />
+      </Head>
       <Hero data={doc.hero} />
       <About data={doc.about} />
       <Projects data={projectsDoc} />
