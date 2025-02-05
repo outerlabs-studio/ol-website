@@ -27,18 +27,6 @@ async function Home() {
   })
   const projectsDoc = projectsData?.data
 
-  console.log(
-    jsonLdScriptProps({
-      '@context': 'https://schema.org',
-      '@type': 'VideoObject',
-      name: doc.hero.image.alternativeText,
-      description: doc.hero.description,
-      uploadDate: doc.hero.image.updatedAt,
-      contentUrl: 'https://www.outerlabs.studio',
-      embedUrl: doc.hero.image.url,
-    }),
-  )
-
   return (
     <>
       <Head>

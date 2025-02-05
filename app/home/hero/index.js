@@ -141,23 +141,7 @@ const Hero = ({ data }) => {
           </TitleWrapper>
         </ContentWrap>
 
-        <ImageWrapper
-          className="hero-image enabled"
-          href="/about"
-          // onMouseEnter={handleMouseEnter}
-          // onMouseMove={handleMouseMove}
-          // onMouseLeave={handleMouseExit}
-          onClick={(e) => {
-            e.preventDefault()
-            animatePageOut('/about', router, pathname)
-          }}
-        >
-          {/* <AboutButtonWrapper className="enabled">
-            <AboutButton ref={movingContainerRef}>
-              Explore our process
-            </AboutButton>
-          </AboutButtonWrapper>
-          <OverlayWrapper className="overlay" /> */}
+        <ImageWrapper className="hero-image enabled">
           {data?.image.mime === 'video/mp4' ||
           data?.image.mime === 'video/mpeg' ||
           data?.image.mime === 'video/webm' ? (

@@ -86,14 +86,13 @@ export const LineTwo = styled.div`
 
   ${media.thone`display: block;`}
 `
-export const ImageWrapper = styled.a`
+export const ImageWrapper = styled.div`
   position: relative;
   display: block;
   width: 100%;
   height: 100svh;
   min-height: 50vw;
   border-radius: 10px;
-  text-decoration: none;
   overflow: hidden;
 
   img {
